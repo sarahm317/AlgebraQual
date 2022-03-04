@@ -44,6 +44,7 @@
 \newcommand{\sq}{\subseteq}
 \newcommand{\scr}{\mathscr}
 \newcommand{\lcm}{\textrm{lcm}}
+\newcommand{\normal}{\triangleleft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Template Information
 \newcommand{\class}{Algebra Qualifying Exam}
@@ -95,6 +96,16 @@
 \end{itemize}
 
 \section{The Sylow Theorems}
+
+	\begin{prob}{S20}{}
+	Let $p$ and $q$ be primes. Prove that a group of order $pq$ is solvable.
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $p,q$ are prime and $G$ is a group of order $pq$. If $p = q$, then $G$ has order $p^2$. Then $G$ must be abelian and is therefore solvable. Assume now that $p \neq q$. By the Sylow Theorems there exists a subgroup $P \leq G$ of order $p$. Since $p \neq q$ and $q$ is prime, there is exactly one Sylow $p$-subgroup. Therefore, $P$ is normal in $G$. Consider the sequence of normal subgroups
+		\[0 \normal P \normal G \]
+	and note that $G/P$ is of order $q$ and $P/0$ is of order $p$. As both of these quotients are of prime order, they are cyclic and therefore abelian. 
+	\end{proof}
 	
 	\begin{prob}{F19}{}
 	\begin{enumerate}[(a)]
@@ -299,10 +310,7 @@ Note that \ref{prob:CauchyTheorem} is Cauchy's Theorem and comes up for many Syl
 	\item Prove that $x+1$ generates the multiplicative group of non-zero elements in $K$.
 	\end{enumerate}
 	\end{prob}
-	
-	\begin{prob}{S20}{}
-	Let $p$ and $q$ be primes. Prove that a group of order $pq$ is solvable.
-	\end{prob}
+
 	
 	\begin{prob}{F20}{F20.RF1}
 	The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
