@@ -1,0 +1,354 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumerate}
+\usepackage{mathrsfs,xcolor} 
+\usepackage[shortlabels]{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{esint}
+\setlength{\parindent}{0pt} % Don't indent new paragraphs
+\setlength{\headheight}{24pt} 
+
+\DeclareMathOperator{\inter}{int}
+
+
+% To allow for referencing
+\usepackage{nameref}
+\usepackage{hyperref}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commonly used commands shortcuts
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\Aut}{\textrm{Aut}}
+\newcommand{\Inn}{\textrm{Inn}}
+\newcommand{\Int}{\textrm{int}}
+\newcommand{\ph}{\varphi}
+\newcommand{\epsi}{\epsilon}
+\newcommand{\incl}{\xhookrightarrow{}}
+\newcommand{\ident}{\mathds{1}}
+\newcommand{\sq}{\subseteq}
+\newcommand{\scr}{\mathscr}
+\newcommand{\lcm}{\textrm{lcm}}
+\newcommand{\normal}{\triangleleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template Information
+\newcommand{\class}{Algebra Qualifying Exam}
+
+% Make header with name and date etc.
+\usepackage{fancyhdr}
+\lhead{Algebra Qualifying Exam}
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Creating solution environment
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{}\begin{proof}[Solution]}
+  {\end{proof}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customize theorem, lemma, and definition environments
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\newtcbtheorem[use counter*=defn]{thm}{Theorem}%
+{fonttitle=\bfseries}{thm}
+
+\newtcbtheorem[use counter*=defn]{lem}{Lemma}%
+{fonttitle=\bfseries}{lem}
+
+\newtcbtheorem[use counter*=defn]{cor}{Corollary}%
+{fonttitle=\bfseries}{cor}
+
+\newtcbtheorem[use counter*=defn]{prob}{Problem}%
+{fonttitle=\bfseries}{prob}
+
+
+\begin{document}
+
+\section{Directory}
+
+\begin{itemize}
+\item \textbf{Fall 2020}:  	G1 (Problem \ref{prob:F20.G1}), 
+							G2 (Problem \ref{prob:F20.G2}), 
+							G3 (Problem \ref{prob:F20.G3}),
+							RF1 (Problem \ref{prob:F20.RF1}),
+							RF2 (Problem \ref{prob:F20.RF2}),
+							RF3 (Problem \ref{prob:F20.RF3}),
+							LA1 (Problem \ref{prob:F20.LA1}),
+							LA2 (Problem \ref{prob:F20.LA2}),
+							LA3 (Problem \ref{prob:F20.LA3})
+\end{itemize}
+
+\section{The Sylow Theorems}
+
+	\begin{prob}{S20}{}
+	Let $p$ and $q$ be primes. Prove that a group of order $pq$ is solvable.
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $p,q$ are prime and $G$ is a group of order $pq$. If $p = q$, then $G$ has order $p^2$. Then $G$ must be abelian and is therefore solvable. Assume now that $p \neq q$. By the Sylow Theorems there exists a subgroup $P \leq G$ of order $p$. Since $p \neq q$ and $q$ is prime, there is exactly one Sylow $p$-subgroup. Therefore, $P$ is normal in $G$. Consider the sequence of normal subgroups
+		\[0 \normal P \normal G \]
+	and note that $G/P$ is of order $q$ and $P/0$ is of order $p$. As both of these quotients are of prime order, they are cyclic and therefore abelian. 
+	\end{proof}
+	
+	\begin{prob}{F19}{}
+	\begin{enumerate}[(a)]
+	\item Suppose that $G$ is a group with exactly two subgroups. Prove that $G$ is finite and of prime order.
+	\item Must the converse of the previous part be true?
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $G$ is a group with exactly two subgroups. Seeking a contradiction, suppose that $G$ is infinite and choose some non-identity element $x \in G$. If $\langle x \rangle = G$, then $G$ is an infinite cyclic group. That is, $G \cong \Z$. As $\Z$ has infinitely many subgroups, this is a contradiction. So, there exists $y \in G - \langle x \rangle$. In this case, there are three distinct subgroups, $\{e\}, \langle x \rangle, \langle y \rangle$, again a contradiction. Therefore, $G$ must be finite.\\
+	
+	Let $p$ be some prime dividing the order of $G$. By Cauchy's Theorem (\ref{prob:CauchyTheorem}), there exists an element $x$ of order $p$. As there are only two subgroups and $p > 1$, $\langle x \rangle = G$, implying that $G$ is of prime order $p$.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $G$ is finite and of prime order $p$. By Lagrange's Theorem, any subgroup of $G$ is of order 1 or order $p$. The only subgroup of order 1 is the trivial subgroup and the only subgroup of order $p$ is $G$. That is, $G$ has exactly two subgroups.
+	\end{proof}
+	
+	\begin{prob}{F19}{}
+	Suppose that $G$ is a finite group with exactly three conjugacy classes. Show that $G$ is isomorphic to either $S_3$ or to $\Z/3\Z$.
+	\end{prob}
+	
+	\begin{proof}
+	Let $r,s,t \geq 1$ denote the sizes of the three distinct conjugacy classes. Without loss of generality, we may assume $r = 1$ as conjugacy classes partition a group and the identity element is in its own conjugacy class. Then, $|G| = 1 + s + t$. Note that the conjugacy classes of $G$ are the same as the orbits formed by the action of $G$ acting on itself via conjugation. Therefore, by the Orbit Stabilizer Theorem, $s$ and $t$ must both divide $|G|$.\\
+	
+	If $G$ is abelian, then $s = t =1$ as every element is in its own conjugacy class. This means that $|G| = 3$ and therefore $G \cong \Z/3\Z$ since this is the only group of order 3.\\
+	
+	Now assume that $G$ is non-abelian. Then, some conjugacy class of $G$ must be of size greater than 1. Assume that $s \geq 2$. Note that $1 + t = |G| -s$ and since $s$ divides $|G|$, $s$ must divide $1 + t$. Therefore, $s \leq 1 + t$. As both $s$ and $t$ are positive integers, this means that $s = t$ or $s = 1 + t$. If $s = t$, then $|G| = 1 + 2s$ and since $s$ divides $|G|$, $s$ must divide 1. This is only possible if $s = 1$. By assumption, $s \geq 2$ and therefore we may assume that $s = 1 + t$. In this case, $|G| = 2 + 2s = 2(1 + s)$. As $s \geq 2$ and $s$ divides $|G|$, $s$ divides 2. That is, $s = 2$ and therefore $t = 3$. Then, $|G| = 6$. As $G$ is non-abelian, $G \cong S_3$ since this is the only non-abelian group of order 6.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $G$ is finite and has exactly three conjugacy classes, of sizes $r, s, t$. As conjugacy classes partition a group, $G$ is of size $r + s + t$.\\
+	
+	If $G$ is abelian, every conjugacy class must be of size 1. Therefore, $|G| = 3$ and thus $G \cong \Z/3\Z$.\\
+	
+	Suppose now that $G$ is not abelian. Without loss of generality, assume that $r = 1$ since the identity element must be in a conjugacy class of size 1. 
+	\end{proof}
+	
+	
+	\begin{prob}{F20}{F20.G2}
+	\begin{enumerate}[(a)]
+	\item Give two examples of non-abelian groups of order 48 that are non-isomorphic.
+	\item Show that a group of order 48 cannot be simple.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Let $G = D_{48}$ and $H = D_{24} \times \Z_2$ where $D_{48}$ and $D_{24}$ are the dihedral groups of orders 48 and 24, respectively. Each of $G$ and $H$ are of order 48 and are clearly non-abelian. However, these groups are non-isomorphic. The generating element for rotation in $G$ has order 48. However, the highest possible order for an element in $H$ is 24 since the order of an element $(x,y) \in H$ is the least common multiple of the order of $x$ in $D_{24}$ and the order of $y$ in $\Z_2$.
+	\end{proof}
+	
+	\begin{proof}
+	Let $G$ be of order 48. Notice that $48 = 2^4 \cdot 3$. By the Sylow Theorems, the number of Sylow 2 subgroups $n_2$ is either 1 or 3 as it must divide 3 and be equivalent to 1 modulo 2. Similarly, the number of Sylow 3 $n_3$ subgroups is either 1, 4, or 16. If $G$ is not simple than $n_2, n_3 \neq 1$ since either being equal to 1 would guarantee a normal subgroup. This means that $n_2 = 3$ and $n_3 = 4$ or $n_3 = 6$. Each Sylow 2 subgroup is of size 16. Suppose that $H$ and $K$ are two distinct Sylow 2 subgroups. Then, $H \cap K$ is a subgroup of $H$ and must be of order 1,2,4, or 8. If $|H \cap K| \leq 4$, then
+	\[ |HK| = \frac{|H|\cdot|K|}{|H\cap K} \geq 64. \]
+But, $HK \sq G$ and therefore this is impossible. Thus, $|H \cap K| = 8$. As any subgroup of index two is normal, $H \cap K$ is normal in each of $H$ and $K$. The normalizer $N$ of $H\cap K$ in $G$ includes $H$, $K$, and $H \cap K$ and therefore must be of size at least $\lcm(8,16) = 24$. Since the normalizer is also a subgroup in $G$, either $|N| = 24$ or $|N| = 48$ since $|H|$ must also divide $|N|$. In either case, $N$ is normal in $G$ as $N$ is either of index 2 or equal to $G$. This is a contradiction to $G$ being simple.
+	\end{proof}
+	
+	
+	\begin{prob}{S19}{}
+	Prove that every group of order 21 has a normal subgroup of index 3, but that not every group of order 21 is abelian.
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $|G| = 21$. By the Sylow Theorems, there exists a Sylow 7-subgroup, say $P$, of order 7. There's exactly one Sylow-7 subgroup because the only number that divides 1 and is equivalent to 1 modulo 7 is 1. Therefore $P$ is normal in $G$ and $|G/P| = 3$.
+	\end{proof}
+	
+	\begin{proof}
+	Consider the subgroup of $M_{2\times2}(\Z_7)$ given by $G = \langle A, B \rangle$ where
+		\[ A = \begin{pmatrix}
+		1 & 1 \\
+		0 & 1 \end{pmatrix} \]
+	and
+		\[ A = \begin{pmatrix}
+		4 & 0 \\
+		0 & 2 \end{pmatrix}. \]
+	Upon inspection, 
+		\[ A^7 = B^3 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \]
+	and
+		\[BAB\inv = A^2. \]
+	This group is non-abelian but is of order 21.\\
+	
+	\emph{I should probably add more details here about why this construction is guaranteed to be of order 21. It's clear there are at most 21 elements, but how do we show that there are no duplicates?}
+	\end{proof}
+
+\section{$G/Z(G)$ is Cyclic}
+
+	\begin{prob}{S20}{GZG}
+	Let $G$ be a group and $H$ a subgroup of $G$ contained in the center $Z(G)$ of $G$ such that $G/H$ is cyclic.
+	\begin{enumerate}[(a)]
+	\item Show that $G$ is abelian.
+	\item Show that every group of order $p^2$ with $p$ a prime is abelian. \emph{It may be assumed that a $p$-group has nontrivial center.}
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $G/H = \langle gH \rangle$ for some $g \in G$. Let $a, b \in G$. By assumption, $a = g^kH$ and $b = g^mH$ for some $k,m \in \N$. Therefore, $a = g^kh_1$ and $b= g^m h_2$. Since elements in $H$ commute with every element in $G$ and powers of $G$ commute with one another,
+		\[ab = g^kh_1g^mh_2 = g^mh_2g^k h_1 = ba \]
+	proving that $G$ is abelian.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $|G| = p^2$ with $p$ a prime. Because $G$ is a $p$-group, it has nontrivial center and thus $|Z(g)| > 1$. By Lagrange's Theorem, $|Z(G)| = p$ or $|Z(G)| = p^2$. If $|Z(G)| =p^2$, $Z(G) = G$. If $|Z(G)| = p$, $\left|G/Z(G) \right| = p$. That is, $G/Z(G)$ is cyclic and therefore $G$ is abelian.
+	\end{proof}
+	
+	\begin{prob}{S19}{}
+	\begin{enumerate}[(a)]
+	\item Suppose that $G$ is a group and $G/Z(G)$ is cyclic. Prove  that $G$ is abelian.
+	\item Let $p$ be a prime number and $G$ a non-cyclic finite $p$-group. Prove that $G$ contains a normal subgroup $N$ such that $G/N \cong C \oplus C$ where $C$ is a cyclic group of order $p$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	See \ref{prob:GZG}.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $|G| = p^k$ with $k \geq 2$. Assume that $G$ is not cyclic.
+	\end{proof}
+	
+
+\section{Order Stabilizer Theorem}
+
+Note that \ref{prob:CauchyTheorem} is Cauchy's Theorem and comes up for many Sylow-like problems. There's another version of the proof specifically for the case when $p = 2$ that does not involve group actions.
+
+	\begin{prob}{F18}{CauchyTheorem}
+	Let $G$ be a finite group with order that is divisible by a prime $p$. Prove that $G$ contains an element of order $p$.
+	\end{prob}
+	
+	\begin{proof}
+	Assume that $G$ is a finite group such that a prime $p$ divides $|G|$. Define a set $X \sq G^p$ as
+		\[X = \{(x_1, \ldots, x_p) \in G^p: x_1 \cdots x_p = e\}. \]
+	That is, $X$ is the set of all $p$-tuples of elements in $G$ where the product of the elements is the identity in $G$. Note that by choosing $x_1, \ldots, x_{p-1}$, $x_p$ is determined as
+		\[x^p = (x_1 \cdots x_{p - 1})\inv. \]
+	This means that $|X| = G^{p-1}$ and therefore $p$ must divide $|X|$.\\
+	
+	Next observe that if $x_1 \cdots x_p = e$, multiplying $x_1, \ldots, x_p$ in any order yields the identity. That is, if $(x_1, \ldots, x_p) \in X$, any permutation of this $p$-tuple is also in $X$. Therefore, we may let $\Z / p\Z$ act on $X$ via permutation. That is,
+		\[1 \cdot (x_1, \ldots, x_p) \mapsto (x_p, x_1, \ldots, x_{p-1}). \]
+	Since the order of $\Z / p\Z$ is prime, every stabilizer subgroup is either of size 1 or of size $p$. By the Order Stabilizer Theorem, this means that the order of an orbit is either 1 or $p$. Furthermore, the orbits of this action form a partition of $X$. Elements of $X$ that are in an orbit of size 1 must be of the form $(x, \ldots, x)$ where $x^p = e$. Since $(e, \ldots, e) \in X$ satisfies this condition, $e$ is in an orbit of size 1. Because orbits are of size 1 or $p$ and partition $X$, there exists some $x \neq e$ also in an orbit of size 1. If this were not the case, $p$ would not divide $X$, a contradiction. This chosen $x$ is of order $p$ since $x^p = e$.
+	\end{proof}
+	
+	
+\section{Unfinished}
+
+	\begin{prob}{F19}{}
+	Let $p$ be a prime number and suppose that $1 \leq n <p^2$ is an integer. Show that every Sylow $p$-subgroup of the symmetric group $S_n$ is abelian.
+	\end{prob}
+	
+
+	\begin{prob}{F20}{F20.G3}
+	Let $G$ be a finite group, $x \in G$, and $H$ a subgroup of $G$.
+	\begin{enumerate}[(a)]
+	\item Prove that the number of conjugates of $x$ in $G$ divides $\rm{order}(G)/\rm{order}(x)$.
+	\item Prove that the number of conjugates of $H$ in $G$ divides the index of $H$ in $G$.
+	\end{enumerate}
+	\end{prob}
+
+	\begin{prob}{S20}{}
+	Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
+	\end{prob}
+
+	\begin{prob}{S19}{}
+	State and prove Lagrange's Theorem. Prove that a subgroup of a cyclic group is cyclic.
+	\end{prob}
+
+	\begin{prob}{S19}{}
+	Prove the following:
+	\begin{enumerate}[(a)]
+	\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
+	\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F19}{}
+	Prove that the set $N$ of nilpotent elements of a commutative ring $R$ is an ideal of $R$ and that $R/N$ has no nilpotent elements.
+	\end{prob}
+	
+	\begin{prob}{S19}{}
+	Prove that $\sigma,\tau \in S_n$ are conjugate if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
+	\end{prob}
+	
+	\begin{prob}{S20}{}
+	\begin{enumerate}[(a)]
+	\item Prove that the centralizer of an element is a subgroup.
+	\item If $G$ is a finite group, prove that the number of elements in the conjugacy class divides the order of $G$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.G1}
+	Show that any finitely generated group of $(\Q,+)$ is cyclic. Use this to prove that the direct product $(\Q,+) \times (\Q,+)$ and $(\Q,+)$ are not isomorphic.
+	\end{prob}
+
+	\begin{prob}{S20}{}
+	Let $R$ be a commutative ring with identity. Show that if $p$ is a prime ideal in $R$ then
+		\[p(x) = \left\{\textrm{all polynomials } \sum_i a_ix^i \textrm{ with each } a_i \in p \right\} \]
+	is a prime ideal in $R[x]$.
+	\end{prob}
+	
+	\begin{prob}{S20}{}
+	Let $\F_3$ be the field with 3 elements.
+	\begin{enumerate}[(a)]
+	\item Prove that $K = \F_3[x]/(x^2 + 1)$ is a field.
+	\item How many elements does $K$ have?
+	\item Prove that $x+1$ generates the multiplicative group of non-zero elements in $K$.
+	\end{enumerate}
+	\end{prob}
+
+	
+	\begin{prob}{F20}{F20.RF1}
+	The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.RF2}
+	Prove or provide a counter example: Suppose that $K$ is a finite extension of $F$. $F \sq L \sq K$, $F \sq M \sq KL$, $LM = K$ and $L \cap M = F$. Then $[L:F][M:F] = [K:F]$. Here, $LM$ denotes the composition of the fields $L$ and $M$.
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.RF3}
+		\begin{enumerate}[(i)]
+		\item Let $R$ be a UFD and $d$ a nonzero element in $R$. Prove that there are only finitely many principal ideals  in $R$ that contain the ideal $(d)$.
+		\item Give an example of a UFD $R$ and a nonzero element $d \in R$ such that there are infinitely many ideals in $R$ that contain $(d)$.
+		\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA1}
+	It is known that real symmetric matrices are always diagonalizable. You may assume this fact.
+	\begin{enumerate}[(a)]
+	\item What special property do the eigenspaces of a real symmetric matrix have?
+	\item Prove that any real symmetric matrix $S$ can be diagonalized by an orthonormal matrix $U$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA2}
+	Prove or give a counter example.
+	\begin{enumerate}[(a)]
+	\item If a $4 \times 4$ real matrix has characteristic polynomial $x^4 -1$ then its minimal polynomial cannot be $x^2 - 1$.
+	\item Every $n \times n$ real matrix is similar over the reals to an upper triangular matrix.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA3}
+	Let $V$ be a finite dimensional complex vector space and $T: V \to V$ a linear transformation.
+	\begin{enumerate}[(a)]
+	\item Show that $V$ has a "flag" of subspaces $V_0 = 0 \sq V_1 \sq \cdots \sq V_n = V$ such that $\dim(V_i) = i$ and $T(V_i) \sq V_i$ for each $i$.
+	\item Show that there is a basis for $V$ such that the matrix of $T$ with respect to this basis is upper triangular.
+	\end{enumerate}
+	\end{prob}
+	
+\end{document}
