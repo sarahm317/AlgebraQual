@@ -45,6 +45,7 @@
 \newcommand{\scr}{\mathscr}
 \newcommand{\lcm}{\textrm{lcm}}
 \newcommand{\normal}{\triangleleft}
+\newcommand{\range}{\mathrm{range}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Template Information
@@ -79,6 +80,8 @@
 \newtcbtheorem[use counter*=defn]{prob}{Problem}%
 {fonttitle=\bfseries}{prob}
 
+\newtcbtheorem[no counter]{LA}{Linear Algebra Done Right}%
+{fonttitle=\bfseries}{prob}
 
 \begin{document}
 
@@ -262,7 +265,42 @@ Note that \ref{prob:F18.G1} is Cauchy's Theorem and comes up for many Sylow-like
 	
 	Suppose that $R/N$ has some nonzero nilpotent element. That is there exists $r \in R - N$ and $m \geq 1$ such that $(r+N)^m = N$. This implies that $r^m \in N$. Choose $n \geq 1$  such that $(r^m)^n = 0$. But this means that $r^{mn} = 0$, contradicting that $r \not\in N$. Thus there are no nonzero nilpotent elements in $R/N$.
 	\end{proof}
-	
+
+
+\section{Linear Algebra Done Right Problems}
+
+\begin{LA}{5A.1}{}
+Suppose that $T \in \scr{L}(V)$ and $U \sq V$ is a subspace. Prove that if $U \sq \null(T)$ then $U$ is invariant under $T$. Prove that if $\range(T) \sq U$ then $U$ is invariant under $T$.
+\end{LA}
+
+\begin{proof}
+Assume that $U \sq \null(T)$ and $u \in U$. Then, $u \in \null(T)$ and so $Tu = 0 \in U$.
+\end{proof}
+
+\begin{proof}
+Assume that $\range(T) \sq U$ and that $u \in U$. Then, $Tu \in \range(T) \sq U$.
+\end{proof}
+
+\begin{LA}{5A.2}{}
+Suppose that $S,T \in \scr{L}(V)$ such that $ST = TS$. Prove that $\range(S)$ is invariant under $T$.
+\end{LA}
+
+\begin{proof}
+Let $v \in \range(S)$ where $v = Su$ for some $u \in V$. Then,
+	\[Tv = (TS) u = (ST)u \in \range(S) \]
+proving that $\range(S)$ is invariant under $T$, as desired.
+\end{proof}
+
+\begin{LA}{5A.3}{}
+Suppose that $T \in \scr{L}(V)$ and $U_1, \ldots, U_m \sq V$ are all subspaces that are invariant under $T$. Prove that $U_1 + \cdots + U_m$ is invariant under $T$.
+\end{LA}
+
+\begin{proof}
+Take $\sum_{i=1}^m u_i \in U_1 + \cdots + U_m$. As each $U_i$ is invariant under $T$, each $Tu_i \in U_i$. Therefore,
+	\[T\left(\sum_{i=1}^m u_i\right) = \sum_{i=1}^m Tu_i \in U_1 + \cdots + U_m \]
+as desired.
+\end{proof}
+
 \section{Unfinished}
 
 	\begin{prob}{F19}{}
