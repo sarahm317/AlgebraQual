@@ -1,5 +1,8 @@
 \documentclass{article}
 
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
 \usepackage{enumerate}
@@ -22,7 +25,6 @@
 % To allow for referencing
 \usepackage{nameref}
 \usepackage{hyperref}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,7 +85,11 @@
 \newtcbtheorem[no counter]{LA}{Linear Algebra Done Right}%
 {fonttitle=\bfseries}{prob}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
+
+\tableofcontents
 
 \section{Directory}
 
@@ -269,6 +275,7 @@ Note that \ref{prob:F18.G1} is Cauchy's Theorem and comes up for many Sylow-like
 
 \section{Linear Algebra Done Right Problems}
 
+\subsection{Invariant Subspaces}
 \begin{LA}{5A.1}{}
 Suppose that $T \in \scr{L}(V)$ and $U \sq V$ is a subspace. Prove that if $U \sq \null(T)$ then $U$ is invariant under $T$. Prove that if $\range(T) \sq U$ then $U$ is invariant under $T$.
 \end{LA}
@@ -282,6 +289,14 @@ Assume that $\range(T) \sq U$ and that $u \in U$. Then, $Tu \in \range(T) \sq U$
 \end{proof}
 
 \begin{LA}{5A.2}{}
+Suppose that $S,T \in \scr{L}(V)$ such that $ST = TS$. Prove that $\null(S)$ is invariant under $T$.
+\end{LA}
+
+\begin{proof}
+Suppose that $u \in \null(S)$. Then $S u = 0$ implying that $TS u = 0$. By assumption, this means that $STu = 0$ and therefore $Tu \in \null(S)$.
+\end{proof}
+
+\begin{LA}{5A.3}{}
 Suppose that $S,T \in \scr{L}(V)$ such that $ST = TS$. Prove that $\range(S)$ is invariant under $T$.
 \end{LA}
 
@@ -291,7 +306,7 @@ Let $v \in \range(S)$ where $v = Su$ for some $u \in V$. Then,
 proving that $\range(S)$ is invariant under $T$, as desired.
 \end{proof}
 
-\begin{LA}{5A.3}{}
+\begin{LA}{5A.4}{}
 Suppose that $T \in \scr{L}(V)$ and $U_1, \ldots, U_m \sq V$ are all subspaces that are invariant under $T$. Prove that $U_1 + \cdots + U_m$ is invariant under $T$.
 \end{LA}
 
@@ -300,6 +315,77 @@ Take $\sum_{i=1}^m u_i \in U_1 + \cdots + U_m$. As each $U_i$ is invariant under
 	\[T\left(\sum_{i=1}^m u_i\right) = \sum_{i=1}^m Tu_i \in U_1 + \cdots + U_m \]
 as desired.
 \end{proof}
+
+\begin{LA}{5A.5}{}
+Let $T \in \scr{L}(V)$. Prove that the intersection of any collection of subspaces of $V$ invariant under $T$ is invariant under $T$.
+\end{LA}
+
+\begin{proof}
+Let $\{U_\alpha\}_{\alpha \in \scr{A}}$ be a collection of subspaces of $V$ that are invariant under $T$. Suppose that $v \in U = \bigcap_{\alpha \in \scr{A}} U_\alpha$. Then $v \in U_\alpha$ and thus $Tv \in U_\alpha$ for each $\alpha \in \scr{A}$. This implies that $Tv \in U$, as desired.
+\end{proof}
+
+\begin{LA}{5A.6}{}
+If $V$ is a finite-dimensional vector space and $U$ is a subspace of $V$ that is invariant under every $T \in \scr{L}(V)$, then $U = \{0\}$ or $U = V$.
+\end{LA}
+
+\begin{proof}
+We prove the contrapositive. Suppose that $U \neq \{0\}$ and $U \neq V$. Choose some nonzero $u \in U$ and let $u' \in V - U$. Extend $\{u\}$ to a basis $\{u, v_1, \ldots, v_m \}$ for $V$. Define $T \in \scr{L}(V)$ by $Tu = u'$ and $Tv_k = 0$ for each $k = 1, \ldots, m$. By construction, $U$ is not invariant under $T$ as $Tu \not\in U$.
+\end{proof}
+
+\begin{LA}{5A.7}{}
+Suppose that $T \in \scr{L}(\R^2)$ is given by $T(x,y) = (-3y, x)$. Find the eigenvalues  and eigenvectors of $T$.
+\end{LA}
+
+\begin{proof}
+If $\lambda$ is an eigenvalue of $T$ then
+	\[(-3y, x) = T(x,y) = (\lambda x, \lambda y). \]
+This implies that $x = \lambda y$ and $-3y = \lambda x$. Therefore, $-3y = \lambda^2 y$. Note that $y\neq 0$ since $y = 0$ implies $x = 0$ and eigenvectors are nonzero. Therefore, $-3 = \lambda^2$ which has no solutions over $\R$. Whence $T$ has no eigenvalues.
+\end{proof}
+
+\begin{LA}{5A.8}{}
+Define $T \in\scr{L}(\F^2)$ by
+	\[T(w,z) = (z,w)\]
+and find all eigenvalues and eigenvectors of $T$.
+\end{LA}
+
+\begin{proof}
+Suppose that $\lambda$ is an eigenvalue of $T$. Then
+	\[(z,w) = T(w,z) = (\lambda w, \lambda z) \]
+implying that $w = \lambda z$ and $z = \lambda w$. This means that $w = \lambda^2 w$. If $w= 0$ then $z = 0$, meaning that $\lambda$ has no associated eigenvector. Therefore, $w \neq 0$ and so $\lambda = \pm 1$. When $\lambda = 1$, eigenvectors are of the form $(w,w)$. When $\lambda = -1$, eigenvectors are of the form $(w,-w)$.
+\end{proof}
+
+\begin{LA}{5A.9}{}
+Define $T \in \scr{L}(\F^3)$ by
+	\[T(z_1, z_2, z_3) = (2z_2, 0, 5z_3) \]
+and find all eigenvalues and eigenvectors of $T$.
+\end{LA}
+
+\begin{proof}
+Suppose that $\lambda$ is an eigenvalue of $T$. Then,
+	\[(2z_2, 0, 5z_3) = T(z_1, z_2, z_3) = (\lambda z_1, \lambda z_2, \lambda z_3). \]
+This means that
+	\[2z_2 = \lambda z_1 \quad \rm{and} \quad 0 = \lambda z_2 \quad \rm{and} \quad 5z_3 = \lambda z_3. \]
+If $\lambda = 0$, then $z_1 = z_3 = 0$ and $z_2$ is free. Therefore, $\lambda = 0$ has corresponding eigenvectors of the form $(0, z, 0)$. If $\lambda \neq 0$, $z_2 = 0$ and thus $z_1 = 0$ as well. This means that $z_3 \neq 0$ and therefore $\lambda = 5$. If $\lambda = 5$, then $z_3$ is free and $z_1 = z_2 = 0$. That is, $\lambda = 5$ has corresponding eigenvectors of the form $(0,0,z)$.
+\end{proof}
+
+\begin{LA}{5A.10}{}
+Define $T \in \scr{L}(\F^n)$ by
+	\[T(x_1, x_2, \ldots, x_n) = (x_1, 2x_2, \ldots, n x_n). \]
+Find the eigenvalues and eigenvectors of $T$. Find the invariant subspaces of $T$.
+\end{LA}
+
+\begin{proof}
+If $\lambda$ is an eigenvalue of $T$, then
+	\[(x_1, 2x_2, \ldots, n x_n) = T(x_1, x_2, \ldots, x_n) = (\lambda x_1, \lambda x_2, \ldots, \lambda x_n) \]
+resulting in the system of $n$ equations of the form $\lambda x_k = k x_k$ for $k = 1, \ldots, n$. Then $\lambda = k$ is an eigenvalue with eigenvector of the form $(v_1, \ldots, v_n)$ where $v_k = 1$ and $v_j = 0$ when $j \neq k$ for each $k = 1, \ldots, n$. As this accounts of $n$ eigenvalues in an $n$-dimensional space, these are all possible eigenvalue-eigenvector pairs.\\
+
+Let these eigenvectors be denoted by $w_1, \ldots, w_n$ where $w_k$ has eigenvalue $\lambda = k$. The span of each $w_k$ is one-dimensional and is an invariant subspace under $T$. Denote these subspaces by $U_1, \ldots, U_n$.
+
+\textcolor{red}{Second part of this solution is not finished!}
+\end{proof}
+
+\begin{LA}{5A.14}{}
+\end{LA}
 
 \section{Unfinished}
 
