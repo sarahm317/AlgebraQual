@@ -33,3 +33,4 @@ clean:
 	$(TEXFILE:.tex=.blg) \
 	$(TEXFILE:.tex=.bcf) \
 	$(TEXFILE:.tex=.run.xml) \
+	$(TEXFILE:.tex=.toc)
