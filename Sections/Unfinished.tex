@@ -1,0 +1,138 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+\section{Unfinished}
+
+	\begin{prob}{F19}{}
+	Let $p$ be a prime number and suppose that $1 \leq n <p^2$ is an integer. Show that every Sylow $p$-subgroup of the symmetric group $S_n$ is abelian.
+	\end{prob}
+	
+
+	\begin{prob}{F20}{F20.G3}
+	Let $G$ be a finite group, $x \in G$, and $H$ a subgroup of $G$.
+	\begin{enumerate}[(a)]
+	\item Prove that the number of conjugates of $x$ in $G$ divides $\rm{order}(G)/\rm{order}(x)$.
+	\item Prove that the number of conjugates of $H$ in $G$ divides the index of $H$ in $G$.
+	\end{enumerate}
+	\end{prob}
+
+	\begin{prob}{S20}{}
+	Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
+	\end{prob}
+
+	\begin{prob}{S19}{}
+	State and prove Lagrange's Theorem. Prove that a subgroup of a cyclic group is cyclic.
+	\end{prob}
+
+	\begin{prob}{S19}{}
+	Prove the following:
+	\begin{enumerate}[(a)]
+	\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
+	\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
+	\end{enumerate}
+	\end{prob}
+	
+
+	
+	\begin{prob}{S19}{}
+	Prove that $\sigma,\tau \in S_n$ are conjugate if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
+	\end{prob}
+	
+	\begin{prob}{S20}{}
+	\begin{enumerate}[(a)]
+	\item Prove that the centralizer of an element is a subgroup.
+	\item If $G$ is a finite group, prove that the number of elements in the conjugacy class divides the order of $G$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.G1}
+	Show that any finitely generated group of $(\Q,+)$ is cyclic. Use this to prove that the direct product $(\Q,+) \times (\Q,+)$ and $(\Q,+)$ are not isomorphic.
+	\end{prob}
+
+	\begin{prob}{S20}{}
+	Let $R$ be a commutative ring with identity. Show that if $p$ is a prime ideal in $R$ then
+		\[p(x) = \left\{\textrm{all polynomials } \sum_i a_ix^i \textrm{ with each } a_i \in p \right\} \]
+	is a prime ideal in $R[x]$.
+	\end{prob}
+	
+	\begin{prob}{S20}{}
+	Let $\F_3$ be the field with 3 elements.
+	\begin{enumerate}[(a)]
+	\item Prove that $K = \F_3[x]/(x^2 + 1)$ is a field.
+	\item How many elements does $K$ have?
+	\item Prove that $x+1$ generates the multiplicative group of non-zero elements in $K$.
+	\end{enumerate}
+	\end{prob}
+
+	
+	\begin{prob}{F20}{F20.RF1}
+	The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.RF2}
+	Prove or provide a counter example: Suppose that $K$ is a finite extension of $F$. $F \sq L \sq K$, $F \sq M \sq KL$, $LM = K$ and $L \cap M = F$. Then $[L:F][M:F] = [K:F]$. Here, $LM$ denotes the composition of the fields $L$ and $M$.
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.RF3}
+		\begin{enumerate}[(i)]
+		\item Let $R$ be a UFD and $d$ a nonzero element in $R$. Prove that there are only finitely many principal ideals  in $R$ that contain the ideal $(d)$.
+		\item Give an example of a UFD $R$ and a nonzero element $d \in R$ such that there are infinitely many ideals in $R$ that contain $(d)$.
+		\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA1}
+	It is known that real symmetric matrices are always diagonalizable. You may assume this fact.
+	\begin{enumerate}[(a)]
+	\item What special property do the eigenspaces of a real symmetric matrix have?
+	\item Prove that any real symmetric matrix $S$ can be diagonalized by an orthonormal matrix $U$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA2}
+	Prove or give a counter example.
+	\begin{enumerate}[(a)]
+	\item If a $4 \times 4$ real matrix has characteristic polynomial $x^4 -1$ then its minimal polynomial cannot be $x^2 - 1$.
+	\item Every $n \times n$ real matrix is similar over the reals to an upper triangular matrix.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F20}{F20.LA3}
+	Let $V$ be a finite dimensional complex vector space and $T: V \to V$ a linear transformation.
+	\begin{enumerate}[(a)]
+	\item Show that $V$ has a "flag" of subspaces $V_0 = 0 \sq V_1 \sq \cdots \sq V_n = V$ such that $\dim(V_i) = i$ and $T(V_i) \sq V_i$ for each $i$.
+	\item Show that there is a basis for $V$ such that the matrix of $T$ with respect to this basis is upper triangular.
+	\end{enumerate}
+	\end{prob}
+	
+
+	
+	\begin{prob}{F21}{F21.G3}
+	Let $p$ and $q$ be distinct odd primes. Use the Sylow Theorems to show that every group of order $p^2q^2$ is not simple.
+	\end{prob}	
+	
+	\begin{proof}
+	Suppose that $|G| = p^2q^2$ and without loss of generality, assume that $p < q$. Note that each Sylow $p$-subgroup is of order $p^2$ and each Sylow $q$-subgroup is of order $q^2$. Furthermore, the number of Sylow-$p$ subgroups is $n_p = 1, q, q^2$ and the number of Sylow-$q$ subgroups is $n_q = 1, p^2$. If $n_q = 1$, then the Sylow-$q$ subgroup is normal in $G$ and thus $G$ is not simple. Suppose instead that $n_q = p^2$.\\
+	
+	If $Q_i, Q_j$ are any two distinct Sylow-$q$ subgroups, the intersection $Q_i \cap Q_j$ is either of size $1$ or $q$. If every pairwise intersection between the Sylow-$q$ subgroups is trivial, then the $p^2$ Sylow-$q$ subgroups account for $p^2q^2 - (p^2 -1)$ elements implying that $n_p = 1$. That is, the Sylow-$p$ subgroup is normal and therefore $G$ is not simple. Suppose that some Sylow-$q$ subgroups$Q_1, Q_2$ have intersection of size $q$. Let $N = Q_1 \cap Q_2$ and let $M$ be the subgroup of $G$ generated by $Q_1$ and $Q_2$. Then, $|M| > |Q_1| = q^2$ and $|M|$ divides $|G| = p^2q^2$. Therefore $|M| = pq^2$ or $|M| = p^2 q^2$. 
+	
+Note first that any group of prime squared order is abelian. Therefore both $Q_1$ and $Q_2$ are abelian and so $N = Q_1 \cap Q_2$ is normal in $M$. If $|M| = p^2q^2$ then $M=G$ and thus $N$ is a normal subgroup of $G$ and is nontrivial.\\
+
+Now suppose that $|M| = pq^2$. 
+	\end{proof}
+	
+	\begin{prob}{S19}{}
+	\begin{enumerate}[(a)]
+	\item Suppose that $G$ is a group and $G/Z(G)$ is cyclic. Prove  that $G$ is abelian.
+	\item Let $p$ be a prime number and $G$ a non-cyclic finite $p$-group. Prove that $G$ contains a normal subgroup $N$ such that $G/N \cong C \oplus C$ where $C$ is a cyclic group of order $p$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	See \ref{prob:GZG}.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $|G| = p^k$ with $k \geq 2$. Assume that $G$ is not cyclic.
+	\end{proof}
+	
+\end{document}

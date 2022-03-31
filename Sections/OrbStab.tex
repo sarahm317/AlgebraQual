@@ -1,0 +1,24 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+\section{Order Stabilizer Theorem}
+
+Note that \ref{prob:F18.G1} is Cauchy's Theorem and comes up for many Sylow-like problems. There's another version of the proof specifically for the case when $p = 2$ that does not involve group actions.
+
+	\begin{prob}{F18}{F18.G1}
+	Let $G$ be a finite group with order that is divisible by a prime $p$. Prove that $G$ contains an element of order $p$.
+	\end{prob}
+	
+	\begin{proof}
+	Assume that $G$ is a finite group such that a prime $p$ divides $|G|$. Define a set $X \sq G^p$ as
+		\[X = \{(x_1, \ldots, x_p) \in G^p: x_1 \cdots x_p = e\}. \]
+	That is, $X$ is the set of all $p$-tuples of elements in $G$ where the product of the elements is the identity in $G$. Note that by choosing $x_1, \ldots, x_{p-1}$, $x_p$ is determined as
+		\[x^p = (x_1 \cdots x_{p - 1})\inv. \]
+	This means that $|X| = G^{p-1}$ and therefore $p$ must divide $|X|$.\\
+	
+	Next observe that if $x_1 \cdots x_p = e$, multiplying $x_1, \ldots, x_p$ in any order yields the identity. That is, if $(x_1, \ldots, x_p) \in X$, any permutation of this $p$-tuple is also in $X$. Therefore, we may let $\Z / p\Z$ act on $X$ via permutation. That is,
+		\[1 \cdot (x_1, \ldots, x_p) \mapsto (x_p, x_1, \ldots, x_{p-1}). \]
+	Since the order of $\Z / p\Z$ is prime, every stabilizer subgroup is either of size 1 or of size $p$. By the Order Stabilizer Theorem, this means that the order of an orbit is either 1 or $p$. Furthermore, the orbits of this action form a partition of $X$. Elements of $X$ that are in an orbit of size 1 must be of the form $(x, \ldots, x)$ where $x^p = e$. Since $(e, \ldots, e) \in X$ satisfies this condition, $e$ is in an orbit of size 1. Because orbits are of size 1 or $p$ and partition $X$, there exists some $x \neq e$ also in an orbit of size 1. If this were not the case, $p$ would not divide $X$, a contradiction. This chosen $x$ is of order $p$ since $x^p = e$.
+	\end{proof}
+	
+\end{document}

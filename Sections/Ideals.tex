@@ -1,0 +1,21 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Ideals}
+
+	\begin{prob}{F19}{F19.RF1}
+	Prove that the set $N$ of nilpotent elements of a commutative ring $R$ is an ideal of $R$ and that $R/N$ has no nilpotent elements.
+	\end{prob}
+	
+	\begin{proof}
+	Since $0^1 = 0$, $0 \in N$ and thus $N \neq \varnothing$. Suppose that $x,y \in N$ are nonzero with $x^n = y^m = 0$ for some $m,n > 1$. Since $R$ is commutative,
+		\[(x+y)^{mn} = \sum_{k=0}^{mn} {mn \choose k} x^k y^{mn - k} \]
+	via the Binomial Theorem. Without loss of generality, assume that $n \leq m$. Then whenever $m \leq k \leq mn$, $x^k = 0$. Whenever $0 \leq k \leq m$, $m(n - 1) \leq mn - k \leq mn$. This implies that $k \geq m(n-1) \geq n(n-1) \geq n$ and therefore $y^k = 0$. Therefore $(x+y)^{mn} = 0$ and so $x + y \in N$. For any $r \in R$, $(rx)^n = r^nx^n = r^n \cdot 0 = 0$ where the first equality follows from $R$ being commutative. Therefore $rx \in N$. As $N$ is closed under addition and multiplication by elements in $R$, $N$ is an ideal.\\
+	
+	Suppose that $R/N$ has some nonzero nilpotent element. That is there exists $r \in R - N$ and $m \geq 1$ such that $(r+N)^m = N$. This implies that $r^m \in N$. Choose $n \geq 1$  such that $(r^m)^n = 0$. But this means that $r^{mn} = 0$, contradicting that $r \not\in N$. Thus there are no nonzero nilpotent elements in $R/N$.
+	\end{proof}
+
+
+
+\end{document}

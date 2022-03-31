@@ -1,0 +1,24 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Properties of Normal Subgroups}
+
+	\begin{prob}{F21}{F21.G2}
+	\begin{enumerate}[(a)]
+	\item Let $G$ be a finite group with $H,K$ normal subgroups of $G$. Show that if $|H|$ and $|K|$ are coprime, then $ab = ba$ for every $a \in H$, $b \in K$.
+	\item Let $H$ and $N$ be normal subgroups of a (not necessarily finite) group $G$. Show that if $H$ is not contained in $N$ and $G/N$ is simple, then $G/N \cong H/H\cap N$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Since  $H \cap K$ is a subgroup of both $H$ and $K$, Lagrange's Theorem implies that $|H \cap K|$ must divide both $|H|$ and $|K|$. This means that $|H \cap K| =1$ and therefore $H \cap K = \{e\}$.\\
+	
+	Let $a \in H$ and $b \in K$. As $H$ is normal, $bHb\inv = H$ and in particular, $ba\inv b\inv \in H$. Since $H$ is closed under multiplication and inverses, $aba\inv b\inv \in H$. Similarly, $aK a\inv = K$ implies that $aba\inv \in K$ and therefore $aba\inv b\inv \in K$. Thus, $aba\inv b\inv \in H \cap K$ and as the intersection is trivial it follows that $ab =ba$.
+	\end{proof}
+	
+	\begin{proof}
+	Define a homomorphism $\varphi: H \to G/N$ by $\varphi(h) = hN$. Because $H$ is normal, the $\varphi(H)$ must be a normal subgroup of $G/N$. But, $H$ is not contained in $G/N$ and therefore there exists some $h\in H$ where $hN \neq N$. Since $G/N$ is simple the only normal subgroups of $G/N$ are $G/N$ and the trivial subgroup. Therefore, $\im(\varphi) = G/N$. For any $n \in H \cap N$, $\varphi(n) = nN = N$. If $h \in H$ and $\varphi(h) = N$ then $hN = N$ implying that $h \in N$. This implies that $\ker(\varphi) = H\cap N$ and thus by the First Isomorphism Theorem,
+		\[G/N \cong H/H\cap N\]
+	\end{proof}
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{The Sylow Theorems}
+\begin{prob}{S20}{}
+	Let $p$ and $q$ be primes. Prove that a group of order $pq$ is solvable.
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $p,q$ are prime and $G$ is a group of order $pq$. If $p = q$, then $G$ has order $p^2$. Then $G$ must be abelian and is therefore solvable. Assume now that $p \neq q$. By the Sylow Theorems there exists a subgroup $P \leq G$ of order $p$. Since $p \neq q$ and $q$ is prime, there is exactly one Sylow $p$-subgroup. Therefore, $P$ is normal in $G$. Consider the sequence of normal subgroups
+		\[0 \normal P \normal G \]
+	and note that $G/P$ is of order $q$ and $P/0$ is of order $p$. As both of these quotients are of prime order, they are cyclic and therefore abelian. 
+	\end{proof}
+	
+	\begin{prob}{F19}{}
+	\begin{enumerate}[(a)]
+	\item Suppose that $G$ is a group with exactly two subgroups. Prove that $G$ is finite and of prime order.
+	\item Must the converse of the previous part be true?
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $G$ is a group with exactly two subgroups. Seeking a contradiction, suppose that $G$ is infinite and choose some non-identity element $x \in G$. If $\langle x \rangle = G$, then $G$ is an infinite cyclic group. That is, $G \cong \Z$. As $\Z$ has infinitely many subgroups, this is a contradiction. So, there exists $y \in G - \langle x \rangle$. In this case, there are three distinct subgroups, $\{e\}, \langle x \rangle, \langle y \rangle$, again a contradiction. Therefore, $G$ must be finite.\\
+	
+	Let $p$ be some prime dividing the order of $G$. By Cauchy's Theorem (\ref{prob:CauchyTheorem}), there exists an element $x$ of order $p$. As there are only two subgroups and $p > 1$, $\langle x \rangle = G$, implying that $G$ is of prime order $p$.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $G$ is finite and of prime order $p$. By Lagrange's Theorem, any subgroup of $G$ is of order 1 or order $p$. The only subgroup of order 1 is the trivial subgroup and the only subgroup of order $p$ is $G$. That is, $G$ has exactly two subgroups.
+	\end{proof}
+	
+	\begin{prob}{F19}{}
+	Suppose that $G$ is a finite group with exactly three conjugacy classes. Show that $G$ is isomorphic to either $S_3$ or to $\Z/3\Z$.
+	\end{prob}
+	
+	\begin{proof}
+	Let $r,s,t \geq 1$ denote the sizes of the three distinct conjugacy classes. Without loss of generality, we may assume $r = 1$ as conjugacy classes partition a group and the identity element is in its own conjugacy class. Then, $|G| = 1 + s + t$. Note that the conjugacy classes of $G$ are the same as the orbits formed by the action of $G$ acting on itself via conjugation. Therefore, by the Orbit Stabilizer Theorem, $s$ and $t$ must both divide $|G|$.\\
+	
+	If $G$ is abelian, then $s = t =1$ as every element is in its own conjugacy class. This means that $|G| = 3$ and therefore $G \cong \Z/3\Z$ since this is the only group of order 3.\\
+	
+	Now assume that $G$ is non-abelian. Then, some conjugacy class of $G$ must be of size greater than 1. Assume that $s \geq 2$. Note that $1 + t = |G| -s$ and since $s$ divides $|G|$, $s$ must divide $1 + t$. Therefore, $s \leq 1 + t$. As both $s$ and $t$ are positive integers, this means that $s = t$ or $s = 1 + t$. If $s = t$, then $|G| = 1 + 2s$ and since $s$ divides $|G|$, $s$ must divide 1. This is only possible if $s = 1$. By assumption, $s \geq 2$ and therefore we may assume that $s = 1 + t$. In this case, $|G| = 2 + 2s = 2(1 + s)$. As $s \geq 2$ and $s$ divides $|G|$, $s$ divides 2. That is, $s = 2$ and therefore $t = 3$. Then, $|G| = 6$. As $G$ is non-abelian, $G \cong S_3$ since this is the only non-abelian group of order 6.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $G$ is finite and has exactly three conjugacy classes, of sizes $r, s, t$. As conjugacy classes partition a group, $G$ is of size $r + s + t$.\\
+	
+	If $G$ is abelian, every conjugacy class must be of size 1. Therefore, $|G| = 3$ and thus $G \cong \Z/3\Z$.\\
+	
+	Suppose now that $G$ is not abelian. Without loss of generality, assume that $r = 1$ since the identity element must be in a conjugacy class of size 1. 
+	\end{proof}
+	
+	
+	\begin{prob}{F20}{F20.G2}
+	\begin{enumerate}[(a)]
+	\item Give two examples of non-abelian groups of order 48 that are non-isomorphic.
+	\item Show that a group of order 48 cannot be simple.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Let $G = D_{48}$ and $H = D_{24} \times \Z_2$ where $D_{48}$ and $D_{24}$ are the dihedral groups of orders 48 and 24, respectively. Each of $G$ and $H$ are of order 48 and are clearly non-abelian. However, these groups are non-isomorphic. The generating element for rotation in $G$ has order 48. However, the highest possible order for an element in $H$ is 24 since the order of an element $(x,y) \in H$ is the least common multiple of the order of $x$ in $D_{24}$ and the order of $y$ in $\Z_2$.
+	\end{proof}
+	
+	\begin{proof}
+	Let $G$ be of order 48. Notice that $48 = 2^4 \cdot 3$. By the Sylow Theorems, the number of Sylow 2 subgroups $n_2$ is either 1 or 3 as it must divide 3 and be equivalent to 1 modulo 2. Similarly, the number of Sylow 3 $n_3$ subgroups is either 1, 4, or 16. If $G$ is not simple than $n_2, n_3 \neq 1$ since either being equal to 1 would guarantee a normal subgroup. This means that $n_2 = 3$ and $n_3 = 4$ or $n_3 = 6$. Each Sylow 2 subgroup is of size 16. Suppose that $H$ and $K$ are two distinct Sylow 2 subgroups. Then, $H \cap K$ is a subgroup of $H$ and must be of order 1,2,4, or 8. If $|H \cap K| \leq 4$, then
+	\[ |HK| = \frac{|H|\cdot|K|}{|H\cap K} \geq 64. \]
+But, $HK \sq G$ and therefore this is impossible. Thus, $|H \cap K| = 8$. As any subgroup of index two is normal, $H \cap K$ is normal in each of $H$ and $K$. The normalizer $N$ of $H\cap K$ in $G$ includes $H$, $K$, and $H \cap K$ and therefore must be of size at least $\lcm(8,16) = 24$. Since the normalizer is also a subgroup in $G$, either $|N| = 24$ or $|N| = 48$ since $|H|$ must also divide $|N|$. In either case, $N$ is normal in $G$ as $N$ is either of index 2 or equal to $G$. This is a contradiction to $G$ being simple.
+	\end{proof}
+	
+	
+	\begin{prob}{S19}{}
+	Prove that every group of order 21 has a normal subgroup of index 3, but that not every group of order 21 is abelian.
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $|G| = 21$. By the Sylow Theorems, there exists a Sylow 7-subgroup, say $P$, of order 7. There's exactly one Sylow-7 subgroup because the only number that divides 1 and is equivalent to 1 modulo 7 is 1. Therefore $P$ is normal in $G$ and $|G/P| = 3$.
+	\end{proof}
+	
+	\begin{proof}
+	Consider the subgroup of $M_{2\times2}(\Z_7)$ given by $G = \langle A, B \rangle$ where
+		\[ A = \begin{pmatrix}
+		1 & 1 \\
+		0 & 1 \end{pmatrix} \]
+	and
+		\[ A = \begin{pmatrix}
+		4 & 0 \\
+		0 & 2 \end{pmatrix}. \]
+	Upon inspection, 
+		\[ A^7 = B^3 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \]
+	and
+		\[BAB\inv = A^2. \]
+	This group is non-abelian but is of order 21.\\
+	
+	\emph{I should probably add more details here about why this construction is guaranteed to be of order 21. It's clear there are at most 21 elements, but how do we show that there are no duplicates?}
+	\end{proof}
+
+
+\end{document}

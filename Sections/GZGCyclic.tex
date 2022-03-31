@@ -1,0 +1,43 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{$G/Z(G)$ is Cyclic}
+
+	\begin{prob}{S20}{S20.G1}
+	Let $G$ be a group and $H$ a subgroup of $G$ contained in the center $Z(G)$ of $G$ such that $G/H$ is cyclic.
+	\begin{enumerate}[(a)]
+	\item Show that $G$ is abelian.
+	\item Show that every group of order $p^2$ with $p$ a prime is abelian. \emph{It may be assumed that a $p$-group has nontrivial center.}
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $G/H = \langle gH \rangle$ for some $g \in G$. Let $a, b \in G$. By assumption, $a = g^kH$ and $b = g^mH$ for some $k,m \in \N$. Therefore, $a = g^kh_1$ and $b= g^m h_2$. Since elements in $H$ commute with every element in $G$ and powers of $G$ commute with one another,
+		\[ab = g^kh_1g^mh_2 = g^mh_2g^k h_1 = ba \]
+	proving that $G$ is abelian.
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $|G| = p^2$ with $p$ a prime. Because $G$ is a $p$-group, it has nontrivial center and thus $|Z(g)| > 1$. By Lagrange's Theorem, $|Z(G)| = p$ or $|Z(G)| = p^2$. If $|Z(G)| =p^2$, $Z(G) = G$. If $|Z(G)| = p$, $\left|G/Z(G) \right| = p$. That is, $G/Z(G)$ is cyclic and therefore $G$ is abelian.
+	\end{proof}
+	
+	\begin{prob}{F21}{F21.G1}
+	Let $G$ be a finite group and let $Z(G)$ denote the center of $G$.
+	\begin{enumerate}[(a)]
+	\item Prove that if $G/Z(G)$ is cyclic then $G$ is abelian.
+	\item Does there exist a finite group $H$ such that $|H/Z(H)| = 7$? What if $|H/Z(H)| = 6$?
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	This is a special case of \ref{prob:S20.G1}.
+	\end{proof}
+	
+	\begin{solution}
+	Suppose that $|H/Z(H)| = 7$. As this group is of prime order, it must be cyclic. Therefore, by the previous result, $H$ is abelian. That is, $H = Z(H)$ which would imply that $|H/Z(H)| = 1$, a contradiction.\\
+	
+	If $H = S_3$ then $Z(H)$ is trivial and $|H: Z(H)| = 6$.
+	\end{solution}
+
+\end{document}
