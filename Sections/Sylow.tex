@@ -3,7 +3,25 @@
 \begin{document}
 
 \section{The Sylow Theorems}
-\begin{prob}{S20}{}
+
+	\begin{prob}{F12}{F12.G1}
+	\begin{enumerate}[(a)]
+	\item Let $G$ be a finite group whose order is divisible by 2. Prove that $G$ contains an element of order two.
+	\item Suppose that the order of $G$ is even but not divisible by 4. Prove that $G$ is not simple.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+	Suppose that $G$ is finite and that 2 divides $|G|$. Then $G$ has an even number of elements and so
+		\[G = \{e, x_1, \ldots, x_n\}\]
+	where $e$ is the identity element and $x_1, \ldots, x_n$ are the remaining $n$ non-identity elements of $G$. As the number of elements is even, $n$ must be odd. Observe that a nonidentity element $x$ is of order two if and only if $x = x\inv$. Pair each element of $G$ with its inverse. Since $e$ is its own inverse, it follows that each $x_i$ is paired with some $x_j$. If no $x_i$ were of order two, then each of the $n$ remaining elements could be paired into disjoint groups of two. This is a contradiction as $n$ is odd. Therefore some $x_i$ is its own inverse and thus is of order two. 
+	\end{proof}
+	
+	\begin{proof}
+	Suppose that $|G|$ is even but is not divisible by 4. That is, $|G| = 2m$ with $m$ some odd integer greater than 1. \textcolor{red}{Stuck on how to proceed here! We know that there's an element of order 2, but I don't know how this can be used.}
+	\end{proof}
+	
+	\begin{prob}{S20}{}
 	Let $p$ and $q$ be primes. Prove that a group of order $pq$ is solvable.
 	\end{prob}
 	

@@ -2,7 +2,85 @@
 
 \begin{document}
 \section{Unfinished}
+	
+	\begin{prob}{F12}{F12.G2}
+	Define the center of a group.
+	\begin{enumerate}[(a)]
+	\item Prove that if the order of $G$ is $p^k$ for some prime $p$ then $G$ has nontrivial center.
+	\item Suppose that $p$ and $q$ are distinct primes. Prove that a non-abelian group of order $pq$ has trivial center.
+	\end{enumerate}
+	\end{prob}
+	
+	The center of a group $G$ is the subgroup
+		\[Z(G) = \{g \in G: gx = xg \textrm{ for any $x \in G$} \} \]
+	
+	\begin{proof}
+	Assume that $|G| = p^k$ for some prime $p$. Suppose that $Z(G)$ is trivial and consists only of the identity element $e \in G$. If $k = 1$, the order of $G$ is prime which implies that $G$ is cyclic and therefore abelian. Therefore, assume that $k > 1$.
+	\end{proof}
+	
+	
+	\begin{prob}{F12}{F12.G3}
+	\begin{enumerate}[(a)]
+	\item State and prove Lagrange's Theorem.
+	\item Prove that a subgroup of a cyclic group is cyclic.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F12}{F12.RF1}
+	\begin{enumerate}[(a)]
+	\item Let $\nu$ be a primitive 10th root of unity. Compute the Galois group of $\Q(\nu)$.
+	\item let $K_t = \Q(\omega)$ where $\omega$ is a primitive $t$th root of unity. Show that $\sqrt[3]{2}$ is not in any $K_t$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F12}{F12.RF2}
+	Suppose that $R,S,A$ are all commutative rings with unity.
+	\begin{enumerate}[(a)]
+	\item Suppose that $R$ is a PID, $S$ is an integral domain, and $\varphi:R \to S$ is a surjection. Prove that either $\varphi$ is an isomorphism or $S$ is a field.
+	\item Prove that $A[x]$ is a PID if and only if $A$ is a field.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F12}{F12.RF3}
+	\begin{enumerate}[(a)]
+	\item Prove that $\Z/m\Z$ has no non-zero nilpotent elements if and only if $m$ has no multiple prime factor.
+	\item Prove that every element of $\Z/m\Z$ is either nilpotent or a unit whenever $m$ is a prime power.
+	\item Prove that if $r$ is a nilpotent element of a ring with unity then $1-r$ is a unit.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F12}{F12.LA1}
+	Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
+		\[\langle A, B \rangle = n \tr(AB) - \tr(A)\tr(B) \]
+	defines a symmetric bilinear form on $V$.
+	\begin{enumerate}[(a)]
+	\item Prove that $\langle,\rangle$ is singular.
+	\item Prove that the restriction of $\langle,\rangle$ to the subspace $W$ of symmetric matrices with 0 trace is positive definite.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{prob}{F12}{F12.LA2}
+	Suppose that $V = X \oplus Y$ and define the projection $V \to X$ by $\alpha(v) = x$ where $v = x+y$.
+	\begin{enumerate}[(a)]
+	\item Prove that a necessary and sufficient condition for an endomorphism $T: V \to V$ to be a projection is that $T^2 = T$. Identify $X$ and $Y$ in the case that this condition is satisfied.
+	\item Prove that projections $T_1$ and $T_2$ have the same range if and only if $T_1T_2 = T_2$ and $T_2T_1 = T_1$.
+	\end{enumerate}
+	\end{prob}
 
+	\begin{proof}
+		Suppose first that $T: V \to V$ is a projection map. That is, for any $v = x + y \in X \oplus Y = V$, $Tv = x$. Then,
+			\[T^2v = T(T(x+y)) = T(x) = x = T(x+y) = Tv\]
+		and therefore $T^2 = T$.\\
+
+		Now assume that $T^2=T$. Let $v = x+y \in V$ be arbitrary. Observe that $T^2 x = Tx$ and therefore $x - Tx \in \null(T)$.
+	\end{proof}
+	
+	\begin{prob}{F12}{F12.LA3}
+	Let $M$ be a $5 \times 5$ matrix with rational entries whose characteristic polynomial is of the form
+		\[(x^2+1)(x^3+x+q).\]
+	For which, if any, $q \in \Q$ is it possible that there does not exist an invertible matrix $A$ with rational entries such that $A\inv M A$ has block diagonal form with a $2 \times 2$ block and a $3 \times 3$ block?
+	\end{prob}
+	
 	\begin{prob}{F19}{}
 	Let $p$ be a prime number and suppose that $1 \leq n <p^2$ is an integer. Show that every Sylow $p$-subgroup of the symmetric group $S_n$ is abelian.
 	\end{prob}
