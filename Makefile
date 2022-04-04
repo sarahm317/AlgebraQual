@@ -4,7 +4,6 @@
 
 # make clean removes all auxiliary files
 
-#TEXFILE=201Homework2.tex # rename to file's name
 TEXFILE=AlgebraQualSolutions # rename to file's name
 
 all:
