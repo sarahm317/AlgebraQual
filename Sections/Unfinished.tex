@@ -26,6 +26,42 @@
 	\end{enumerate}
 	\end{prob}
 	
+	Lagrange's Theorem States the following: If $G$ is a finite group and $H$ is a subgroup of $G$ then $[G:H]\cdot|H| = |G|$ where $[G:H]$ is the number of distinct left cosets of $H$ in $G$.
+
+	\begin{proof}
+		Suppose that $G$ is a finite group and $H \leq G$ is a subgroup.
+
+		\begin{claim}
+			The set of left cosets of $H$ in $G$ partitions $G$.
+
+			\begin{proof}
+				Note that any $g \in G$ is in the coset $gH$ since $g = g\cdot e$ where $e \in H$ is the identity element of the group. That is, each element of $G$ is in some left coset of $H$.\\
+
+				Let $a,b \in G$ and suppose that $aH \cap bH \neq \varnothing$. Let $y \in aH \cap bH$ with $y = ah_1 = bh_2$ where $h_1,h_2 \in H$. Observe that $a = bh_1h_2\inv$ and $b = ah_2h_1\inv$. Then, for any $h \in H$,
+					\[ah = bh_1h_2\inv h \in bH \]
+				and
+					\[bh = ah_2h_1\inv h \in aH.\]
+				Therefore, $aH = bH$. Since any pair of left cosets are either disjoint or equal, it follows that the set of left cosets partitions $G$.
+			\end{proof}
+		\end{claim}
+
+		\begin{claim}
+			For any $g \in G$, $|H| = |gH|$.
+
+			\begin{proof}
+				Define $\varphi: H \to gH$ by $\varphi(h) = gh$. Clearly $\varphi$ is surjective. If $gh = gh'$, multiplying each side by $g\inv$ implies that $h = h'$ and so $\varphi$ is injective. As $\varphi$ is a bijection between $H$ and $gH$, $|H| = |gH|$ as desired. 
+			\end{proof}
+		\end{claim}
+
+		As $G$ is finite, there are a finite number of left cosets of $H$ in $G$. Let $g_1H, \ldots, g_nH$ be the left cosets of $H$ in $G$. Each $g_iH$ has $|H|$ elements and each $g \in G$ is in some $g_iH$. Therefore,
+			\[|G| = n|H| = [G:H]|H|,\]
+		as desired.
+	\end{proof}
+
+	\begin{proof}
+		Suppose that $G$ is a cylic group and $H \leq G$ a subgroup. Since $G$ is cyclic, there exists $g \in G$ such that $G = \langle g \rangle$. 
+	\end{proof}
+	
 	\begin{prob}{F12}{F12.RF1}
 	\begin{enumerate}[(a)]
 	\item Let $\nu$ be a primitive 10th root of unity. Compute the Galois group of $\Q(\nu)$.
@@ -58,23 +94,7 @@
 	\item Prove that the restriction of $\langle,\rangle$ to the subspace $W$ of symmetric matrices with 0 trace is positive definite.
 	\end{enumerate}
 	\end{prob}
-	
-	\begin{prob}{F12}{F12.LA2}
-	Suppose that $V = X \oplus Y$ and define the projection $V \to X$ by $\alpha(v) = x$ where $v = x+y$.
-	\begin{enumerate}[(a)]
-	\item Prove that a necessary and sufficient condition for an endomorphism $T: V \to V$ to be a projection is that $T^2 = T$. Identify $X$ and $Y$ in the case that this condition is satisfied.
-	\item Prove that projections $T_1$ and $T_2$ have the same range if and only if $T_1T_2 = T_2$ and $T_2T_1 = T_1$.
-	\end{enumerate}
-	\end{prob}
 
-	\begin{proof}
-		Suppose first that $T: V \to V$ is a projection map. That is, for any $v = x + y \in X \oplus Y = V$, $Tv = x$. Then,
-			\[T^2v = T(T(x+y)) = T(x) = x = T(x+y) = Tv\]
-		and therefore $T^2 = T$.\\
-
-		Now assume that $T^2=T$. Let $v = x+y \in V$ be arbitrary. Observe that $T^2 x = Tx$ and therefore $x - Tx \in \null(T)$.
-	\end{proof}
-	
 	\begin{prob}{F12}{F12.LA3}
 	Let $M$ be a $5 \times 5$ matrix with rational entries whose characteristic polynomial is of the form
 		\[(x^2+1)(x^3+x+q).\]
