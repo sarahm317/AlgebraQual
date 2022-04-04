@@ -40,6 +40,12 @@
 	\item Prove that if $r$ is a nilpotent element of a ring with unity then $1-r$ is a unit.
 	\end{enumerate}
 	\end{prob}
+
+	\begin{proof}
+		Assume that $r \in R$ is a nilpotent element of a ring with unity. Then there exists $n \in \N$ such that $r^n = 0$. Then,
+			\[1 = 1 - r^n = (1 + r + r^2 + \cdots + r^{n-1})(1-r)\]
+		meaning that $\sum_{i=0}^{n-1}r^i$ is the multiplicative inverse of $(1-r)$. That is, $1-r$ is a unit.
+	\end{proof}
 	
 	\begin{prob}{F12}{F12.LA1}
 	Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
