@@ -54,7 +54,9 @@
 \newcommand{\im}{\mathrm{im}}
 \newcommand{\tr}{\mathrm{tr}}
 
+\newcommand{\ns}{\mathrm{null}}
 \newcommand{\cyc}[1]{\langle #1 \rangle}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Template Information
@@ -91,6 +93,18 @@
 
 \newtcbtheorem[no counter]{LA}{Linear Algebra Done Right}%
 {fonttitle=\bfseries}{prob}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allow for claims inside a proof
+\newlist{Claim}{description}{1}% allow 3 levels of nesting
+\setlist[Claim]{labelindent=3em,leftmargin=*}
+
+\let\originalqedsymbol\qedsymbol
+\newenvironment{claim}{%
+  % disable qed symbol if there is no star
+  \let\qedsymbol\relax%
+  \Claim\item[\textbf{Claim\csuse{theclaim}:}]%
+  }{\endClaim\let\qedsymbol\originalqedsymbol}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -169,6 +183,8 @@
 \subfile{Sections/OrbStab}
 
 \subfile{Sections/Ideals}
+
+\subfile{Sections/LinearMaps.tex}
 
 \subfile{Sections/LADR}
 

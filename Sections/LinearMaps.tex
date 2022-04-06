@@ -1,0 +1,45 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Linear Maps}
+
+	\begin{prob}{F12}{F12.LA2}
+	Suppose that $V = X \oplus Y$ and define the projection $V \to X$ by $\alpha(v) = x$ where $v = x+y$.
+	\begin{enumerate}[(a)]
+	\item Prove that a necessary and sufficient condition for an endomorphism $T: V \to V$ to be a projection is that $T^2 = T$. Identify $X$ and $Y$ in the case that this condition is satisfied.
+	\item Prove that projections $T_1$ and $T_2$ have the same range if and only if $T_1T_2 = T_2$ and $T_2T_1 = T_1$.
+	\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Suppose first that $T: V \to V$ is a projection map. That is, for any $v = x + y \in X \oplus Y = V$, $Tv = x$. Then,
+			\[T^2v = T(T(x+y)) = T(x) = x = T(x+y) = Tv\]
+		and therefore $T^2 = T$.\\
+
+		Now assume that $T^2=T$. Let $v  \in V$. Observe that $v = (v - Tv) + Tv$. Applying $T$ to both sides yields the following set of equalities:
+			\[Tv = T(v-Tv) + T^2v = T(v-Tv) + Tv\]
+		implying that $T(v-Tv) =0$ and therefore $v-Tv \in \range(T)$. Because $Tv \in \range(T)$, $v \in \ns(T) + \range(T)$.\\
+		
+		To show that $\ns(T) + \range(T)$ is a direct sum, suppose that $0 = x + Tu \in \ns(T) + \range(T)$. Then,	
+			\[0 = T(0) = Tx + T^2u = 0 + Tu = Tu \]
+		and therefore $x = 0$ as well. Since $x = Tu = 0$, $\ns(T) + \range(T)$ is a direct sum. That is, $V = \range(T) \oplus \ns(T)$.\\
+
+		Since $Tv \in \range(T)$ for any $v \in V$, $T$ is indeed a projection.
+	\end{proof}
+
+	\begin{proof}
+		Suppose that $\range(T_1) = W = \range(T_2)$ with both $T_1$ and $T_2$ projections. Let $v \in V$ and suppose that $v = w + w'$ where $w \in W$. Then,
+			\[T_1T_2v = T_1w = w = T_2v\]
+		and similarly,
+			\[T_2T_1v = T_2w = w = T_1v.\]
+		Assume now that $T_1T_2 = T_2$ and $T_2T_1 = T_1$. Let $v \in V$ and consider $T_1v \in \range(T_1)$. Then,
+			\[T_1v = T_2T_1v \in \range(T_2).\]
+		Similarly,
+			\[T_2v = T_1T_2v \in \range(T_1) \]
+		implying that $\range(T_1) = \range(T_2)$.
+	\end{proof}
+
+
+
+\end{document}
