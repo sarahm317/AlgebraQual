@@ -4,6 +4,25 @@
 
 \section{$G/Z(G)$ is Cyclic}
 
+	\begin{prob}{F12}{F12.G2.b}
+	Define the center of a group.
+	\begin{enumerate}[(a)]
+	\item Prove that if the order of $G$ is $p^k$ for some prime $p$ then $G$ has nontrivial center.
+	\item Suppose that $p$ and $q$ are distinct primes. Prove that a non-abelian group of order $pq$ has trivial center.
+	\end{enumerate}
+	\end{prob}
+	
+	The center of a group $G$ is the subgroup
+		\[Z(G) = \{g \in G: gx = xg \textrm{ for any $x \in G$} \} \]
+	
+	\begin{proof}
+		See \ref{prob:F12.G2.a}
+	\end{proof}
+
+	\begin{proof}
+		Suppose that $G$ is a non-abelian group of order $pq$ with $p \neq q$ both prime. Because $G$ is non-abelian and the order of a subgroup of $G$ must divide $pq$, $Z(G)$ is of order 1, $q$, or $p$. If $Z(G)$ is of order $p$ then $|G/Z(G)| = q$. Since $q$ is prime, this means that $G/Z(G)$ is cyclic. This implies that $G$ is abelian, a contradiction (see \ref{prob:F21.G1}). Similarly, if $Z(G)$ were of order $q$, then $G/Z(G)$ would be cyclic which contradicts $G$ being non-abelian. Therefore $|Z(G)| = 1$ meaning that the center is trivial.
+	\end{proof}
+
 	\begin{prob}{S20}{S20.G1}
 	Let $G$ be a group and $H$ a subgroup of $G$ contained in the center $Z(G)$ of $G$ such that $G/H$ is cyclic.
 	\begin{enumerate}[(a)]

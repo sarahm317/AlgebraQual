@@ -3,6 +3,30 @@
 \begin{document}
 \section{Order Stabilizer Theorem}
 
+
+\begin{prob}{F12}{F12.G2.a}
+Define the center of a group.
+\begin{enumerate}[(a)]
+\item Prove that if the order of $G$ is $p^k$ for some prime $p$ then $G$ has nontrivial center.
+\item Suppose that $p$ and $q$ are distinct primes. Prove that a non-abelian group of order $pq$ has trivial center.
+\end{enumerate}
+\end{prob}
+
+The center of a group $G$ is the subgroup
+	\[Z(G) = \{g \in G: gx = xg \textrm{ for any $x \in G$} \} \]
+
+\begin{proof}
+Assume that $|G| = p^k$ for some prime $p$. If $k = 1$, then $G$ is cyclic and therefore abelian. In this case, $Z(G) = G$ and thus is nontrivial. Assume now that $k > 1$. If $G$ is abelian, $Z(G) = G$ and so $G$ has nontrivial center. If $G$ is non-abelian, $G - Z(G)$ is non-empty. Let $C_1, \ldots, C_n$ be the distinct conjugacy classes of elements in $G - Z(G)$. That is, for each $j \in \{1, \ldots, n\}$ let $x_j \in G - Z(G)$ such that $C_j = \{gx_jg\inv: g \in G\}$. Note that each $|C_j| > 1$ since a conjugacy class is a singleton if and only if the representative element is in $Z(G)$. The Orbit Stablizer Theorem implies that for each $j = 1, \ldots, n$,
+	\[ |C_j| =  [G: C_G(x_j)] \]
+where $C_G(x_j) = \{g \in G: gx_jg\inv = x_j \}$ is the centralizer of $x_j$ in $G$. In particular, each $|C_j|$ divides $|G| = p^k$. Since $|C_j| > 1$, $p$ divides each $|C_j|$. The Class Equation states that 
+	\[|Z(G)| = |G| - \sum_{j=1}^n [G: C_G(x_j)] = p^k -  \sum_{j=1}^n |C_j| .\]
+Because $p$ divides $p^k$ and $p$ divides each $|C_j|$, $p$ must also divide $|Z(G)|$. Thus $Z(G)$ is nontrivial.
+\end{proof}
+
+\begin{proof}
+	See \ref{prob:F12.G2.b}.
+\end{proof}
+
 Note that \ref{prob:F18.G1} is Cauchy's Theorem and comes up for many Sylow-like problems. There's another version of the proof specifically for the case when $p = 2$ that does not involve group actions.
 
 	\begin{prob}{F18}{F18.G1}
