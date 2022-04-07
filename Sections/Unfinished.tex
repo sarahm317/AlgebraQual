@@ -3,319 +3,386 @@
 \begin{document}
 \section{Unfinished}
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\subsection{Fall 2012}
-	
-	\begin{prob}{F12}{F12.RF1}
+\subsection{Spring 2013}
+
+\begin{prob}{S13}{S13.G1}
+	Fix a prime $p$ and let $A, A_1, A_2,$ and $B$ be finite abelian $p$-groups.
+
 	\begin{enumerate}[(a)]
-	\item Let $\nu$ be a primitive 10th root of unity. Compute the Galois group of $\Q(\nu)$.
-	\item let $K_t = \Q(\omega)$ where $\omega$ is a primitive $t$th root of unity. Show that $\sqrt[3]{2}$ is not in any $K_t$.
+		\item Assume that $A$ and $B$ are cyclic and that the number of elements of order at most $p^r$ in $A$ equals the corresponding number in $B$ for each $r \in \N$. Show that $A \cong B$.
+		\item Suppose that $A = A_1 \oplus A_2$. Show that for any $r \in \N$ the number of elements of order at most $p^r$ in $A$ equals $n_1\cdot n_2$ where $n_i$ is the number of elements of order at most $p^r$ in $A_i$.
+		\item Prove that $A$ is isomorphic to $B$ if for each $r\in \N$ the number of elements of order at most $p^r$ in $A$ equals the number of elements of order at most $p^r$ in $B$. \emph{You may use without proof the Fundamental Theorem for Finite Abelian Groups. What does the number of elements of order at most $p$ in $A$ tell you about the number of nontrivial cyclic direct summands of $A$?}
 	\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F12}{F12.RF2}
-	Suppose that $R,S,A$ are all commutative rings with unity.
+\end{prob}
+
+\begin{prob}{S13}{S13.G2}
+
+	Let  $X = \{1,\ldots, n\}$. For any $\tau \in S_n$, the \emph{support} of $\tau$ is the set $\{i \in X: \tau(i) \neq i\}$. Let $\sigma \in S_n$ be nontrivial and consider the equivalence relation on $X$ given by $a \sim b$ if and only if there exists $m \in \Z$ where $\sigma^m(a) = b$.
+
 	\begin{enumerate}[(a)]
-	\item Suppose that $R$ is a PID, $S$ is an integral domain, and $\varphi:R \to S$ is a surjection. Prove that either $\varphi$ is an isomorphism or $S$ is a field.
-	\item Prove that $A[x]$ is a PID if and only if $A$ is a field.
+		\item Let $X_0 \sq X$ be some equivalence class. Show that the restriction of $\sigma$ to $X_0$ is a cyclic permutation of $X_0$.
+		\item Prove that $\sigma$ is a product of cycles $\sigma_1,\ldots,\sigma_r$ with pairwise disjoint supports.
+		\item Show that the order of $\sigma$ in $S_n$ equals the least common multiple of the cardinalities of the supports of the $\sigma_i$.
 	\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F12}{F12.LA1}
-	Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
-		\[\langle A, B \rangle = n \tr(AB) - \tr(A)\tr(B) \]
-	defines a symmetric bilinear form on $V$.
+\end{prob}
+
+\begin{prob}{S13}{S13.G3}
+	Let $G$ be a finite group and $H$ a proper subgroup of $G$ such that $|G|$ does not divide $[G:H]!$. Prove that $H$ contains a nontrivial normal subgroup of $G$.
+\end{prob}
+
+\begin{prob}{S13}{S13.RF1}
+
 	\begin{enumerate}[(a)]
-	\item Prove that $\langle,\rangle$ is singular.
-	\item Prove that the restriction of $\langle,\rangle$ to the subspace $W$ of symmetric matrices with 0 trace is positive definite.
+		\item
 	\end{enumerate}
-	\end{prob}
+\end{prob}
 
-	\begin{prob}{F12}{F12.LA3}
-	Let $M$ be a $5 \times 5$ matrix with rational entries whose characteristic polynomial is of the form
-		\[(x^2+1)(x^3+x+q).\]
-	For which, if any, $q \in \Q$ is it possible that there does not exist an invertible matrix $A$ with rational entries such that $A\inv M A$ has block diagonal form with a $2 \times 2$ block and a $3 \times 3$ block?
-	\end{prob}
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Spring 2012}
+\begin{prob}{S13}{S13.RF2}
+\end{prob}
 
+\begin{prob}{S13}{S13.RF3}
 
-	\begin{prob}{S12}{S12.G1}
-		Prove that there are at least two non-isomorphic non-abelian groups of order 24.
-	\end{prob}
-
-	\begin{prob}{S12}{S12.G2}
-		\begin{enumerate}[(a)]
-			\item State (any version of) the Fundamental Theorem of finite abelian groups.
-			\item Classify all abelian groups of order 144.
-			\item Explain which group in part (b) is isomorphic to the group $\Z_4 \times \Z_{36}$.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.G3}
-		\begin{enumerate}[(a)]
-			\item State the Sylow Theorems.
-			\item Prove that every group of order 126 has a normal subgroup of order 7.
-			\item Prove that any group of order 1000 is not simple.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.RF1}
-		Prove or disprove:
-
-		\begin{enumerate}[(a)]
-			\item If $R$ is an integral domain, then $R[x]$ is an integral domain.
-			\item If $R$ is a principal ideal domain, then $R[x]$ is a principal ideal domain.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.RF2}
-		Let $F$ be a finite field.
-
-		\begin{enumerate}[(a)]
-			\item Show that the multiplicative group $F^*$ is cyclic.
-			\item Suppose $|F| = 125 = 5^3$ and $\cyc{\alpha} = F^*$. What is $\alpha^{62}$?
-			\item Is there a $\beta \neq \alpha$ in $F$ such that $\cyc{\beta} = F^*$?
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.RF3}
-		Let $\alpha = \sqrt{-1+\sqrt{2}}$.
-		\begin{enumerate}[(a)]
-			\item Prove that $\alpha$ is the root of a monic polynomial in $\Q[x]$.
-			\item Let $K$ be the smallest Galois extension of $\Q$ that contains $\alpha$. Find the degree $[K: \Q]$.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.LA1}
-
-		Consider a real vector space $V = \R^n$ with the Euclidean inner product and let $U$ be a subspace of $V$.
-
-		\begin{enumerate}[(a)]
-			\item Prove that $U$ has an orthonormal basis. Note that this is the real version of the Gram-Schmidt Theorem.
-			\item Find an orthonormal basis for the span of $(1,2,0)$ and $(1,1,3)$ in $\R^3$.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{S12}{S12.LA2}
-		Let $V$ be a finite dimensional vector space. A linear transformation $T: V \to V$ is a projection when $T = T^2$. Prove that there exists a basis for $V$ such that the matrix for $T$ with respect to this basis is a diagonal matrix with diagonal entries all zeros or ones.
-	\end{prob}
-
-	\begin{prob}{S12}{S12.LA3}
-		Let $V$ be a finite dimensional vector space over $\C$.
-
-		\begin{enumerate}[(a)]
-			\item Define the characteristic polynomial of a linear transformation of $V$ and the minimal polynomial of a linear transformation of $V$.
-			\item Give an example of two lienar transformations $S,T: V \to V$ such that $S$ and $T$ have the same characteristic polynomial, but are not similar.
-			\item Give an example of two linear transformations $S,T: V \to V$ such that $S$ and $T$ have the same minimal polynomial, but are not similar.
-		\end{enumerate}
-	\end{prob}
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Fall 2013}
-
-	\begin{prob}{F13}{F13.G1}
-		A subgroup $H$ of a group $G$ is \emph{characteristic} if $\alpha(H) = H$ for any automorphism $\alpha$ of $H$.
-		
-		\begin{enumerate}[(a)]
-			\item Prove that if $H$ is characteristic in $K$ and $K$ is characteristic in $G$, then $H$ is characteristic in $G$.
-			\item Suppose now that $H$, $K$, and $G$ are groups with $H$ a normal subgroup of $K$ and $K$ a normal subgroup of $G$. Does this imply that $H$ is a normal subgroup of $G$?
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.G2}
-		Prove that every finite group of order greater than two has a non-trivial automorphism.
-	\end{prob}
-
-	\begin{prob}{F13}{F13.G3}
-
-		\begin{enumerate}[(a)]
-			\item Let $G$ be a finite group and $H$ a subgroup of $G$. Prove that the order of $H$ divides the order of $G$.
-			\item  Let $\Q$ and $\Z$ denote the additive groups of the rationals and integers, respectively. Prove that $\Q/\Z$ has no proper subgroups of finite index.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.RF1}
-		Let $V = \R^2$, regarded as a two-dimensional subspace over $\R$. Let $L(V)$ be the ring of all linear transformations from $V$ to $V$. let $T \in L(V)$ be given by $T(x,y) = (y,-x)$ and define 
-			\[A = \{S \in L(V): ST = TS\}. \]
-		\begin{enumerate}[(a)]
-			\item Prove that $A$ is a subring of $L(V)$.
-			\item To what well-known ring is $A$ isomorphic?
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.RF2}
-
-		\begin{enumerate}[(a)]
-			\item Let $N$ be a non-negative integer and $\alpha \in \C$ a primitive $N$th root of unity. FOr which $N$ is it true that $\Q(\alpha) = (\alpha + \alpha\inv)$?
-			\item Let $K$ be a field and $\beta$ an element of the algebraic closure of $K$. If $[K(3):K]$ is odd, prove that $K(\beta) = K(\beta + \beta\inv)$.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.RF3}
-		Let $F$ be a field and $p_1(x), \ldots, p_r(x)$ distinct, monic, irreducible polynomials in $F[x]$. Let $f(x) = p_1(x)^{n_1} + \cdots + p_r(x)^{n_r}$ where each $n_i$ is a positive integer.
-
-		\begin{enumerate}[(a)]
-			\item Determine the number of ideals in $F[x]/\cyc{f(x)}$.
-			\item Determine the number of prime ideals in $F[x]/\cyc{f(x)}$.
-		\end{enumerate}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.LA1}
-		Let $T: \R^3 \to \R^3$ be a lienar transformation. Prove the following:
-		\begin{enumerate}[(a)]
-			\item $T$ has a one-dimensional invariant subspace.
-			\item $T$ has a two-dimensional invariant subspace.
-		\end{enumerate}
-
-		\emph{ Do not use the existence of canonical forms for matrices.}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.LA2}
-		Let $V$ be a finite dimensional vector space of $\Q$ and let $M$ be an automorphism of $V$ such that $M$ fixes no non-zero vector in $V$. Suppose that $M^p$ is the identyt map on $V$ with $p$ a prime. Show that the dimension of $V$ is divisible by $p-1$. \emph{ You may assume that the polynomial $x^{p-1} + \cdots + x + 1$ is irreducible  over $\Q$.}
-	\end{prob}
-
-	\begin{prob}{F13}{F13.LA3}
-		Let $\R^3$ have  the usual inner product and suppose that $(a,b,c) \in \R^3$ is of unit length. Let $W$ be the plane given by $ax + by + cz = 0$. Let $\ell$ be the line through the origin in the direction $(a,b,c)$.
-		\begin{enumerate}[(a)]
-			\item Define the standard matrix representing the orthogonal projection of $\R^3$ onto $\ell$.
-			\item Define the standard matrix representing the orthogonal projection of $\R^3$ onto $W$.
-		\end{enumerate}
-	\end{prob}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-
-	\begin{prob}{F19}{}
-	Let $p$ be a prime number and suppose that $1 \leq n <p^2$ is an integer. Show that every Sylow $p$-subgroup of the symmetric group $S_n$ is abelian.
-	\end{prob}
-	
-
-	\begin{prob}{F20}{F20.G3}
-	Let $G$ be a finite group, $x \in G$, and $H$ a subgroup of $G$.
 	\begin{enumerate}[(a)]
-	\item Prove that the number of conjugates of $x$ in $G$ divides $\rm{order}(G)/\rm{order}(x)$.
-	\item Prove that the number of conjugates of $H$ in $G$ divides the index of $H$ in $G$.
+		\item
 	\end{enumerate}
-	\end{prob}
+\end{prob}
 
-	\begin{prob}{S20}{}
-	Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
-	\end{prob}
+\begin{prob}{S13}{S13.LA1}
 
-	\begin{prob}{S19}{}
-	State and prove Lagrange's Theorem. Prove that a subgroup of a cyclic group is cyclic.
-	\end{prob}
-
-	\begin{prob}{S19}{}
-	Prove the following:
 	\begin{enumerate}[(a)]
-	\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
-	\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
+		\item
 	\end{enumerate}
-	\end{prob}
-	
+\end{prob}
 
-	
-	\begin{prob}{S19}{}
-	Prove that $\sigma,\tau \in S_n$ are conjugate if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
-	\end{prob}
-	
-	\begin{prob}{S20}{}
-	\begin{enumerate}[(a)]
-	\item Prove that the centralizer of an element is a subgroup.
-	\item If $G$ is a finite group, prove that the number of elements in the conjugacy class divides the order of $G$.
-	\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.G1}
-	Show that any finitely generated group of $(\Q,+)$ is cyclic. Use this to prove that the direct product $(\Q,+) \times (\Q,+)$ and $(\Q,+)$ are not isomorphic.
-	\end{prob}
+\begin{prob}{S13}{S13.LA2}
 
-	\begin{prob}{S20}{}
-	Let $R$ be a commutative ring with identity. Show that if $p$ is a prime ideal in $R$ then
-		\[p(x) = \left\{\textrm{all polynomials } \sum_i a_ix^i \textrm{ with each } a_i \in p \right\} \]
-	is a prime ideal in $R[x]$.
-	\end{prob}
-	
-	\begin{prob}{S20}{}
-	Let $\F_3$ be the field with 3 elements.
 	\begin{enumerate}[(a)]
-	\item Prove that $K = \F_3[x]/(x^2 + 1)$ is a field.
-	\item How many elements does $K$ have?
-	\item Prove that $x+1$ generates the multiplicative group of non-zero elements in $K$.
+		\item
 	\end{enumerate}
-	\end{prob}
+\end{prob}
 
-	
-	\begin{prob}{F20}{F20.RF1}
-	The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.RF2}
-	Prove or provide a counter example: Suppose that $K$ is a finite extension of $F$. $F \sq L \sq K$, $F \sq M \sq KL$, $LM = K$ and $L \cap M = F$. Then $[L:F][M:F] = [K:F]$. Here, $LM$ denotes the composition of the fields $L$ and $M$.
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.RF3}
-		\begin{enumerate}[(i)]
-		\item Let $R$ be a UFD and $d$ a nonzero element in $R$. Prove that there are only finitely many principal ideals  in $R$ that contain the ideal $(d)$.
-		\item Give an example of a UFD $R$ and a nonzero element $d \in R$ such that there are infinitely many ideals in $R$ that contain $(d)$.
-		\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.LA1}
-	It is known that real symmetric matrices are always diagonalizable. You may assume this fact.
-	\begin{enumerate}[(a)]
-	\item What special property do the eigenspaces of a real symmetric matrix have?
-	\item Prove that any real symmetric matrix $S$ can be diagonalized by an orthonormal matrix $U$.
-	\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.LA2}
-	Prove or give a counter example.
-	\begin{enumerate}[(a)]
-	\item If a $4 \times 4$ real matrix has characteristic polynomial $x^4 -1$ then its minimal polynomial cannot be $x^2 - 1$.
-	\item Every $n \times n$ real matrix is similar over the reals to an upper triangular matrix.
-	\end{enumerate}
-	\end{prob}
-	
-	\begin{prob}{F20}{F20.LA3}
-	Let $V$ be a finite dimensional complex vector space and $T: V \to V$ a linear transformation.
-	\begin{enumerate}[(a)]
-	\item Show that $V$ has a "flag" of subspaces $V_0 = 0 \sq V_1 \sq \cdots \sq V_n = V$ such that $\dim(V_i) = i$ and $T(V_i) \sq V_i$ for each $i$.
-	\item Show that there is a basis for $V$ such that the matrix of $T$ with respect to this basis is upper triangular.
-	\end{enumerate}
-	\end{prob}
-	
+\begin{prob}{S13}{S13.LA3}
 
+	\begin{enumerate}[(a)]
+		\item
+	\end{enumerate}
+\end{prob}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Fall 2012}
+
+\begin{prob}{F12}{F12.RF1}
+\begin{enumerate}[(a)]
+\item Let $\nu$ be a primitive 10th root of unity. Compute the Galois group of $\Q(\nu)$.
+\item let $K_t = \Q(\omega)$ where $\omega$ is a primitive $t$th root of unity. Show that $\sqrt[3]{2}$ is not in any $K_t$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F12}{F12.RF2}
+Suppose that $R,S,A$ are all commutative rings with unity.
+\begin{enumerate}[(a)]
+\item Suppose that $R$ is a PID, $S$ is an integral domain, and $\varphi:R \to S$ is a surjection. Prove that either $\varphi$ is an isomorphism or $S$ is a field.
+\item Prove that $A[x]$ is a PID if and only if $A$ is a field.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F12}{F12.LA1}
+Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
+	\[\langle A, B \rangle = n \tr(AB) - \tr(A)\tr(B) \]
+defines a symmetric bilinear form on $V$.
+\begin{enumerate}[(a)]
+\item Prove that $\langle,\rangle$ is singular.
+\item Prove that the restriction of $\langle,\rangle$ to the subspace $W$ of symmetric matrices with 0 trace is positive definite.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F12}{F12.LA3}
+Let $M$ be a $5 \times 5$ matrix with rational entries whose characteristic polynomial is of the form
+	\[(x^2+1)(x^3+x+q).\]
+For which, if any, $q \in \Q$ is it possible that there does not exist an invertible matrix $A$ with rational entries such that $A\inv M A$ has block diagonal form with a $2 \times 2$ block and a $3 \times 3$ block?
+\end{prob}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spring 2012}
+
+
+\begin{prob}{S12}{S12.G1}
+	Prove that there are at least two non-isomorphic non-abelian groups of order 24.
+\end{prob}
+
+\begin{prob}{S12}{S12.G2}
+	\begin{enumerate}[(a)]
+		\item State (any version of) the Fundamental Theorem of finite abelian groups.
+		\item Classify all abelian groups of order 144.
+		\item Explain which group in part (b) is isomorphic to the group $\Z_4 \times \Z_{36}$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.G3}
+	\begin{enumerate}[(a)]
+		\item State the Sylow Theorems.
+		\item Prove that every group of order 126 has a normal subgroup of order 7.
+		\item Prove that any group of order 1000 is not simple.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.RF1}
+	Prove or disprove:
+
+	\begin{enumerate}[(a)]
+		\item If $R$ is an integral domain, then $R[x]$ is an integral domain.
+		\item If $R$ is a principal ideal domain, then $R[x]$ is a principal ideal domain.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.RF2}
+	Let $F$ be a finite field.
+
+	\begin{enumerate}[(a)]
+		\item Show that the multiplicative group $F^*$ is cyclic.
+		\item Suppose $|F| = 125 = 5^3$ and $\cyc{\alpha} = F^*$. What is $\alpha^{62}$?
+		\item Is there a $\beta \neq \alpha$ in $F$ such that $\cyc{\beta} = F^*$?
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.RF3}
+	Let $\alpha = \sqrt{-1+\sqrt{2}}$.
+	\begin{enumerate}[(a)]
+		\item Prove that $\alpha$ is the root of a monic polynomial in $\Q[x]$.
+		\item Let $K$ be the smallest Galois extension of $\Q$ that contains $\alpha$. Find the degree $[K: \Q]$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.LA1}
+
+	Consider a real vector space $V = \R^n$ with the Euclidean inner product and let $U$ be a subspace of $V$.
+
+	\begin{enumerate}[(a)]
+		\item Prove that $U$ has an orthonormal basis. Note that this is the real version of the Gram-Schmidt Theorem.
+		\item Find an orthonormal basis for the span of $(1,2,0)$ and $(1,1,3)$ in $\R^3$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{S12}{S12.LA2}
+	Let $V$ be a finite dimensional vector space. A linear transformation $T: V \to V$ is a projection when $T = T^2$. Prove that there exists a basis for $V$ such that the matrix for $T$ with respect to this basis is a diagonal matrix with diagonal entries all zeros or ones.
+\end{prob}
+
+\begin{prob}{S12}{S12.LA3}
+	Let $V$ be a finite dimensional vector space over $\C$.
+
+	\begin{enumerate}[(a)]
+		\item Define the characteristic polynomial of a linear transformation of $V$ and the minimal polynomial of a linear transformation of $V$.
+		\item Give an example of two lienar transformations $S,T: V \to V$ such that $S$ and $T$ have the same characteristic polynomial, but are not similar.
+		\item Give an example of two linear transformations $S,T: V \to V$ such that $S$ and $T$ have the same minimal polynomial, but are not similar.
+	\end{enumerate}
+\end{prob}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fall 2013}
+
+\begin{prob}{F13}{F13.G1}
+	A subgroup $H$ of a group $G$ is \emph{characteristic} if $\alpha(H) = H$ for any automorphism $\alpha$ of $H$.
 	
-	\begin{prob}{F21}{F21.G3}
-	Let $p$ and $q$ be distinct odd primes. Use the Sylow Theorems to show that every group of order $p^2q^2$ is not simple.
-	\end{prob}	
-	
-	\begin{proof}
-	Suppose that $|G| = p^2q^2$ and without loss of generality, assume that $p < q$. Note that each Sylow $p$-subgroup is of order $p^2$ and each Sylow $q$-subgroup is of order $q^2$. Furthermore, the number of Sylow-$p$ subgroups is $n_p = 1, q, q^2$ and the number of Sylow-$q$ subgroups is $n_q = 1, p^2$. If $n_q = 1$, then the Sylow-$q$ subgroup is normal in $G$ and thus $G$ is not simple. Suppose instead that $n_q = p^2$.\\
-	
-	If $Q_i, Q_j$ are any two distinct Sylow-$q$ subgroups, the intersection $Q_i \cap Q_j$ is either of size $1$ or $q$. If every pairwise intersection between the Sylow-$q$ subgroups is trivial, then the $p^2$ Sylow-$q$ subgroups account for $p^2q^2 - (p^2 -1)$ elements implying that $n_p = 1$. That is, the Sylow-$p$ subgroup is normal and therefore $G$ is not simple. Suppose that some Sylow-$q$ subgroups$Q_1, Q_2$ have intersection of size $q$. Let $N = Q_1 \cap Q_2$ and let $M$ be the subgroup of $G$ generated by $Q_1$ and $Q_2$. Then, $|M| > |Q_1| = q^2$ and $|M|$ divides $|G| = p^2q^2$. Therefore $|M| = pq^2$ or $|M| = p^2 q^2$. 
-	
+	\begin{enumerate}[(a)]
+		\item Prove that if $H$ is characteristic in $K$ and $K$ is characteristic in $G$, then $H$ is characteristic in $G$.
+		\item Suppose now that $H$, $K$, and $G$ are groups with $H$ a normal subgroup of $K$ and $K$ a normal subgroup of $G$. Does this imply that $H$ is a normal subgroup of $G$?
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F13}{F13.G2}
+	Prove that every finite group of order greater than two has a non-trivial automorphism.
+\end{prob}
+
+\begin{prob}{F13}{F13.G3}
+
+	\begin{enumerate}[(a)]
+		\item Let $G$ be a finite group and $H$ a subgroup of $G$. Prove that the order of $H$ divides the order of $G$.
+		\item  Let $\Q$ and $\Z$ denote the additive groups of the rationals and integers, respectively. Prove that $\Q/\Z$ has no proper subgroups of finite index.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F13}{F13.RF1}
+	Let $V = \R^2$, regarded as a two-dimensional subspace over $\R$. Let $L(V)$ be the ring of all linear transformations from $V$ to $V$. let $T \in L(V)$ be given by $T(x,y) = (y,-x)$ and define 
+		\[A = \{S \in L(V): ST = TS\}. \]
+	\begin{enumerate}[(a)]
+		\item Prove that $A$ is a subring of $L(V)$.
+		\item To what well-known ring is $A$ isomorphic?
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F13}{F13.RF2}
+
+	\begin{enumerate}[(a)]
+		\item Let $N$ be a non-negative integer and $\alpha \in \C$ a primitive $N$th root of unity. FOr which $N$ is it true that $\Q(\alpha) = (\alpha + \alpha\inv)$?
+		\item Let $K$ be a field and $\beta$ an element of the algebraic closure of $K$. If $[K(3):K]$ is odd, prove that $K(\beta) = K(\beta + \beta\inv)$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F13}{F13.RF3}
+	Let $F$ be a field and $p_1(x), \ldots, p_r(x)$ distinct, monic, irreducible polynomials in $F[x]$. Let $f(x) = p_1(x)^{n_1} + \cdots + p_r(x)^{n_r}$ where each $n_i$ is a positive integer.
+
+	\begin{enumerate}[(a)]
+		\item Determine the number of ideals in $F[x]/\cyc{f(x)}$.
+		\item Determine the number of prime ideals in $F[x]/\cyc{f(x)}$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F13}{F13.LA1}
+	Let $T: \R^3 \to \R^3$ be a lienar transformation. Prove the following:
+	\begin{enumerate}[(a)]
+		\item $T$ has a one-dimensional invariant subspace.
+		\item $T$ has a two-dimensional invariant subspace.
+	\end{enumerate}
+
+	\emph{ Do not use the existence of canonical forms for matrices.}
+\end{prob}
+
+\begin{prob}{F13}{F13.LA2}
+	Let $V$ be a finite dimensional vector space of $\Q$ and let $M$ be an automorphism of $V$ such that $M$ fixes no non-zero vector in $V$. Suppose that $M^p$ is the identyt map on $V$ with $p$ a prime. Show that the dimension of $V$ is divisible by $p-1$. \emph{ You may assume that the polynomial $x^{p-1} + \cdots + x + 1$ is irreducible  over $\Q$.}
+\end{prob}
+
+\begin{prob}{F13}{F13.LA3}
+	Let $\R^3$ have  the usual inner product and suppose that $(a,b,c) \in \R^3$ is of unit length. Let $W$ be the plane given by $ax + by + cz = 0$. Let $\ell$ be the line through the origin in the direction $(a,b,c)$.
+	\begin{enumerate}[(a)]
+		\item Define the standard matrix representing the orthogonal projection of $\R^3$ onto $\ell$.
+		\item Define the standard matrix representing the orthogonal projection of $\R^3$ onto $W$.
+	\end{enumerate}
+\end{prob}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\begin{prob}{F19}{}
+Let $p$ be a prime number and suppose that $1 \leq n <p^2$ is an integer. Show that every Sylow $p$-subgroup of the symmetric group $S_n$ is abelian.
+\end{prob}
+
+
+\begin{prob}{F20}{F20.G3}
+Let $G$ be a finite group, $x \in G$, and $H$ a subgroup of $G$.
+\begin{enumerate}[(a)]
+\item Prove that the number of conjugates of $x$ in $G$ divides $\rm{order}(G)/\rm{order}(x)$.
+\item Prove that the number of conjugates of $H$ in $G$ divides the index of $H$ in $G$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{S20}{}
+Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
+\end{prob}
+
+\begin{prob}{S19}{}
+State and prove Lagrange's Theorem. Prove that a subgroup of a cyclic group is cyclic.
+\end{prob}
+
+\begin{prob}{S19}{}
+Prove the following:
+\begin{enumerate}[(a)]
+\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
+\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}{S19}{}
+Prove that $\sigma,\tau \in S_n$ are conjugate if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
+\end{prob}
+
+\begin{prob}{S20}{}
+\begin{enumerate}[(a)]
+\item Prove that the centralizer of an element is a subgroup.
+\item If $G$ is a finite group, prove that the number of elements in the conjugacy class divides the order of $G$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F20}{F20.G1}
+Show that any finitely generated group of $(\Q,+)$ is cyclic. Use this to prove that the direct product $(\Q,+) \times (\Q,+)$ and $(\Q,+)$ are not isomorphic.
+\end{prob}
+
+\begin{prob}{S20}{}
+Let $R$ be a commutative ring with identity. Show that if $p$ is a prime ideal in $R$ then
+	\[p(x) = \left\{\textrm{all polynomials } \sum_i a_ix^i \textrm{ with each } a_i \in p \right\} \]
+is a prime ideal in $R[x]$.
+\end{prob}
+
+\begin{prob}{S20}{}
+Let $\F_3$ be the field with 3 elements.
+\begin{enumerate}[(a)]
+\item Prove that $K = \F_3[x]/(x^2 + 1)$ is a field.
+\item How many elements does $K$ have?
+\item Prove that $x+1$ generates the multiplicative group of non-zero elements in $K$.
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}{F20}{F20.RF1}
+The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
+\end{prob}
+
+\begin{prob}{F20}{F20.RF2}
+Prove or provide a counter example: Suppose that $K$ is a finite extension of $F$. $F \sq L \sq K$, $F \sq M \sq KL$, $LM = K$ and $L \cap M = F$. Then $[L:F][M:F] = [K:F]$. Here, $LM$ denotes the composition of the fields $L$ and $M$.
+\end{prob}
+
+\begin{prob}{F20}{F20.RF3}
+	\begin{enumerate}[(i)]
+	\item Let $R$ be a UFD and $d$ a nonzero element in $R$. Prove that there are only finitely many principal ideals  in $R$ that contain the ideal $(d)$.
+	\item Give an example of a UFD $R$ and a nonzero element $d \in R$ such that there are infinitely many ideals in $R$ that contain $(d)$.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}{F20}{F20.LA1}
+It is known that real symmetric matrices are always diagonalizable. You may assume this fact.
+\begin{enumerate}[(a)]
+\item What special property do the eigenspaces of a real symmetric matrix have?
+\item Prove that any real symmetric matrix $S$ can be diagonalized by an orthonormal matrix $U$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F20}{F20.LA2}
+Prove or give a counter example.
+\begin{enumerate}[(a)]
+\item If a $4 \times 4$ real matrix has characteristic polynomial $x^4 -1$ then its minimal polynomial cannot be $x^2 - 1$.
+\item Every $n \times n$ real matrix is similar over the reals to an upper triangular matrix.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{F20}{F20.LA3}
+Let $V$ be a finite dimensional complex vector space and $T: V \to V$ a linear transformation.
+\begin{enumerate}[(a)]
+\item Show that $V$ has a "flag" of subspaces $V_0 = 0 \sq V_1 \sq \cdots \sq V_n = V$ such that $\dim(V_i) = i$ and $T(V_i) \sq V_i$ for each $i$.
+\item Show that there is a basis for $V$ such that the matrix of $T$ with respect to this basis is upper triangular.
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}{F21}{F21.G3}
+Let $p$ and $q$ be distinct odd primes. Use the Sylow Theorems to show that every group of order $p^2q^2$ is not simple.
+\end{prob}	
+
+\begin{proof}
+Suppose that $|G| = p^2q^2$ and without loss of generality, assume that $p < q$. Note that each Sylow $p$-subgroup is of order $p^2$ and each Sylow $q$-subgroup is of order $q^2$. Furthermore, the number of Sylow-$p$ subgroups is $n_p = 1, q, q^2$ and the number of Sylow-$q$ subgroups is $n_q = 1, p^2$. If $n_q = 1$, then the Sylow-$q$ subgroup is normal in $G$ and thus $G$ is not simple. Suppose instead that $n_q = p^2$.\\
+
+If $Q_i, Q_j$ are any two distinct Sylow-$q$ subgroups, the intersection $Q_i \cap Q_j$ is either of size $1$ or $q$. If every pairwise intersection between the Sylow-$q$ subgroups is trivial, then the $p^2$ Sylow-$q$ subgroups account for $p^2q^2 - (p^2 -1)$ elements implying that $n_p = 1$. That is, the Sylow-$p$ subgroup is normal and therefore $G$ is not simple. Suppose that some Sylow-$q$ subgroups$Q_1, Q_2$ have intersection of size $q$. Let $N = Q_1 \cap Q_2$ and let $M$ be the subgroup of $G$ generated by $Q_1$ and $Q_2$. Then, $|M| > |Q_1| = q^2$ and $|M|$ divides $|G| = p^2q^2$. Therefore $|M| = pq^2$ or $|M| = p^2 q^2$. 
+
 Note first that any group of prime squared order is abelian. Therefore both $Q_1$ and $Q_2$ are abelian and so $N = Q_1 \cap Q_2$ is normal in $M$. If $|M| = p^2q^2$ then $M=G$ and thus $N$ is a normal subgroup of $G$ and is nontrivial.\\
 
 Now suppose that $|M| = pq^2$. 
-	\end{proof}
-	
-	\begin{prob}{S19}{}
-	\begin{enumerate}[(a)]
-	\item Suppose that $G$ is a group and $G/Z(G)$ is cyclic. Prove  that $G$ is abelian.
-	\item Let $p$ be a prime number and $G$ a non-cyclic finite $p$-group. Prove that $G$ contains a normal subgroup $N$ such that $G/N \cong C \oplus C$ where $C$ is a cyclic group of order $p$.
-	\end{enumerate}
-	\end{prob}
-	
-	\begin{proof}
-	See \ref{prob:GZG}.
-	\end{proof}
-	
-	\begin{proof}
-	Suppose that $|G| = p^k$ with $k \geq 2$. Assume that $G$ is not cyclic.
-	\end{proof}
-	
+\end{proof}
+
+\begin{prob}{S19}{}
+\begin{enumerate}[(a)]
+\item Suppose that $G$ is a group and $G/Z(G)$ is cyclic. Prove  that $G$ is abelian.
+\item Let $p$ be a prime number and $G$ a non-cyclic finite $p$-group. Prove that $G$ contains a normal subgroup $N$ such that $G/N \cong C \oplus C$ where $C$ is a cyclic group of order $p$.
+\end{enumerate}
+\end{prob}
+
+\begin{proof}
+See \ref{prob:GZG}.
+\end{proof}
+
+\begin{proof}
+Suppose that $|G| = p^k$ with $k \geq 2$. Assume that $G$ is not cyclic.
+\end{proof}
+
 \end{document}
