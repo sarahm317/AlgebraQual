@@ -1,0 +1,44 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Inner Products}
+
+\begin{prob}{F12}{F12.LA1}
+    Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
+        \[\langle A, B \rangle = n \tr(AB) - \tr(A)\tr(B) \]
+    defines a symmetric bilinear form on $V$.
+    \begin{enumerate}[(a)]
+    \item Prove that $\langle,\rangle$ is singular.
+    \item Prove that the restriction of $\langle,\rangle$ to the subspace $W$ of symmetric matrices with 0 trace is positive definite.
+    \end{enumerate}
+    \end{prob}
+    
+    \begin{proof}
+        Note that for any $n \times n$ real matrices $A$ and $B$, $\tr(AB) = \tr(BA)$ and $\tr(A+B) = \tr(A) + \tr(B)$. Furthermore, whenever $\alpha \in \R$, $\tr(\alpha A) = \alpha \tr(A)$. Therefore,
+            \[\ip{A}{B} = n \tr(AB) - \tr(A)\tr(B) = n \tr(BA) - \tr(B)\tr(A) = \ip{B}{A}\]
+        meaning that $\ip{\cdot}{\cdot}$ is symmetric. Since
+            \begin{align*}
+                \ip{A}{\alpha B + \beta C} &= n\tr(A(\alpha B + \beta C)) - \tr(A) \tr(\alpha B + \beta C)\\
+                &= n\tr(\alpha AB + \beta AC) - \tr(A) \tr(\alpha B + \beta C)\\
+                &= \alpha n \tr(AB) + \beta n \tr(AC) - \alpha \tr(A)\tr(B) - \beta \tr(A)\tr(C)\\
+                &= \alpha \ip{A}{B} + \beta\ip{A}{C}
+            \end{align*}
+        it follows that $\ip{\cdot}{\cdot}$ is a bilinear form.
+    \end{proof}
+    
+    \begin{proof}
+        Let $I$ be the $n \times n$ identity matrix and observe that for any nonzero $n \times n$ matrix $B$,
+            \[\ip{I}{B} = n\tr(IB) - \tr(I)\tr(B) = n\tr(B) - n \tr(B) = 0.\]
+        Since $I \neq 0$ and $B$ was arbitrary, $\ip{\cdot}{\cdot}$ is singular.
+    \end{proof}
+    
+    \begin{proof}
+        Let $W = \{A_{n\times n}: A \textrm{ is symmetric  and } \tr(A) = 0\}.$ Then,
+            \[\ip{A,A} = n\tr(A^2) - \tr(A)\tr(A) = n\tr(A^2)\]
+        whenever $A \in W$. Suppose that $A = (a_{ij})$ where $a_{ij}$ denotes the $(i,j)$ entry of $A$ with $1\leq i,j \leq n$. Because $A$ is symmetric, $a_{ij} = a_{ji}$. Therefore the $(i,i)$ entry of $A^2$ is
+            \[b_i = a_{i1}a_{1i} + \cdots + a_{in}a_{ni} = \sum_{j=1}^n a_{ij}^2. \]
+        Thus, the trace of $A^2$ can be written as $\tr(A^2) = \sum_{i=1}^n b_i = \sum_{i=1}^n \sum_{j=1}^n a_{ij}^2$. As each term in the sum is at least zero, $\ip{A}{A} = \tr(A^2) \geq 0$. If $\ip{A}{A} = 0$, then $\sum_{i=1}^n \sum_{j=1}^n a_{ij}^2 = \tr(A^2) = 0$. As each term in the sum is non-negative, each term must then equal zero. That is, $a_ij = 0$ for $i,j = 1, \ldots, n$ and therefore $A = 0$.
+    \end{proof}
+
+\end{document}
