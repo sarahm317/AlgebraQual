@@ -110,6 +110,25 @@ defines a symmetric bilinear form on $V$.
 \end{enumerate}
 \end{prob}
 
+\begin{proof}
+	Note that for any $n \times n$ real matrices $A$ and $B$, $\tr(AB) = \tr(BA)$ and $\tr(A+B) = \tr(A) + \tr(B)$. Furthermore, whenever $\alpha \in \R$, $\tr(\alpha A) = \alpha \tr(A)$. Therefore,
+		\[\ip{A}{B} = n \tr(AB) - \tr(A)\tr(B) = n \tr(BA) - \tr(B)\tr(A) = \ip{B}{A}\]
+	meaning that $\ip{\cdot}{\cdot}$ is symmetric. Since
+		\begin{align*}
+			\ip{A}{\alpha B + \beta C} &= n\tr(A(\alpha B + \beta C)) - \tr(A) \tr(\alpha B + \beta C)\\
+			&= n\tr(\alpha AB + \beta AC) - \tr(A) \tr(\alpha B + \beta C)\\
+			&= \alpha n \tr(AB) + \beta n \tr(AC) - \alpha \tr(A)\tr(B) - \beta \tr(A)\tr(C)\\
+			&= \alpha \ip{A}{B} + \beta\ip{A}{C}
+		\end{align*}
+	it follows that $\ip{\cdot}{\cdot}$ is a bilinear form.
+\end{proof}
+
+\begin{proof}
+	Let $I$ be the $n \times n$ identity matrix and observe that for any nonzero $n \times n$ matrix $B$,
+		\[\ip{I}{B} = n\tr(IB) - \tr(I)\tr(B) = n\tr(B) - n \tr(B) = 0.\]
+	Since $I \neq 0$ and $B$ was arbitrary, $\ip{\cdot}{\cdot}$ is singular.
+\end{proof}
+
 \begin{prob}{F12}{F12.LA3}
 Let $M$ be a $5 \times 5$ matrix with rational entries whose characteristic polynomial is of the form
 	\[(x^2+1)(x^3+x+q).\]
