@@ -4,7 +4,7 @@
 
 \section{General Group Theory}
 
-\begin{prob}{F12}{F12.G3}
+	\begin{prob}{F12}{F12.G3}
 	\begin{enumerate}[(a)]
 	\item State and prove Lagrange's Theorem.
 	\item Prove that a subgroup of a cyclic group is cyclic.
@@ -50,5 +50,22 @@
 			\[a^r = b \left(a^{mq}\right)\inv \in H.\]
 		Because $0 \leq r < m$ and $m$ is the minimal positive integer where $a^m \in H$, it follows that $r = 0$. Therefore, $n = mq$. This means that $b = a^n=a^{mq} = (a^m)^q$. Because $b$ was arbitrary, $H = \langle a^m \rangle$ proving that $H$ is cyclic.
 	\end{proof}
+
+	\begin{prob}{F13}{F13.G1}
+		A subgroup $H$ of a group $G$ is \emph{characteristic} if $\alpha(H) = H$ for any automorphism $\alpha$ of $H$.
+		
+		\begin{enumerate}[(a)]
+			\item Prove that if $H$ is characteristic in $K$ and $K$ is characteristic in $G$, then $H$ is characteristic in $G$.
+			\item Suppose now that $H$, $K$, and $G$ are groups with $H$ a normal subgroup of $K$ and $K$ a normal subgroup of $G$. Does this imply that $H$ is a normal subgroup of $G$?
+		\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+		Let $\varphi$ be an automorphism of $G$. Because $K$ is characteristic in $G$, $\varphi(K) = K$. Therefore, $\varphi$ restricts to an automorphism of $K$. Since $H$ is characteristic in $K$, $\varphi(H) = H$. But since $\varphi$ was an arbitrary automorphism of $G$, this means that $H$ is characteristic in $G$.
+	\end{proof}
+	
+	\begin{solution}
+	This need not be true. Let $G = S_4$, $H = \cyc{(12)(34),e}$, $K = \cyc{(12)(34), (13)(24),(14)(23), e}$. Upon inspection, $H$ is normal in $K$, $K$ is normal in $G$, but $H$ is not normal in $G$.
+	\end{solution}
 
 \end{document}
