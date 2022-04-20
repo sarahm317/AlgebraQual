@@ -40,5 +40,20 @@
             \[b_i = a_{i1}a_{1i} + \cdots + a_{in}a_{ni} = \sum_{j=1}^n a_{ij}^2. \]
         Thus, the trace of $A^2$ can be written as $\tr(A^2) = \sum_{i=1}^n b_i = \sum_{i=1}^n \sum_{j=1}^n a_{ij}^2$. As each term in the sum is at least zero, $\ip{A}{A} = \tr(A^2) \geq 0$. If $\ip{A}{A} = 0$, then $\sum_{i=1}^n \sum_{j=1}^n a_{ij}^2 = \tr(A^2) = 0$. As each term in the sum is non-negative, each term must then equal zero. That is, $a_ij = 0$ for $i,j = 1, \ldots, n$ and therefore $A = 0$.
     \end{proof}
-
+    
+    \begin{prob}{F14}{F14.LA3}
+        Let $U$ be a real inner-product space and $T: U \to U$ a linear operator on $U$. Prove that $T$ is an orthogonal linear transformation if and only if $\norm[T(u)] = \norm[u]$ for all $u \in U$.\\
+    
+        \emph{$T$ is an orthogonal linear transformation if $\ip{u}{v} = \ip{Tu}{Tv}$}.
+    \end{prob}
+    
+    \begin{proof}
+        Assume first that $T$ is an orthogonal linear transformation. For any $u \in U$,
+            \[\ip{u}{u} = \norm[u]^2 = \norm[Tu]^2 = \ip{Tu,Tu}.\]
+        Conversely, assume that $\norm[T(u)] = \norm[u]$ for all $u \in U$. Notice that this implies $\ip{Tu}{Tu} = \ip{u}{u}$ for each $u \in U$. Let $x, y \in U$ be arbitrary. Then,
+            \[\ip{x+y}{x+y} = \ip{x}{x} + 2\ip{x}{y} + \ip{y}{y} = \ip{Tx}{Tx} + 2\ip{x}{y} + \ip{Ty}{Ty}.\]
+        On the other hand,
+            \[\ip{T(x+y)}{T(x+y)} = \ip{Tx + Ty}{Tx + Ty} = \ip{Tx}{Tx} + 2\ip{Tx}{Ty} + \ip{Ty}{Ty}.\]
+        Since $\norm[x + y] = \norm[T(x+y)]$, we may equate the right sides of the above equations to find that $\ip{Tx}{Ty} = \ip{x}{y}$.
+    \end{proof}
 \end{document}
