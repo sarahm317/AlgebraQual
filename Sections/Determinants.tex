@@ -1,0 +1,23 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Determinants}
+
+\begin{prob}{F14}{F14.RF1}
+	Let $R$ be a commutative ring with 1 and let $M_n(R)$ be the ring of $n \times n$ matrices with entries in $R$. Show that the units of $M_n(R)$ are precisely the matrices $A \in M_n(R)$ whose determinate $\det(A)$ is a unit in $R$.
+\end{prob}
+
+\begin{proof}
+	Suppose first that $\det(A)$ is a unit in $R$. Let $\rm{adj}(A)$ denote the transpose of the cofactor matrix of $A$ so that
+		\[A \rm{adj}(A) = \det(A) \cdot I. \]
+	Since $\det(A)$ is invertible in $R$,
+		\[A\left(\det(A)\inv \cdot \rm{adj}(A)\right) = I\]
+	and therefore $A$ is a unit in $M_n(R)$ with inverse $\det(A)\inv \cdot \rm{adj}(A)$.\\
+
+	Conversely, suppose that $A$ is a unit in $M_n(R)$. Then,
+		\[1 = \det(I) = \det(AA\inv) = \det(A)\det(A\inv)\]
+	and so $\det(A)$ is a unit in $R$.
+\end{proof}
+
+\end{document}
