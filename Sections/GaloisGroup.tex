@@ -1,0 +1,27 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Galois Groups}
+
+\begin{prob}{S11.RF3}{S11.RF3}
+    Let $F$ be a splitting field of the polynomial $f(x) = x^4 - 2 \in \Q[x]$ over $\Q$. Find the degree $[F: \Q]$ and determine the Galois group of the extension $\Q \sq F$ up to isomorphism.
+\end{prob}
+
+\begin{proof}
+    Let $a = \sqrt[4]{2}$ and  observe that $\{a,ai,-a,-ai\}$ are all roots of $f$. Since $\deg(f) = 4$, these are the only roots of $f$. By Eisenstein's Criterion, $f$ is irreducible over $\Q$. Therefore $f$ is the minimal polynomial for $a$ over $\Q$ and so $[\Q(a),\Q] = 4$. Since $\Q(a)$ is a real-valued field, $i \not\in \Q(a)$ and so the degree of the minimal polynomial for $i$ over $\Q(a)$ is at least 2. But, $i$ is a root of $x^2 + 1 \in \Q(a)[x]$ and so $[\Q(a,i): \Q(a)] = 2$. By the Tower Rule, $[\Q(a,i): \Q] = 4$. Since $\Q(a,i)$ contains all the roots of $f$, it is a splitting field for $f$ over $\Q$ and thus is isomorphic to $F$. So, $[F: \Q] = 4$ as well.\\
+
+    Since $f(a) = 0$ and $f$ is irreducible over $\Q$ The Extension Lemma yields isomorphisms $\varphi_k: \Q(a) \to \Q(ai^k)$ where $\varphi:a \mapsto ai^k$ for $k = 0,1,2,3$. Next define $g(x) = x^2 + 1 \in \Q(a)$ and note that $g(i) = 0$ and $g$ is irreducible over $\Q(a)$ as the roots are both complex. Again, by the Extension Lemma each $\varphi_k$ may be extended to $\varphi_{k1}: \Q(a,i) \to \Q(ai^k, i)$ or $\varphi_{k2}: \Q(a,i) \to \Q(ai^k,-i)$ where
+        \[\varphi_{k1}: \begin{cases}
+            a \mapsto ai^k\\
+            i \mapsto i
+        \end{cases}\]
+    and
+        \[\varphi_{k2}: \begin{cases}
+        a \mapsto ai^k\\
+        i \mapsto -i
+    \end{cases}\]
+    Observe that this accounts for 8 $\Q$-automorphisms of $\Q(a,i)$. Since $f$ has 4 roots and $g$ has 2 roots and $\Q$-automorphisms must permute roots of polynomials over $\Q$, there are at most 8 total $\Q$-automorphisms. Thus $|G(\Q(a,i): \Q)| = 8$. Upon inspection, $G = G(\Q(a,i): \Q)$ is nonabelian and contains an element of order 4, $\varphi_{11}$. That is, $G \cong D_8$. 
+\end{proof}
+
+\end{document}

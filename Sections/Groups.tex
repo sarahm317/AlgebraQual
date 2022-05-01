@@ -3,6 +3,13 @@
 \begin{document}
 
 \section{General Group Theory}
+\begin{prob}{S12.G1}{S12.G1}
+	Prove that there are at least two non-isomorphic non-abelian groups of order 24.
+\end{prob}
+
+\begin{proof}
+	Consider the groups $H = D_{24}$ and $G = \Z_2 \times D_{12}$. Since any dihedral group is nonabelian, both $H$ and $G$ must be nonabelian. However, $H$ contains an element of order 12. The order of an element $(x,y) \in G$ is the least common multiple of the order of $x \in \Z_2$ and $y \in D_{12}$. The highest order of an element in $\Z_2$ is 2 and the highest order of an element in $D_{12}$ is 6. Since the least common multiple of 2 and 6 is 6, it is impossible for $G$ to contain an element of order 12.
+\end{proof}
 
 	\begin{prob}{F12}{F12.G3}
 	\begin{enumerate}[(a)]

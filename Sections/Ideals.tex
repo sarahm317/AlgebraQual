@@ -16,6 +16,13 @@
 	Suppose that $R/N$ has some nonzero nilpotent element. That is there exists $r \in R - N$ and $m \geq 1$ such that $(r+N)^m = N$. This implies that $r^m \in N$. Choose $n \geq 1$  such that $(r^m)^n = 0$. But this means that $r^{mn} = 0$, contradicting that $r \not\in N$. Thus there are no nonzero nilpotent elements in $R/N$.
 	\end{proof}
 
+\begin{prob}{S11.RF2}{S11.RF2}
+	Let $R$ be a commutative ring with 1. Show that an ideal $M$ is maximal if and only if for all $r \in R \sm M$ there exists an element $x \in R$ such that $1 - rx \in M$.
+\end{prob}
 
+\begin{proof}
+	Suppose first that $M$ is a maximal ideal. Then $R/M$ is a field. Let $r \in R \sm M$ so that $r + M \in R/M$ is a nonzero element. As $R/M$ is a field, there exists $x + M \in R/M$ such that $(r + M)(x + M) = 1 + M$. By the definitions of multiplication and addition in $R/M$, $1 - rx + M = M$ implying that $1 - rx \in M$.\\
 
+	Let $r + M \in R/M$ be a nonzero element. Then $r \in R \sm M$ and so there exists $x \in \R$ such that $1 - rx \in M$. This means that $M = (1 - rx) + M = (1 + M) - (r + M)(x + M)$. Rearranging, we see that $(r + M)(x + M) = 1 + M$ meaning that $r + M$ has a multiplicative inverse in $R/M$. As $r + M$ was an arbitrary nonzero element, it follows that $R/M$ is a field and so $M$ must be a maximal ideal.
+\end{proof}
 \end{document}
