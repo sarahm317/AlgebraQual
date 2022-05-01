@@ -3,6 +3,40 @@
 \begin{document}
 
 \section{General Group Theory}
+
+\begin{prob}{S12.G2}{S12.G2}
+	\begin{enumerate}[(a)]
+		\item State (any version of) the Fundamental Theorem of finite abelian groups.
+		\item Classify all abelian groups of order 144.
+		\item Explain which group in part (b) is isomorphic to the group $\Z_4 \times \Z_{36}$.
+	\end{enumerate}
+\end{prob}
+
+Suppose that $G$ is a finite abelian group. Then $G$ is isomorphic to a direct sum of the form
+	\[\bigoplus_{i=1}^m \Z_{k_i}\]
+where each $k_i$ is a power of some prime and $\prod_{i=1}^m k_i = |G|$. Note that the $k_i$ need not be powers of distinct primes.
+
+\begin{solution}
+Observe that $144 = 2^4 \cdot 3$. Therefore, the following are the abelian groups of order 144, up to isomorphism:
+
+\begin{align*}
+	\Z_{16} \times \Z_9 \\
+	\Z_{16} \times \Z_3^2 \\
+	\Z_8 \times \Z_2 \times \Z_9 \\
+	\Z_8 \times \Z_2 \times \Z_3^2\\
+	\Z_4 \times \Z_4 \times \Z_9 \\
+	\Z_4 \times \Z_4 \times \Z_3^2\\
+	\Z_4 \times \Z_2^2 \times \Z_9 \\
+	\Z_4 \times \Z_2^2 \times \Z_3^2 \\
+	\Z_2^4 \times \Z_9 \\
+	\Z_2^4 \times \Z_3^2 \\
+\end{align*}
+
+The group $\Z_4 \times \Z_{36}$ is isomorphic to the group $\Z_4 \times Z_4 \times Z_9$. To see this, let $G = \Z_4 \times \Z_{36}$ and $H = \Z_4 \times \Z_{4} \times Z_9$ and consider the homomorphism $\varphi: H \to G$ given by
+	\[\varphi(x,y,z) = (x,yz). \]
+Clearly $\varphi$ is a homomorphism and is well-defined as $yz \in \{0,1, \ldots, 35\}$. The inverse of $\varphi$ is given by $(a,b) \mapsto(a,b\mod{4},b\mod{9})$ since 4 and 9 are relatively prime.
+\end{solution}
+
 \begin{prob}{S12.G1}{S12.G1}
 	Prove that there are at least two non-isomorphic non-abelian groups of order 24.
 \end{prob}
