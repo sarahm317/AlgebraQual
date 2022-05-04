@@ -1,0 +1,17 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Permutation Groups}
+
+\begin{prob}{S18.G1}{S18.G1}
+    Show that if $G$ is a group of order $2k$ where $k$ is odd, then $G$ has a subgroup of index 2.
+\end{prob}
+
+\begin{proof}
+    Enumerate the elements of $G$ with values $\{1,\ldots, 2k\}$. For each $a \in G$, let $\varphi_a: G \to G$ be left multiplication by $a$. Identify $\varphi_a$ with the permutation in $S_{2k}$ corresponding to the image of $\varphi_a$. Then define $\varphi: G \to S_{2k}$ by $\varphi: a \mapsto \varphi_{a} \in S_{2k}$. By construction, $\varphi$ is injective and a homomorphism meaning that $G$ is isomorphic to some subgroup $H$ of $S_{2k}$.\\
+
+    By Cauchy's Theorem (or \ref{prob:F12.G1}), $G$ has an element $x$ of order 2 since the order of $G$ is divisible by two. Consider $\varphi(x) \in H$. Since $x$ is of order 2 and $\varphi$ is an isomorphism, $\varphi(x)$ must also be of order 2. That is, $\varphi(x)$ is the product of some number of disjoint transpositions. Since $|G| = 2k$, there are at most $k$ disjoint transpositions in $\varphi(x)$. If $\varphi(x)$ is the product of less than $k$ transpositions, then there exists $g \in G$ such that $xg = g$. 
+\end{proof}
+
+\end{document}
