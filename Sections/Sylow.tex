@@ -4,6 +4,21 @@
 
 \section{The Sylow Theorems}
 
+	\begin{prob}{S18.G2}{S18.G2}
+		\begin{enumerate}[(a)]
+			\item Give two examples of non abelian and non-isomorphic groups of order 80.
+			\item Show that a group of order 80 cannot be simple.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Let $G = D_{80}$ and $H = \Z_2 \times D_{40}$. Notice that $G$ has an element of order 80. In a direct product, the order of an element $(x,y)$ is equal to the least common multiple of the orders of $x$ and $y$ in their respective groups. The maximum order of an element in $D_{40}$ is 20 and the maximum order of an element in $\Z_2$ is 2. Therefore the maximum order of an element in $H$ is $\lcm(2,20) = 20$. Since it is impossible for $H$ to have an element of order 40, $G \not\cong H$.
+	\end{proof}
+
+	\begin{proof}
+		Notice that $80 = 2^4 \cdot 5$. By the Sylow Theorems, $n_2 = 1, 5$ and $n_5 = 1,16$. The Sylow 2 subgroups are of order 16 and the Sylow 5 subgroups are of order 5. This means that the Sylow 5 subgroups intersect trivially. If $n_5 \neq 1$ then there are $16 \cdot 4 = 64$ elements of order 5 accounted for. This leaves room for exactly one Sylow 2 subgroup. That is $n_2 = 1$ and so the Sylow 2 subgroup is normal in $G$.
+	\end{proof}
+
 	\begin{prob}{F14}{F14.G3}
 		\begin{enumerate}[(a)]
 			\item Let $x = (12345)$ be a cyclic permutation of $\{1,2,3,4,5\}$. Find another permutation $y$ such that $y\inv xy = x^2$.
@@ -61,7 +76,7 @@
 	\end{proof}
 	
 	\begin{proof}
-	Suppose that $|G|$ is even but is not divisible by 4. That is, $|G| = 2m$ with $m$ some odd integer greater than 1. By \ref{S18.G1}, $G$ has a subgroup of index 2. Since any index 2 subgroup is normal, $G$ has a nontrivial normal subgroup and therefore is not simple.
+	Suppose that $|G|$ is even but is not divisible by 4. That is, $|G| = 2m$ with $m$ some odd integer greater than 1. By \ref{prob:S18.G1}, $G$ has a subgroup of index 2. Since any index 2 subgroup is normal, $G$ has a nontrivial normal subgroup and therefore is not simple.
 	\end{proof}
 	
 	\begin{prob}{S20}{}

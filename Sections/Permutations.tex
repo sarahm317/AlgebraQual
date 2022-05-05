@@ -11,7 +11,9 @@
 \begin{proof}
     Enumerate the elements of $G$ with values $\{1,\ldots, 2k\}$. For each $a \in G$, let $\varphi_a: G \to G$ be left multiplication by $a$. Identify $\varphi_a$ with the permutation in $S_{2k}$ corresponding to the image of $\varphi_a$. Then define $\varphi: G \to S_{2k}$ by $\varphi: a \mapsto \varphi_{a} \in S_{2k}$. By construction, $\varphi$ is injective and a homomorphism meaning that $G$ is isomorphic to some subgroup $H$ of $S_{2k}$.\\
 
-    By Cauchy's Theorem (or \ref{prob:F12.G1}), $G$ has an element $x$ of order 2 since the order of $G$ is divisible by two. Consider $\varphi(x) \in H$. Since $x$ is of order 2 and $\varphi$ is an isomorphism, $\varphi(x)$ must also be of order 2. That is, $\varphi(x)$ is the product of some number of disjoint transpositions. Since $|G| = 2k$, there are at most $k$ disjoint transpositions in $\varphi(x)$. If $\varphi(x)$ is the product of less than $k$ transpositions, then there exists $g \in G$ such that $xg = g$. 
+    By Cauchy's Theorem (or \ref{prob:F12.G1}), $G$ has an element $x$ of order 2 since the order of $G$ is divisible by two. Consider $\varphi(x) \in H$. Since $x$ is of order 2 and $\varphi$ is an isomorphism, $\varphi(x)$ must also be of order 2. That is, $\varphi(x)$ is the product of some number of disjoint transpositions. Since $|G| = 2k$, there are at most $k$ disjoint transpositions in $\varphi(x)$. If $\varphi(x)$ is the product of less than $k$ transpositions, then there exists $g \in G$ such that $xg = g$. However, this would imply that $x = e$ which contradicts the fact that $x$ is of order 2. Therefore $\varphi(x)$ is the product of exactly $k$ disjoint transpositions. Since $k$ is odd, $H \not\sq A_{2k}$. Let $\sigma: H \to \Z_2$ be the sign map. Then, $\sigma\varphi: G \to \Z_2$ is surjective and if $K = \ker(\sigma\varphi)$,
+        \[G/K \cong \Z_2.\]
+    That is, $K$ is a normal subgroup of index 2.
 \end{proof}
 
 \end{document}
