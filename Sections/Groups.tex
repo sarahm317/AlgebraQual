@@ -4,6 +4,29 @@
 
 \section{General Group Theory}
 
+\begin{prob}{S16.G1}{S16.G1}
+	Explicitly describe two non-isomorphic, nonabelian groups of order 12.
+\end{prob}
+
+\begin{proof}
+	Consider $A_4$ and $D_{12}$. Both groups are of order 12. However, $D_{12}$ contains an element of order 6 and $A_4$ does not. To see this, consider the elements in $A_4$:
+		\begin{align*}
+			&\perm{1}\\
+			&\perm{1,2}\perm{3,4}\\
+			&\perm{1,3}\perm{2,4}\\
+			&\perm{1,4}\perm{2,3}\\
+			&\perm{1,2,3}\\
+			&\perm{1,3,2}\\
+			&\perm{1,2,4}\\
+			&\perm{1,4,2}\\
+			&\perm{1,3,4}\\
+			&\perm{1,4,3}\\
+			&\perm{2,3,4}\\
+			&\perm{2,4,3}
+		\end{align*}
+	Upon inspection, every element in $A_4$ is of order 1,2, or 3. In particular, there are no elements of order 6.
+\end{proof}
+
 \begin{prob}{S12.G2}{S12.G2}
 	\begin{enumerate}[(a)]
 		\item State (any version of) the Fundamental Theorem of finite abelian groups.
