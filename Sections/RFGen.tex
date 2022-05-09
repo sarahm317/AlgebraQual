@@ -1,0 +1,34 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{General Rings and Fields}
+
+\begin{prob}{F16.RF3}{F16.RF3}
+    Let $p$ be a prime and $R_p$ the set of all $2 \times 2$ matrices of the form $\begin{pmatrix} a & b\\ -b & a\end{pmatrix}$ where $a,b \in \Z_p$.
+
+    \begin{enumerate}[(i)]
+        \item Show that $R_p$ is a commutative ring with identity.
+        \item Show that $R_7$ is a field.
+        \item Show that $R_{13}$ is not a field.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Let $S,T \in R_p$ be arbitrary. Both $ST$ and $S + T$ are in $R_p$, by properties of modular arithmetic. Notice that $ST = TS$, following from the definition of matrix multiplication and the commutativity of $\Z_p$. Similarly, $S + T = T + S$. The additive inverse of $S$ is $-S$ which is in $R_p$. The multiplicative identity in $R_p$ is the $2 \times 2$ identity matrix and the additive identity is the $2 \times 2$ zero matrix.
+\end{proof}
+
+\begin{proof}
+    From (i), $R_7$ is a commutative ring with identity. It remains to show that each element of $R_7$ has a multiplicative inverse. Let $\begin{pmatrix} a & b\\ -b & a\end{pmatrix} \in R_7$ be nonzero. Then at most one of $a$ and $b$ can be zero. Consider the quantity $a^2 + b^2 \in R_7$. In $R_7$, $a^2,b^2 \in \{0, 1, 2, 4\}$. At most one of $a^2$ and $b^2$ can be zero and upon inspection this implies $a^2 + b^2 \neq 0$. Therefore, $a^2 + b^2$ has an inverse in $R_7$. The matrix 
+        \[\begin{pmatrix}
+            a \left(a^2 + b^2\right)\inv & -b \left(a^2 + b^2\right)\inv\\
+            b\left(a^2 + b^2\right)\inv & a\left(a^2 + b^2\right)\inv
+        \end{pmatrix}\]
+    is therefore well-defined and is the multiplicative inverse of the original matrix.
+\end{proof}
+
+\begin{solution}
+    Consider the matrix $\begin{pmatrix} 2 & 3\\ -3 & 2\end{pmatrix} \in R_{13}$. Because $2^2 + 3^2 = 0$ in $\R_{13}$, there is no multiplicative inverse for the matrix.
+\end{solution}
+
+\end{document}

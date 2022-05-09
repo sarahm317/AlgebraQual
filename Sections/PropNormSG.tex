@@ -4,7 +4,18 @@
 
 \section{Properties of Normal Subgroups}
 
-	\begin{prob}{F21}{F21.G2}
+	\begin{prob}{F16.G2}{F16.G2}
+		\begin{enumerate}[(i)]
+			\item Suppose that $H \leq G$. Define the normalizer of $H$ in $G$. Prove that there is a bijection between the conjugates of $H$ in $G$ and the left cosets of $N_G(H)$ in $G$.
+			\item Deduce that if a group has a subgroup of finite index greater than one, then it has a normal subgroup of finite index greater than one.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		The normalizer of $H$ in $G$ is the largest subgroup of $G$ in which $H$ is normal. Let $A = \{gHg\inv: g \in G\}$ and $B = \{gN_G(H): g \in G\}$. Define $f: A \to B$ by $f\left(gHg\inv\right) = gN_G(H)$. To see that $f$ is well-defined, suppose that $gHg\inv = aHa\inv$. Then $a\inv g H  (a\inv g)\inv$ implying that $a\inv g \in N_G(H)$. Then, $aN_G(H) = a(a\inv g)N_G(H) = gN_G(H)$, proving that  $f$ is well-defined. Clearly $f$ is surjective, and if $gN_G(H) = aN_G(H)$ then 
+	\end{proof}
+
+	\begin{prob}{F21.G2}{F21.G2}
 	\begin{enumerate}[(a)]
 	\item Let $G$ be a finite group with $H,K$ normal subgroups of $G$. Show that if $|H|$ and $|K|$ are coprime, then $ab = ba$ for every $a \in H$, $b \in K$.
 	\item Let $H$ and $N$ be normal subgroups of a (not necessarily finite) group $G$. Show that if $H$ is not contained in $N$ and $G/N$ is simple, then $G/N \cong H/H\cap N$.

@@ -4,7 +4,21 @@
 
 \section{Inner Products}
 
-\begin{prob}{F12}{F12.LA1}
+\begin{prob}{S19.LA4}{S19.LA4}
+    Let $V$ be a finite dimensional inner product space over $\R$. If $A$ and $B$ are subspaces of $V$, prove that $(A+B)^\perp = A^\perp \cap B^\perp$.
+\end{prob}
+
+\begin{proof}
+    Suppose that $v \in (A+B)^\perp$ and let $a \in A$ be arbitrary. Then, $a + 0 \in A+B$ and therefore,
+        \[\ip{a}{v} = \ip{a+0}{v} = 0\]
+    since $\ip{a + b}{v} = 0$ for all $a + b \in A + B$. Similarly, $\ip{b}{v} = 0$ for any $b \in B$. Thus $v \in A^\perp \cap B^\perp$.\\
+
+    Now assume that $v \in A^\perp \cap B^\perp$. Let $a + b \in A + B$ be arbitrary. By the linearity of the inner product,
+        \[\ip{a + b}{v} = \ip{a}{v} + \ip{b}{v} = 0 + 0 = 0\]
+    proving that $v \in (A+B)^\perp$.
+\end{proof}
+
+\begin{prob}{F12.LA1}{F12.LA1}
     Let $V$ be the vector space of real $n \times n$ matrices. Show that 	
         \[\langle A, B \rangle = n \tr(AB) - \tr(A)\tr(B) \]
     defines a symmetric bilinear form on $V$.
