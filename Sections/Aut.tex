@@ -1,0 +1,35 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Automorphism Groups}
+
+\begin{prob}{F18.G3, F03.G3}{F18.G3}
+    Let $\rm{Inn}(G)$ be the group of inner automorphisms of the group $G$ and $\rm{Aut}(G)$ the group of all automorphisms of $G$.
+    \begin{enumerate}[(a)]
+        \item Show that $\rm{Inn}(G)$ is normal in $\rm{Aut}(G)$.
+        \item Show that if $Z(G)$ is the center of $G$, then $\rm{Inn}(G) \cong G/Z(G)$.
+    \end{enumerate}
+\end{prob}
+
+\emph{The 2003 version of this question only asks part (a), but also requires that we prove that $\rm{Inn}(G)$ is a subgroup of $\rm{Aut}(G)$.}
+
+\begin{proof}
+    Let $\psi: G\to G$ be an automorphism. We must show that $\psi \rm{Inn}(G) \psi\inv = \rm{Inn}(G)$. Let $\varphi_g \in \rm{Inn}(G)$ be the inner automorphism such that $\varphi_g: x \mapsto gxg\inv$. For any $x \in X$,
+            \[\psi\varphi_g\psi\inv(x) = \psi\left(g\psi\inv(x)g\inv\right) = \psi(g)x\psi(g)\inv\]
+    where the last equality follows from the fact that $\psi$ is an automorphism. Therefore, $\psi\varphi_g\psi = \varphi_{\psi(g)} \in \rm{Inn}(G)$.
+\end{proof}
+
+\begin{proof}
+    Define a map $F: G \to \rm{Inn}(G)$ by $F: g \mapsto \varphi_g$ where $\varphi_g: x \mapsto gxg\inv$. For any $g,h \in G$ and $x \in G$,
+
+        \begin{align*}
+            \varphi_g\circ\varphi_h(x) &= \varphi_g\left(hxh\inv\right)\\
+            &= ghxh\inv g\inv\\
+            &= (gh)x(gh)\inv\\
+            &= \varphi_{gh}(x).
+        \end{align*}
+    Therefore, $F(gh) = \varphi_{gh} = \varphi_g\circ \varphi_h = F(g)F(h)$. By construction, $F$ is surjective. If $g \in Z(G)$, then $gxg\inv = xgg\inv = x$ for every $x \in G$. That is, $\varphi_g$ is the identity element in $\rm{Inn}(G)$ and so $Z(G) \sq \ker(F)$. If $\varphi_g$ is the identity map, then $gxg\inv = x$ for all $x \in G$. Equivalently, $g \in Z(G)$. Since $F(G) = \rm{Inn}(G)$ and $\ker(F) = Z(G)$, the First Isomorphism Theorem implies that $\rm{Inn}(G) \cong G/Z(G)$, as desired.
+\end{proof}
+
+\end{document}
