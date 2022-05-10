@@ -4,6 +4,29 @@
 
 \section{The Sylow Theorems}
 
+	\begin{prob}{F16.G1}{F16.G1}
+		\begin{enumerate}[(i)]
+			\item Suppose that $G$ has no subgroup of index 2. Prove that any subgroup of index 3 is normal.
+			\item Let $G$ be the finite simple group of order 168. Prove that $G$ is a subgroup of the alternating group on 8 letters.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Suppose that $H \sq G$ is of index 3. Let $G$ act on the left cosets of $H$ and suppose that $\varphi: G \incl S_3$ is the permutation associated with this action. Note that $\varphi$ is nontrivial. Define $K = \ker(\varphi)$. For any $a \in K$, $aH = a \cdot H = H$. Therefore, $K \sq H$. By the First Isomorphism Theorem,
+			\[G/K \cong \varphi(G) \leq S_3 \]
+		meaning that $[G:K]$ must divide $|S_3| = 6$. By assumption, $[G:H] = 3$ and since $K \sq H$, $[G:K] \geq [G:H]$. This means that either $[G:K] = 3$ or $[G:K] = 6$.\\
+
+		If $[G:K] = 6$, then $G/K \cong S_3$. Notice that $A_3 \triangleleft S_3$ is a subgroup of index 2. Therefore, there exists a subgroup $J/K \sq G/K$ of index 2. However, this would imply that
+			\[[G:J] = [G/K: J/K] = 2,\]
+		contradicting the fact that $G$ has no subgroups of index 2.\\
+
+		Since $[G:K] \neq 6$, it must be the case that $[G:K] = 3$. Since $K \sq H$ and $[G:H] = 3$, it follows that $H = K$ and thus $H$ must be normal.
+	\end{proof}
+
+	\begin{proof}
+		Notice that $168 = 2^3\cdot3\cdot7$. Because $G$ is simple, $n_7 \neq 1$ and by the Sylow Theorems, the only other possibility is that $n_7 = 8$. Let $\varphi: G \incl S_8$ be the permutation associated with $G$ acting on the left cosets of $P$, a Sylow 7-subgroup. Notice that $\varphi$ is a nontrivial homomorphism. We must show that $\varphi(G) = A_8$. \textcolor{red}{Where to go from here?}
+	\end{proof}
+
 	\begin{prob}{S18.G2}{S18.G2}
 		\begin{enumerate}[(a)]
 			\item Give two examples of non abelian and non-isomorphic groups of order 80.
@@ -89,7 +112,7 @@
 	and note that $G/P$ is of order $q$ and $P/0$ is of order $p$. As both of these quotients are of prime order, they are cyclic and therefore abelian. 
 	\end{proof}
 	
-	\begin{prob}{F19, F14}{F19.G1}
+	\begin{prob}{F19.G1, F16.G3, F14}{F19.G1}
 	\begin{enumerate}[(a)]
 	\item Suppose that $G$ is a group with exactly two subgroups. Prove that $G$ is finite and of prime order.
 	\item Must the converse of the previous part be true?
