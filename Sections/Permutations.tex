@@ -16,4 +16,21 @@
     That is, $K$ is a normal subgroup of index 2.
 \end{proof}
 
+\begin{prob}{F16.G1}{F16.G1}
+    \begin{enumerate}[(i)]
+        \item Suppose that $G$ has no subgroup of index 2. Prove that any subgroup of index 3 is normal.
+        \item Let $G$ be the finite simple group of order 168. Prove that $G$ is a subgroup of $A_8$.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Let $H \sq G$ be of index 3. Let $\varphi: G \to S_3$ be the homomorphism of the group action of $G$ acting on the left cosets of $H$ by $g\cdot xH = (gx)H$. Notice that $\varphi$ is therefore a nontrivial homomorphism. Define $K = \ker(\varphi)$ so that $K$ is a normal subgroup of $G$. We prove that $K = H$ to show that $H$ is normal in $G$.\\
+
+    If $a \in K$, then $H = a\cdot H = aH$ implying that $a \in H$. That is, $K \sq H$ and so $[G:K] \geq [G:H]$. By the First Isomorphism Theorem, $G/K$ is isomorphic to some subgroup of $S_3$. Since $[G:K] = |G/K|$ which must divide 6 and $[G:K] \geq [G:H] = 3$, the only possible values for $[G:K]$ are 3 or 6. If $[G:K] =6$, then $G/K \cong S_3$ which has a normal subgroup of index 2. Then $G/K$ must have a subgroup, say $J/K$, of index 2. This would then imply that $[G:J] =2$, a contradiction. Therefore, $[G:K] = 3$ and so $H = K$.
+\end{proof}
+
+\begin{proof}
+    Notice that $168 = 2^3 \cdot 3 \cdot 7$. By the Sylow Theorems, $n_7 = 1$ or $n_7 = 8$. Since $G$ is simple, $n_7 \neq 1$ or else $G$ would have a nontrivial normal subgroup. Therefore $n_7 = 8$. Map $G$ into $S_8$ by letting $G$ act on the eight Sylow-7 subgroups via conjugation. Let $\varphi: G \to S_8$ be the homomorphism associated with this action. Let $\rm{sgn}: S_8 \to \Z_2$ be the sign map and let $\psi = \rm{sgn}\circ \varphi: G \to \Z_2$. Suppose that $\varphi(G) \not\sq A_8$. Then there exists some odd permutation in $\varphi(G)$ and therefore $\psi$ is a surjection. By the First Isomorphism Theorem, this implies that $G/\ker(\psi) \cong \Z_2$. This is impossible since then $\ker(\psi)$ would be a nontrivial normal subgroup of $G$. Therefore every element in $\varphi(G)$ must be an even permutation. Again, because $G$ has no nontrivial normal subgroups, the kernel of $\varphi$ must be trivial meaning that $\varphi$ is indeed an embedding.
+\end{proof}
+
 \end{document}
