@@ -4,7 +4,21 @@
 
 \section{Ideals}
 
-	\begin{prob}{F19}{F19.RF1}
+	\begin{prob}{S18.RF1}{S18.RF1}
+		Let $R$ be a commutative ring with 1 and let $M$ be an ideal of $R$. Prove that when $M$ is both maximal and principal there are no ideals properly between $M^2$ and $M$.
+	\end{prob}
+
+	\begin{proof}
+		Since $M$ is a principal ideal, there exists $a \in R$ such that $M = (a)$. Then, $M^2 = (a^2)$. Suppose that $J$ is an ideal of $R$ such that $M^2 \sq J \sq J$. Furthermore, assume that $J \neq M$. We shall prove that this implies $J = M^2$.\\
+
+		Since $J \neq M$, there exists $x \in M \sm J$. Then, $x = ra$ for some $r \in R$. If $rM = M$ then $r = r'a$ for some $r' \in R$. This means that $x = ra = (r'a)a = r'a^2 \in M^2$. But $x \not\in J$ so $x \not\in M^2$. Therefore, $rM \neq M$ and so the ideal $rM + M$ contains $M$ as a proper subideal. Because $M$ is maximal and $M \subset rM + M \sq R$, it must be the case that $rM + M = R$. In particular, there exist $s,t \in R$ such that
+			\[1 = rsa + ta.\]
+		Multiplying both sides of the equation by $a$ implies that
+			\[a = rsa^2 + ta^2 \in M^2\]
+		and as $a$ generates $M$, it follows that $M \sq M^2$. Therefore, $J \sq M = M^2$ and so $J = M^2$.
+	\end{proof}
+
+	\begin{prob}{F19.RF1}{F19.RF1}
 	Prove that the set $N$ of nilpotent elements of a commutative ring $R$ is an ideal of $R$ and that $R/N$ has no nilpotent elements.
 	\end{prob}
 	

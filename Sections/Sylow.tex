@@ -3,6 +3,21 @@
 \begin{document}
 
 \section{The Sylow Theorems}
+	\begin{prob}{F18.G2}{F18.G2}
+		\begin{enumerate}[(a)]
+			\item State and prove Lagrange's Theorem.
+			\item Suppose that $p$ and $q$ are distinct primes. Prove that a nonabelian group of order $pq$ has trivial center.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		See \ref{prob:F12.G3}.
+	\end{proof}
+
+	\begin{proof}
+		Suppose that $\Z(G)$ is of order $q$. Then $G/Z(G)$ is of order $q$. Any group of prime order is cyclic. But, $G/Z(G)$ cyclic implies that $G$ is abelian (\ref{prob:F21.G1}), a contradiction. Therefore $|Z(G)| \neq p$ and similarly, $|Z(G)| \neq q$. As $G$ is nonabelian, $|Z(G)| < |G|$ and by Lagrange's Theorem the only remaining possibility is $|Z(G)| =1$.
+	\end{proof}
+
 
 	\begin{prob}{F16.G1}{F16.G1}
 		\begin{enumerate}[(i)]
