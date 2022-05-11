@@ -4,6 +4,26 @@
 
 \section{Permutation Groups}
 
+\begin{prob}{F17.G1}{F17.G1}
+    \begin{enumerate}[(i)]
+        \item Let $G$ be a finite group and $H \leq G$ such that $[G:H] = n$. Prove that there is a nontrivial homomorphism $\rho: G \to S_n$ with $\ker(\rho)\leq H$.
+        \item Let $G$ be a finite group and $H$ a subgroup of $G$ whose index in $G$ is the smallest prime dividing $|G|$. Show that $H$ is a normal subgroup of $G$.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Let $\rho: G \to S_n$ be the homomorphism given by $G$ acting on the left cosets of $H$ in $G$ via multiplication. If $g \in \ker(\rho)$ then $g\cdot(xH) = H$ for every left coset $xH$. In particular, $g\cdot(H) = H$ and therefore $g \in H$. That is, $\ker(\rho) \leq H$.\\
+
+    Since $[G:H] > 1$, there exists some $g \in G\sm H$. Then, $g\cdot H = gH \neq H$ and so $\rho$ is nontrivial.
+\end{proof}
+
+\begin{proof}
+    Suppose that $p$ is the smallest prime dividing $|G|$ and that $H \leq G$ is a subgroup such that $[G:H] = p$. From the previous proof, there exists a nontrivial homomorphism $\rho: G \to S_p$ such that $\ker(\rho) \sq H$. Define $K = \ker(\rho)$. By the First Isomorphism Theorem, $G/K$ is isomorphic to some subgroup $J$ of $S_p$. Then $|J|$ must divide $|S_p| = p!$ and $|J|$ must divide $|G|$. If $|G/K| = |J| = 1$, then $G = K$. Then $H = G$ and is thus trivially normal in $G$. Otherwise, the minimality of $p$ implies that $|J| = p$. Then $[G:K] = p = [G:H]$ and since $K \leq H$, it follows  that $H = K$, a normal subgroiup.
+    
+    Since $p$ is the smallest prime that divides 
+\end{proof}
+
+
 \begin{prob}{S18.G1}{S18.G1}
     Show that if $G$ is a group of order $2k$ where $k$ is odd, then $G$ has a subgroup of index 2.
 \end{prob}

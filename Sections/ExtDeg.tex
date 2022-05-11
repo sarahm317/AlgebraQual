@@ -1,0 +1,33 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Field Extensions}
+
+\begin{prob}{F17.RF2}{F17.RF2}
+	\begin{enumerate}[(i)]
+		\item State Eisenstein's irreducibility criterion for polynomials.
+		\item Find $[\Q(\sqrt 2): \Q]$ and $[\Q(3^{1/3}): \Q]$.
+		\item Using (ii), prove that $\alpha = \sqrt{2}+3^{1/3}$ is irrational.
+	\end{enumerate}
+\end{prob}
+
+\begin{proof}
+	The minimal polynomial for $\sqrt2$ over $\Q$ is $x^2 - 2$ and therefore $[\Q(\sqrt 2): \Q] =2$. Similarly, the minimal polynomial for $3^{1/3}$ over $\Q$ is $x^3 - 3$ and so $[\Q(3^{1/3}): \Q] = 3$.
+\end{proof}
+
+\begin{proof}
+	Seeking a contradiction, suppose that $\alpha \in \Q$.
+
+	\[
+		\begin{tikzcd}[column sep=1cm]
+		  & \Q(\sqrt2,3^{1/3}) & \\
+		  \Q(\sqrt2) \ar[ru, no head,"m"]& & \ar[lu, no head,"n"'] \Q(3^{1/3}) \\
+		  & \Q \ar[lu, no head, "2"] \ar[ru, no head, "3"']&
+		\end{tikzcd}
+		\]
+	Because $\alpha \in \Q$, $3^{1/3} = \alpha - \sqrt2 \in \Q(\sqrt2)$. Therefore, $[\Q(\sqrt2 + 3^{1/3}): \Q(\sqrt2)] = m = 1$. Similarly, $\sqrt{2} = \alpha - 3^{1/3} \in \Q(3^{1/3})$ and so $[\Q(\sqrt2 + 3^{1/3}): \Q(3^{1/3})] = n = 1$. However, the Tower Rule implies that $2 = m\cdot2 = n\cdot 3 = 3$, a contradiction. 
+\end{proof}
+
+
+\end{document}
