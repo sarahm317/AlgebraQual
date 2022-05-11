@@ -108,6 +108,9 @@
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 
+\newtcbtheorem[use counter*=defn]{prop}{Proposition}%
+{fonttitle=\bfseries}{thm}
+
 \newtcbtheorem[use counter*=defn]{thm}{Theorem}%
 {fonttitle=\bfseries}{thm}
 
@@ -270,6 +273,8 @@
 		\item G3 Problem \ref{prob:F18.G3}
 	\end{itemize}
 \end{itemize}
+
+\subfile{Sections/CommonLA}
 
 \subfile{Sections/PropNormSG}
 

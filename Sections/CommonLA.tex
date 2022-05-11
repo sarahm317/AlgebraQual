@@ -1,0 +1,61 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\section{Common Linear Algebra Results}
+
+\begin{prop}{Eigenvectors of Distinct Eigenvalues are Linearly Independent}{}
+    Let $T \in \scr{L}(V)$ and suppose that $\lambda_1,\ldots, \lambda_m$ are distinct eigenvalues of $T$ and $v_1,\ldots,v_m$ are the corresponding eigenvectors. Then, $v_1,\ldots,v_m$ is linearly independent.
+\end{prop}
+
+\begin{proof}
+    Assume that $v_1,\ldots, v_m$ are linearly dependent. Then there exists some minimal index $k$ for which $v_k \in \rm{span}\{v_1,\ldots,v_m\}$. That is,
+        \begin{equation} v_k = a_1v_1 + \cdots + a_{k-1}v_{k-1} \label{LDrelation}\end{equation}
+    and by the minimality of $k$, $a_{k-1} \neq 0$. Applying $T$ to both sides of (\ref{LDrelation}) yields
+        \begin{equation} Tv_k = \sum_{j=1}^{k-1} a_jTv_j\end{equation}
+    which is the same as
+        \begin{equation} \lambda_k v_k = \sum_{j=1}^{k-1} a_j\lambda_jv_j\label{applyT}.\end{equation}
+    On the other hand, multiplying both sides of (\ref{LDrelation}) by $\lambda_k$ yields
+        \begin{equation} \lambda_k v_k = \sum_{j=1}^{k-1} a_j\lambda_kv_j\label{applylambda}.\end{equation}
+    Then, subtracting (\ref{applyT}) from (\ref{applylambda}) yields
+        \[0 = (\lambda_k - \lambda_1)a_1 v_1 + \cdots + (\lambda_k - \lambda_{k-1})a_{k-1}v_{k-1}.\]
+    But $v_1,\ldots,v_{k-1}$ are linearly independent and therefore each $(\lambda_k - \lambda_j)a_j = 0$. As $\lambda_k \neq \lambda_j$, it must be the case that each $a_j = 0$, a contradiction.
+\end{proof}
+
+\begin{prop}{Every Complex Operator has an Eigenvalue}{evalExists}
+    Suppose that $V$ is a finite dimensional complex vector space and $T \in \scr{L}(V)$. Then $T$ has an eigenvalue.
+\end{prop}
+
+\begin{proof}
+    Suppose that $\dim(V) = n$ and $v \in V$ is nonzero. Consider the collection of vectors $v, Tv, \ldots, T^nv$. Since this is a collection of $n + 1$ vectors in an $n$-dimensional space, the collection must be linearly dependent. Therefore there exist $a_0,\ldots, a_n \in \C$, not all zero, such that
+        \[0 = a_0 v + a_1Tv + \cdots + a_n T^n v.\]
+    If $a_1 = \cdots = a_n = 0$, then $a_0 = 0$ since $v \neq 0$. Therefore not all of $a_1,\ldots, a_k$ can be zero. Define a polynomial $f \in \C[z]$ by
+        \[f(z) = a_0 + a_1z + \cdots + a_nz^n. \]
+    Then $f$ splits over $\C$ into a polynomial of the form
+        \[f(z) = c(z- \lambda_1)\cdots (z - \lambda_m) \]
+    with each $\lambda_j \in \C$ and $c \in \C$ is nonzero. Therefore,
+        \begin{align*}
+            0 &= a_0 v + a_1Tv + \cdots + a_n T^n v\\
+            &= (a_0I + a_1T + \cdots + a_nT^n)v\\
+            &= c(T- \lambda_1I)\cdots (T - \lambda_mI)v
+        \end{align*}
+    This means that $v \in \null(T - \lambda_j I)$ for some $j$. Since $v \neq 0$, this means that some $T - \lambda_j I$ is not injective, meaning that $\lambda_j$ is an eigenvalue.
+\end{proof}
+
+\begin{prop}{Every Complex Operator has some Upper-Triangular Matrix}{}
+    Suppose that $V$ is a finite dimensional complex vector space and $T \in \scr{L}(V)$. Then $T$ has an upper-triangular matrix with respect to some basis of $V$.
+\end{prop}
+
+\begin{proof}
+    We proceed by induction on the dimension of $V$. If $\dim(V) = 1$, any matrix for $T$ is trivially upper triangular. Assume now that $\dim(V) > 0$ and that the result holds over any vector space with dimension less than $\dim(V)$. From \ref{thm:evalExists}, there exists some eigenvalue $\lambda$ of $T$. Define $U = \range(T - \lambda I)$. Since $\lambda$ is an eigenvalue, $T - \lambda I$ is not surjective and thus $\dim(U) < \dim(V)$.\\
+
+    For any $u \in U$,
+        \[Tu = (T - \lambda I)u + \lambda u\]
+    is the sum of two vectors in $U$ and thus is in $U$ itself. This means that $T|_U \in \scr{L}(U)$. By the inductive hypothesis, there exists a basis $\{u_1,\ldots,u_m\}$ of $U$ with respect to which the matrix of $T|_U$ is upper-triangular. Notice that for each $j$,
+        \[Tu_j = T|_Uu_j \in \rm{span}\{u_1,\ldots,u_j\}\]
+    where the second equality follows from the fact that the matrix of $T|_U$ is upper-triangular. Extend the basis for $U$ to a basis $\{u_1,\ldots,u_m,v_1,\ldots,v_n\}$. For each $v_k$,
+        \[Tv_k = (T -\lambda I)v_k + \lambda v_k.\]
+    Then, $(T -\lambda I)v_k \in U$ meaning that it may be written as a linear combination of $\{u_1,\ldots, u_m\}$. This means that $Tv_k \in \rm{span}\{u_1,\ldots,u_m,v_1,\ldots, v_k\}$. With respect to this chosen basis, the  matrix of $T$ is thus upper-triangular.
+\end{proof}
+
+\end{document}
