@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{Common Linear Algebra Results}
+\subsection{Common Linear Algebra Results}
 
 \begin{prop}{Eigenvectors of Distinct Eigenvalues are Linearly Independent}{}
     Let $T \in \scr{L}(V)$ and suppose that $\lambda_1,\ldots, \lambda_m$ are distinct eigenvalues of $T$ and $v_1,\ldots,v_m$ are the corresponding eigenvectors. Then, $v_1,\ldots,v_m$ is linearly independent.
@@ -21,6 +21,8 @@
         \[0 = (\lambda_k - \lambda_1)a_1 v_1 + \cdots + (\lambda_k - \lambda_{k-1})a_{k-1}v_{k-1}.\]
     But $v_1,\ldots,v_{k-1}$ are linearly independent and therefore each $(\lambda_k - \lambda_j)a_j = 0$. As $\lambda_k \neq \lambda_j$, it must be the case that each $a_j = 0$, a contradiction.
 \end{proof}
+
+\gap
 
 \begin{prop}{Every Complex Operator has an Eigenvalue}{evalExists}
     Suppose that $V$ is a finite dimensional complex vector space and $T \in \scr{L}(V)$. Then $T$ has an eigenvalue.
@@ -41,6 +43,8 @@
         \end{align*}
     This means that $v \in \null(T - \lambda_j I)$ for some $j$. Since $v \neq 0$, this means that some $T - \lambda_j I$ is not injective, meaning that $\lambda_j$ is an eigenvalue.
 \end{proof}
+
+\gap
 
 \begin{prop}{Every Complex Operator has some Upper-Triangular Matrix}{}
     Suppose that $V$ is a finite dimensional complex vector space and $T \in \scr{L}(V)$. Then $T$ has an upper-triangular matrix with respect to some basis of $V$.
