@@ -1,0 +1,24 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Canonical Forms}
+
+\begin{prob}{S19.LA2}{S19.LA2}
+    Determine a necessary and sufficient condition for when a matrix $A \in M_2(\C)$ has a square root. That is, for which $A \in M_2(\C)$ does there exist $B \in M_2(\C)$ such that $A = B^2$?
+\end{prob}
+
+\begin{proof}
+    Since we are working over a complex vector space, $A$ has a normal Jordan form. That is, there exists a block diagonal matrix $J$ with each block a  Jordan block and an invertible matrix $P$ such that $A = P J P\inv$. If there exists $B \in M_2(\C)$ such that $B^2 = J$, then $(PBP\inv)^2 = A$. On the other hand, if $A = B^2$ then $J = (P\inv B P)^2$. Therefore, to determine when $A$ has a square root, it suffices to determine when the Jordan normal form of $A$ has a square root.\\
+    
+    
+    Let $p(x)$ be the characteristic polynomial of $A$. As $A$ is a $2 \times 2$ matrix, $\deg(p) = 2$. Note that since $J$ is $2 \times 2$, the only possible forms for $J$ are $\begin{pmatrix} \lambda & 1\\ 0 & \lambda \end{pmatrix}$ or $\begin{pmatrix} \lambda_1 & 0\\ 0 & \lambda_2 \end{pmatrix}$ where $\lambda_1 \neq \lambda_2$.\\ 
+    
+    If $p(x) = (x-\lambda)^2$, then $J = \begin{pmatrix} \lambda & 1\\ 0 & \lambda \end{pmatrix}$.  If $\lambda = 0$, then it is impossible to find a matrix $B$ such that $B^2 = \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix}$. If $\lambda \neq 0$, then the matrix $B = \begin{pmatrix} \pm \sqrt\lambda & \frac{\pm1}{2 \sqrt \lambda}\\ 0 & \pm \sqrt\lambda \end{pmatrix}$ is such that $B^2 = J$.
+    
+    If $p(x) = (x-\lambda_1)(x-\lambda_2)$ for some $\lambda_1 \neq \lambda_2$ then $J = \begin{pmatrix} \lambda_1 & 0\\ 0 & \lambda_2 \end{pmatrix}$. Letting $B = \begin{pmatrix} \pm \sqrt{\lambda_1} & 0\\ 0 & \pm\sqrt{\lambda_2} \end{pmatrix}$, we see that $B^2 = J$.\\
+
+    From the above, we conclude that a nonzero matrix $A$ has a square root if and only if zero is not an eigenvalue with multiplicity two. If $A = 0$, then clearly $B = 0$ satisfies $B^2 = A$.
+\end{proof}
+
+\end{document}
