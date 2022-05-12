@@ -4,6 +4,49 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{S20.LA4}{S20.LA4}
+		Let $V$ be a finite dimensional vector space and $T: V \to V$ a linear map such that $T^2 = T$.
+		\begin{enumerate}[(a)]
+			\item Prove that $V = T(V) \oplus \ker(T)$.
+			\item If $S: V \to V$ is another linear map and $S^2 = S$, $S(V) = T(V)$, and $\ker(S) = \ker(T)$, prove that $S = T$.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Let $v \in V$. Observe that $v = Tv + (v - Tv)$. Clearly $Tv \in T(V)$ and since $T(v - Tv) = Tv - T^2v = 0$, $v - Tv \in \ker(T)$. Therefore, $V = T(V) + \ker(T)$. To see that this sum is actually a direct sum, it suffices to show that $T(V) \cap \ker(T) = \{0\}$. Let $v \in T(V) \cap \ker(T)$. Then, $Tv = 0$ and $v = Tw$ for some $w \in V$. Together, this means that
+			\[0 = Tv = T^2w = Tw = v\]
+		meaning the intersection is trivial.
+	\end{proof}
+
+	\begin{proof}
+		Let $v \in V$. Since $V = S(V) \oplus \ker(S)$, we may write $v = Su + w$ where $w \in \ker(S)$. But, $Su \in S(V) = T(V)$ means that there exists $u' \in V$ such that $Su = Tu'$. Also, $\ker(S) = \ker(T)$ implies that $Tw = 0$. Therefore,
+			\[Sv = S(Su + w) = S^2u + Sw = Su = Tu' = T^2u' + Tw = T(Su + w) = Tv.\]
+		As this holds for each $v \in V$, $S = T$.
+	\end{proof}
+
+	\begin{prob}{S20.LA3}{S20.LA3}
+		Let $V$ be a finite-dimensional vector space and $S,T: V \to V$ linear transformations.
+		\begin{enumerate}[(a)]
+			\item Prove that $\rank{S+T} \leq \rank{S} + \rank{T}$
+			\item Prove that $\rank{ST} \leq \max(\rank{S}, \rank{T})$.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Recall that for any two subspaces $U_1,U_2$ of a finite dimensional vector space $V$,
+			\[\dim(U_1 + U_2) = \dim(U_1) + \dim(U_2) - \dim(U_1 \cap U_2).\]
+		As the dimension is always non-negative, $\dim(U_1 + U_2) \leq \dim(U_1) + \dim(U_2)$. By the linearity of $S$ and $T$, for any $v \in V$,
+			\[(S + T)v = Sv + Tv.\]
+		Therefore, $\range(S + T) = \range(S) + \range(T)$. This means that
+			\[\rank{S+T} = \dim(\range(S) + \range(T)) \leq \dim(\range(S)) + \dim(\range(T)) = \rank{S} + \rank{T},\]
+		as desired.
+	\end{proof}
+
+	\begin{proof}
+		For any $v \in V$, $STv = S(Tv)$ and therefore $\range(ST) \sq \range(S)$. Since the dimension of a subspace is bounded above by the dimension of the larger space,
+			\[\rank{ST} = \dim(\range(ST)) \leq \dim(\range(S)) = \rank{S} \leq \max\{\rank{S},\rank{T}\}.\]
+	\end{proof}
+
 	\begin{prob}{S19.LA4}{S19.LA4}
 		Let $V$ be the vector space of all $2 \times 2$ matrices and let 
 			\[A = \begin{pmatrix} 2 & 0\\ 0 & 3 \end{pmatrix}. \]
@@ -56,7 +99,7 @@
 		But, $\beta$ is a basis and so the collection of elements in $\beta$ is linearly independent. That is, $c_1 = \cdots = c_n = d_1 = \cdots = d_m = 0$. Therefore, $\{Tw_1,\ldots,Tw_n\}$ are linearly independent. As this is a linearly independent spanning set for $\range(T)$, $\dim(\range(T)) = n$ as desired.
 	\end{proof}
 
-	\begin{prob}{F12}{F12.LA2}
+	\begin{prob}{F12.LA2}{F12.LA2}
 	Suppose that $V = X \oplus Y$ and define the projection $V \to X$ by $\alpha(v) = x$ where $v = x+y$.
 	\begin{enumerate}[(a)]
 	\item Prove that a necessary and sufficient condition for an endomorphism $T: V \to V$ to be a projection is that $T^2 = T$. Identify $X$ and $Y$ in the case that this condition is satisfied.
