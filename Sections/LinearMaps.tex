@@ -4,6 +4,33 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{S19.LA4}{S19.LA4}
+		Let $V$ be the vector space of all $2 \times 2$ matrices and let 
+			\[A = \begin{pmatrix} 2 & 0\\ 0 & 3 \end{pmatrix}. \]
+		Let $T: V \to V$ be given by $T(B) = AB + BA$.
+
+		\begin{enumerate}[(a)]
+			\item Prove that $T$ is a linear map.
+			\item Compute $T(B)$ when $B = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$.
+			\item Find the eigenvalues and corresponding eigenspaces of $T$.
+		\end{enumerate}
+	\end{prob}
+
+	\begin{proof}
+		Let $B,C \in V$ and $\alpha \in \R$. Following from properties of matrix multiplication and addition,
+			\[T(B + C) = A(B+C) + (B+C)A = AB + AC + BA + CA = T(B) + T(C).\]
+		Likewise,
+			\[T(\alpha B) = A(\alpha B) + (\alpha B)A = \alpha(AB +BA) = \alpha T(B).\]
+	\end{proof}
+
+	\begin{solution}
+		\[T\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = \begin{pmatrix} 2a & 2b \\ 3c & 3d \end{pmatrix}.\]
+	\end{solution}
+
+	\begin{solution}
+		Notice that $V$ is dimension 4 and so the sum of the dimensions  of the eigenspaces is at most 4. Upon inspection, we find that $\lambda = 2$ is an eigenvalue with an eigenspace basis given by $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \right\}$. Similarly, $\lambda = 3$ is an eigenvalue with eigenspace basis given by $\left\{ \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \right\}$. 
+	\end{solution}
+
 	\begin{prob}{F16.LA1, F14.LA1}{F14.LA1}
 		Suppose that $T: U \to V$ is a linear transformation with $U$ and $V$ both finite-dimensional vector spaces. Prove that
 			\[\dim(\ker(T)) + \dim(\rm{range}(T)) = \dim(U).\]
