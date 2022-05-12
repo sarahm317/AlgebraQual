@@ -33,7 +33,11 @@
 \end{prob}
 
 \begin{proof}
-    We show that $\Z/m\Z$ has some non-zero nilpotent element if and only if $m$ has some multiple prime factor.
+    Suppose first that $m$ has some multiple prime factor. If $p_1,\ldots, p_n$ are the distinct prime factors of $m$, this implies that there exists $k \geq 2$ for which some $p_j^k | m$. In particular, this means that the product $p_1 \cdots p_n$ is not congruent to zero modulo $m$. Write out the prime factorization for $m$ as 
+		\[m = p_1^{\ell_1} \cdots p_n^{\ell_n}\]
+	and define $d = \gcd{\ell_1,\ldots, \ell_n}$. Then, $(p_1\cdots p_n)^d = 0$ in $\Z/m\Z$ and thus is a nonzero nilpotent element.\\
+
+	Now suppose that $m = p_1 \cdots p_n$ with $p_1,\ldots, p_n$ the distinct prime factors of $m$. That is, $m$ has no multiple prime factors. Let $x \in \Z/m\Z$ be such that $x^k = 0$ for some $k \in \N$. Write $x = q_1^{\ell_1} \cdots q_r^{\ell_r}$ where each $q_j$ is prime, the $q_j$ are distinct, and $0 \leq x < m$. Then, $x^k = q_1^{k\ell_1} \cdots q_r^{k\ell_r}$. Since $m$ divides $x^k$, each $p_j$ must divide $x^k$. Since the $q_i$ and $p_j$ are all prime, this means that $p_j = q_i$ for some $i$. But, $x$ and $x^k$ share the same prime factors and so each $p_j$ must divide $x$. Therefore, $m$ divides $x$ and so $x = 0$ in $\Z/m\Z$. It follows that any nilpotent element in such a $\Z/m\Z$ must be zero.
 \end{proof}
 
 \begin{proof}
