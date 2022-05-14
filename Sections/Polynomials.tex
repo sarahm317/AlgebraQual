@@ -1,0 +1,23 @@
+\documentclass[../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Polynomial Rings}
+
+\begin{prob}{(F20.RF1)}{F20.RF1}
+    The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
+    \end{prob}
+    
+    \begin{claim}
+        If $R$ is a field and $f \in R[x]$ is a nonzero polynomial of degree $n$, then $f$ has at most $n$ roots in $R$.
+    
+        \begin{proof}
+            We proceed by induction on the degree of $f$. If $\deg(f) = 0$, then $f$ is constant and nonzero, meaning it has no zeros. Assume that $\deg(f) = 1$ so that $f(x) = ax + b$ for some $a,b \in R$. If $r,s$ are both roots of $f$, then
+                \[ar + b = as + b\]
+            and therefore $r = s$. That is, $f$ has at most one root in $R$.\\
+            
+            Now let $\deg(f) = n$ and assume that the result holds for any polynomial $p$ of degree less than $n$. If $f$ has no zeros in $R$, then the result holds. Otherwise, suppose that $r$ is a root of $f$ in $R$. Then, $f(x) = (x - r)q(x)$ where $q \in R[x]$ is a polynomial of degree $n - 1$. By the inductive hypothesis, $q$ has at most $n - 1$ roots and therefore $f$ has at most $n$ roots.
+        \end{proof}
+    \end{claim}
+
+\end{document}
