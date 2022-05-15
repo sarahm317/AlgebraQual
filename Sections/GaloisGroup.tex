@@ -4,7 +4,49 @@
 
 \subsection{Galois Groups}
 
-\begin{prob}{S11.RF3, S18.RF3}{S11.RF3}
+\begin{prob}{(F14.RF2)}{F14.RF2}
+	\begin{enumerate}[(a)]
+		\item Find a monic polynomial $f(x) \in \Q[x]$ that has $\sqrt{1 + \sqrt2}$ as a root.
+		\item Find the splitting field $K$ of $f(x)$ over $\Q$.
+		\item Find the Galois group of $K$ over $\Q$.
+	\end{enumerate}
+\end{prob}
+
+\begin{solution}
+	Consider the polynomial $x^4 - 2x^2 - 1$. Upon inspection, this polynomial has $\sqrt{1 + \sqrt2}$ as a root and is monic.
+\end{solution}
+
+\begin{solution}
+	Let $f(x) = x^4 - 2x^2 - 1$. The roots of $f$ are
+		\[\sqrt{1 + \sqrt2}\]
+		\[\sqrt{1 - \sqrt2}\]
+		\[-\sqrt{1 + \sqrt2}\]
+		\[-\sqrt{1 - \sqrt2}\]
+	Notice that since $1 - \sqrt2<0$, the splitting field for $f$ must contain complex values. Let $a = \sqrt{1 + \sqrt2}$ and $b = \sqrt{1 - \sqrt2}$. Define $c = \sqrt{\sqrt2 - 1}$ so that $b = ic$. Upon inspection, $a\inv = c$. Define $K = \Q(a, i)$. Then $K$ contains $\pm a$, by additive closure. Since $a\inv = c$, $i a\inv = ic = b$ must also be in $K$. Therefore $K$ contains all four roots of $f$ and thus is a splitting field.
+\end{solution}
+
+\begin{solution}
+	Consider the following diagram:
+
+	\[
+		\begin{tikzcd}
+			& \Q(a,i) = K & \\
+			\Q(a) \ar[ur,no head, "2"] & & \Q(i) \ar[ul,no head, "4"']\\
+			& \Q \ar[ul, no head, "4"] \ar[ur, no head, "2"'] \ar[uu, dashed, no head, "8"] &
+		\end{tikzcd}
+		\]
+
+	From (a), we know that $a$ is a root of an irreducible degree 4 polynomial and so $[\Q(a): \Q] = 4$. Since both $\Q$ and $\Q(a)$ are real-valued fields, $[\Q(a,i): \Q(a)] = 2$ and $[Q(i): \Q] = 2$. The remaining degrees in the diagram follow directly from Tower Rule. \\
+\end{solution}
+\begin{solution}
+	From (b), it follows that $|G(K:\Q)| = 8$ since the order of the Galois group equals the degree of the splitting field over the base field.\\
+	
+	Let $f = x^4 - 2x^2 - 1$. Then $f$ is irreducible over $\Q$ and has $a$ as a root. For simplicity, let $a_1 = a,a_2 = -a ,a_3 = b,a_4 = -b$ denote the roots of $f$. By the Extension Lemma the identity map on $\Q$ can be extended to $\varphi_j: \Q(a) \to \Q(a_j)$ where $\varphi_j: a \mapsto a_j$. Apply the Extension Lemma again to each $\varphi_j$ to obtain $\varphi_{j1}: \Q(a,i) \to \Q(a_j,i)$ where $\varphi_{j1}: i\mapsto i$ and $\varphi_{j2}: \Q(a,i) \to \Q(a_j,i)$ where $\varphi_{j2}: i \mapsto -i$. Here, $\pm i$ are the roots of the irreducible polynomial $x^2 + 1$ over $\Q(a)$. Upon inspection, $K = \Q(a,i) = \Q(a_j,i)$ and therefore each of the eight $\varphi{jk}$ is a $\Q$-automorphism. Since $|G(K:\Q)| = 8$, these are all of the automorphisms.\\
+
+	The automorphism that sends $a$ to $b$ and $i$ to $i$ is of order four. Furthermore, the Galois group is nonabelian since the automorphism of order four does not commute with the automorphism that sends $a$ to itself and $i$ to $-i$. Therefore $G(K:\Q) \cong D_8$.
+\end{solution}
+
+\begin{prob}{(S11.RF3), (S18.RF3)}{S11.RF3}
     Let $F$ be a splitting field of the polynomial $f(x) = x^4 - 2 \in \Q[x]$ over $\Q$. Find the degree $[F: \Q]$ and determine the Galois group of the extension $\Q \sq F$ up to isomorphism.
 \end{prob}
 
