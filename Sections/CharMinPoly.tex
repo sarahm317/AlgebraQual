@@ -4,7 +4,23 @@
 
 \subsection{Characteristic and Minimal Polynomials}
 
-\begin{prob}{F14}{F14.LA2}
+\begin{prob}{(F20.LA2)}{F20.LA2}
+	Prove or give a counter example.
+	\begin{enumerate}[(a)]
+	\item If a $4 \times 4$ real matrix has characteristic polynomial $x^4 -1$ then its minimal polynomial cannot be $x^2 - 1$.
+	\item Every $n \times n$ real matrix is similar over the reals to an upper triangular matrix.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+		Notice that $x^4 - 1$ has four distinct roots, namely $\pm 1, \pm i$. Since $x^2 - 1$ has roots $\pm 1$ and the characteristic polynomial divides some power of the minimal polynomial, it is impossible for $x^2 -1$ to be the minimal polynomial.
+	\end{proof}
+	
+	\begin{solution}
+		This is false: consider the matrix $A = \begin{pmatrix} 0 & -1\\ 1 & 0\end{pmatrix}$. This matrix has no eigenvalues over the reals. If $A$ were to be similar to an upper triangular matrix, the (1,1) entry would need to correspond to an eigenvalue which is impossible.
+	\end{solution}
+
+\begin{prob}{(F14.LA2)}{F14.LA2}
 	Prove or provide a counterexample: the characteristic polynomial of a matrix with entries in a field $K$ must be irreducible in the ring $K[x]$.
 \end{prob}
 
