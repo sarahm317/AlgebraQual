@@ -4,6 +4,16 @@
 
 \subsection{General Rings and Fields}
 
+\begin{prob}{(S20.RF2), (F14.G2)}{S20.RF2}
+Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
+\end{prob}
+
+\begin{proof}
+	Let $G \leq K^\times$ be a finite subgroup. Then $G$ is a finite abelian group and can therefore can be written as the direct product of its Sylow subgroups, each of some prime power order. By the Chinese Remainder Theorem, this direct product is cyclic if and only if each of the Sylow subgroups is cyclic. Therefore, without loss of generality, assume that $|G| = p^k$.\\
+
+	Let $m$ denote the maximal order of the elements in $G$. That is, $m \leq p^k$ and $g^m - 1 = 0$ for each $g \in G$. This  means that each $g \in G$ is a root of $x^m - 1$. Since $G$ is a field, this polynomial has at most $m$ roots. Therefore $m = p^k$ and so $G$ has an element of order $m$ which generates the subgroup.
+\end{proof}
+
 \begin{prob}{F16.RF3}{F16.RF3}
     Let $p$ be a prime and $R_p$ the set of all $2 \times 2$ matrices of the form $\begin{pmatrix} a & b\\ -b & a\end{pmatrix}$ where $a,b \in \Z_p$.
 

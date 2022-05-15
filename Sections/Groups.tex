@@ -4,7 +4,26 @@
 
 \subsection{General Group Theory}
 
-\begin{prob}{F17.G2}{F17.G2}
+\begin{prob}{(S20.G3)}{S20.G3}
+	\begin{enumerate}[(a)]
+	\item Prove that the centralizer of an element is a subgroup.
+	\item If $G$ is a finite group, prove that the number of elements in the conjugacy class divides the order of $G$.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+		Let $a \in G$ and let $C_G(a)$ denote the centralizer of $a$. If $e$ is the identity element in $G$, then $ea = ae$ and so $e \in C_G(a)$. Suppose now that $g,h \in C_G(a)$. Then, $ga = ag$ and $ha = ah$. Therefore, $(gh)a = g(ah) = a(gh)$ proving that $C_G(a)$ is closed under multiplication. Multiplying $ga = ag$ by $g\inv$ on the left and right of each side of the equation shows that $g\inv \in C_G(a)$ and so $C_G(a)$ is closed under inverses.
+	\end{proof}
+	
+	\begin{proof}
+		Let $a \in G$ and let $\rm{Cl}(a)$ denote the conjugacy class of $a$. Define $f: \{xC_G(a)\} \to \rm{Cl}(a)$ by $f: xC_G(a) \mapsto xax\inv$. To see that $f$ is well-defined, suppose that $xC_G(a) = yC_G(a)$. Then $x = yg$ for some $g \in C_G(a)$. This means that $g$ and $g\inv$ commute with $a$. Therefore,
+			\[xax\inv = (yg)a(yg)\inv = ygag\inv y\inv = yay\inv\]
+		and so $f$ is well-defined. Clearly $f$ is surjective. Now suppose that $xax\inv = yay\inv$. Then, $e = (x\inv y)a(x\inv y)\inv a\inv$ meaning that $x\inv y \in C_G(a)$. That is, $xC_G(a) = yC_G(a)$.\\
+	
+		Since $f$ is a bijection, the size of $\rm{Cl}(a)$ is equal to the number of left cosets of $C_G(a)$ in $G$ and therefore divides $|G|$, as desired.
+	\end{proof}
+
+\begin{prob}{(F17.G2)}{F17.G2}
 	\begin{enumerate}[(i)]
 		\item Let $G$ be a finite group and $H$ a subgroup of $G$. Prove that the order of $H$ divides the order of $G$.
 		\item Let $\C^*$ be the multiplicative group of nonzero complex numbers. If $H$ is a subgroup of $\C^*$ of finite index, prove that $H = \C^*$.
@@ -21,7 +40,7 @@
 	implying that $z^m \in H$. Now let $\omega \in \C^*$ be arbitrary and consider the polynomial $x^m - \omega$ over $\C$. This polynomial has some root, say $z \in \C^*$. This means that $z^m - \omega = 0$ or equivalently, $\omega = z^m$. But, $z^m \in H$ and so $\omega \in H$. Since $\omega$ was arbitrary, $\C^* = H$.
 \end{proof}
 
-\begin{prob}{S16.G1}{S16.G1}
+\begin{prob}{(S16.G1)}{S16.G1}
 	Explicitly describe two non-isomorphic, nonabelian groups of order 12.
 \end{prob}
 
@@ -44,7 +63,7 @@
 	Upon inspection, every element in $A_4$ is of order 1,2, or 3. In particular, there are no elements of order 6.
 \end{proof}
 
-\begin{prob}{S12.G2}{S12.G2}
+\begin{prob}{(S12.G2)}{S12.G2}
 	\begin{enumerate}[(a)]
 		\item State (any version of) the Fundamental Theorem of finite abelian groups.
 		\item Classify all abelian groups of order 144.

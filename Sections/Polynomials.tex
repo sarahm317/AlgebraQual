@@ -4,6 +4,16 @@
 
 \subsection{Polynomial Rings}
 
+\begin{prob}{(S20.RF4)}{S20.RF4}
+    Prove that the polynomial $x^3 - 2$ is irreducible over the field $\Q(i)$.
+\end{prob}
+
+\begin{proof}
+    Let $f = x^3 - 2$. Notice that $f$ is irreducible over $\Q$ by Eisenstein's Theorem. If $\zeta$ denotes a primitive 3rd root of unity, then the three roots of $f$ are $a,a\zeta, a\zeta^2$. That is, $[\Q(a): \Q] = [\Q(a\zeta): \Q] = [\Q(a\zeta^2): \Q] = 3$\\
+    
+    If $f$ were to be reducible over $\Q(i)$, then $f$ would have a root in $\Q(i)$. Seeking a contradiction, let $\alpha \in \Q(i)$ be a root of $f$. Then, $\Q(\alpha) \sq \Q(i)$ is a subfield. Since $x^2 + 1$ is irreducible over $\Q$ and has $i$ as a root, $[\Q(i): \Q] = 2$. By Tower Rule, $2 = [\Q(i): \Q] = [\Q(i): \Q(\alpha)]\cdot[\Q(\alpha): \Q]$. But, $a$ is a root of $f$ and therefore $[\Q(\alpha): \Q]$, a contradiction.
+\end{proof}
+
 \begin{prob}{(F20.RF1)}{F20.RF1}
     The polynomial $x^3 - x$ has six roots in the ring $\Z/6\Z$. Find a sufficient condition on a commutative ring $R$ which ensures that the number of roots of a polynomial with coefficients in $R$ cannot exceed its degree and justify your assertion.
     \end{prob}
