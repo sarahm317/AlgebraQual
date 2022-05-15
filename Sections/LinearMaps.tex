@@ -4,6 +4,16 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{S12.LA2}{S12.LA2}
+		Let $V$ be a finite dimensional vector space. A linear transformation $T: V \to V$ is a projection when $T = T^2$. Prove that there exists a basis for $V$ such that the matrix for $T$ with respect to this basis is a diagonal matrix with diagonal entries all zeros or ones.
+	\end{prob}
+
+	\begin{proof}
+		Since $T = T^2$, $V = \Null(T) \oplus \range(T)$ (see \ref{prob:S20.LA4}). Let $v_1,\ldots, v_n$ be a basis for $\Null(T)$ and extend this list to $v_1,\ldots, v_n, w_1,\ldots,w_m$ to obtain a basis for $V$. Then $Tw_1,\ldots, Tw_m$ is a basis for $\range(T)$. Since $V = \Null(T) \oplus \range(T)$, the list $v_1,\ldots, v_n, Tw_1,\ldots, Tw_m$ form a basis for $V$. With respect to this basis, the matrix for $T$ is as desired.
+	\end{proof}
+
+	\emph{Technically there are some more details to prove here, such as linear independence of $Tw_1,\ldots, Tw_m$, but this is all routine.}
+
 	\begin{prob}{S20.LA4}{S20.LA4}
 		Let $V$ be a finite dimensional vector space and $T: V \to V$ a linear map such that $T^2 = T$.
 		\begin{enumerate}[(a)]

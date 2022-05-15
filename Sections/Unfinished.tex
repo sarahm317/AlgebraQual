@@ -154,19 +154,19 @@ For which, if any, $q \in \Q$ is it possible that there does not exist an invert
 	\end{enumerate}
 \end{prob}
 
-\begin{prob}{S12}{S12.LA2}
-	Let $V$ be a finite dimensional vector space. A linear transformation $T: V \to V$ is a projection when $T = T^2$. Prove that there exists a basis for $V$ such that the matrix for $T$ with respect to this basis is a diagonal matrix with diagonal entries all zeros or ones.
-\end{prob}
-
 \begin{prob}{S12}{S12.LA3}
 	Let $V$ be a finite dimensional vector space over $\C$.
 
 	\begin{enumerate}[(a)]
 		\item Define the characteristic polynomial of a linear transformation of $V$ and the minimal polynomial of a linear transformation of $V$.
-		\item Give an example of two lienar transformations $S,T: V \to V$ such that $S$ and $T$ have the same characteristic polynomial, but are not similar.
+		\item Give an example of two linear transformations $S,T: V \to V$ such that $S$ and $T$ have the same characteristic polynomial, but are not similar.
 		\item Give an example of two linear transformations $S,T: V \to V$ such that $S$ and $T$ have the same minimal polynomial, but are not similar.
 	\end{enumerate}
 \end{prob}
+
+The characteristic polynomial of a linear transformation $T: V \to V$ is $(x - \lambda_1)^{\ell_1}\cdots(x-\lambda_m)^{\ell_m}$ where $\lambda_1,\ldots, \lambda_j$ are the distinct eigenvalues of $T$ and $\ell_j$ is the multiplicity of the eigenvalue $\lambda_j$. The minimal polynomial of $T$ is the smallest degree monic polynomial $p$ such that $p(T) = 0$.\\
+
+The minimal polynomial and characteristic polynomial have the same roots, ignoring multiplicity. The minimal polynomial divides the characteristic polynomial.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fall 2013}
@@ -256,16 +256,6 @@ State and prove Lagrange's Theorem. Prove that a subgroup of a cyclic group is c
 \end{prob}
 
 \begin{prob}{S19}{}
-Prove the following:
-\begin{enumerate}[(a)]
-\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
-\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
-\end{enumerate}
-\end{prob}
-
-
-
-\begin{prob}{S19}{}
 Prove that $\sigma,\tau \in S_n$ are conjugate if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
 \end{prob}
 
@@ -305,5 +295,9 @@ Let $V$ be a finite dimensional complex vector space and $T: V \to V$ a linear t
 \item Show that there is a basis for $V$ such that the matrix of $T$ with respect to this basis is upper triangular.
 \end{enumerate}
 \end{prob}
+
+\begin{proof}
+	See \ref{thm:upper}.
+\end{proof}
 
 \end{document}

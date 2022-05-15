@@ -4,7 +4,25 @@
 
 \subsection{Nilpotent}
 
-\begin{prob}{F14}{F14.RF3}
+\begin{prob}{S19}{}
+	Prove the following:
+	\begin{enumerate}[(a)]
+	\item If $R$ is a commutative ring with no nilpotent elements, then $R[x]$ has no nilpotent elements.
+	\item If $r$ is a nilpotent element of a ring with unity, then $1 - r$ is a unit.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{proof}
+		Suppose that $a_0 + a_1 x + \cdots + a_nx^n = p(x) \in R[x]$ is nilpotent. Then there exists $k \in \N$ such that $p(x)^k = (a_0 + a_1 x + \cdots + a_nx^n)^k = 0$. In particular, the leading coefficient of $p(x)^k$ is $a_n^k$ and since $p(x)^k = 0$, $a_n^k = 0$. Since $a_n$ is the leading term of $p(x)$, it is nonzero and therefore a nilpotent element of $R$.
+	\end{proof}
+	
+	\begin{proof}
+		Suppose that $r$ is nilpotent. Choose a minimal $k \in \N$ such that $r^k = 0$. Then,
+			\[1 = 1 - r^k = (1-r)(1 + r + r^2 + \cdots + r^{k-1})\]
+		meaning that $1-r$ has multiplicative inverse given by $(1 + r + r^2 + \cdots + r^{k-1})$. That is, $1-r$ is a unit.
+	\end{proof}
+
+\begin{prob}{F14.RF3}{F14.RF3}
 	Prove that the set $N$ of nilpotent elements of a commutative ring $R$ is an ideal of $R$ and that $R/N$ has no nonzero nilpotent elements.
 \end{prob}
 
