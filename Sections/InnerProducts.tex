@@ -24,12 +24,35 @@
             For any $1 \leq i < j \leq m$, $\ip{v_i}{v_j} = 0$.
 
             \begin{proof}
-                For the base case, notice that $\ip{v_1}{v_2} = 0$. Assume now that whenever $1 \leq i < j < k$, $\ip{v_i}{v_j}
+                For the base case, notice that $\ip{v_1}{v_2} = 0$. Assume now that whenever $1 \leq i < j < k$, $\ip{v_i}{v_j} = 0$. Now for any $i = 1, \ldots, k-1$,
+                    \begin{align*}
+                        \ip{v_k}{v_i} &= \ip{u_k - \sum_{j=1}^{i-1} \frac{\ip{v_j}{u_k}}{\norm[v_j]}v_j}{v_i}\\
+                        &= \ip{u_k}{v_i} - \sum_{j=1}^{i-1} \frac{\ip{v_j}{u_k}}{\norm[v_j]}\ip{v_j}{v_i}\\
+                        &= \ip{u_k}{v_i} - \frac{\ip{v_i}{u_k}}{\norm[v_i]}\ip{v_i}{v_i} \label{eq:IH}\\
+                        &= 0
+                    \end{align*}
+                Line (\ref{eq:IH}) follows from the inductive hypothesis since $i, j < k$.
             \end{proof}
         \end{claim}
 
-    Now define $e_j = \frac{1}{\norm[v_j]}v_j$ for each $j = 1,\ldots, m$. Then each $e_j$ has norm 1, the list $e_1,\ldots, e_m$ is pair-wise orthogonal, and is linearly independent.
+        \begin{claim}
+            The list $v_1, \ldots, v_n$ is linearly independent.
+
+            \begin{proof}
+                Assume that
+                \[a_1v_1 + \cdots + a_nv_n = 0\]
+                for some constants $a_1,\ldots, a_n$. Notice that each $v_j$ is a linear combination of $u_1,\ldots, u_j$. By rewriting the equation in terms of the $u_j$ and using the fact that $u_1,\ldots, u_n$ are linearly independent, it follows  that $a_1 = \cdots = a_n = 0$.
+            \end{proof}
+        \end{claim}
+
+    Next define $e_j = \frac{1}{\norm[v_j]}v_j$ for each $j = 1,\ldots, m$. Then each $e_j$ has norm 1, the list $e_1,\ldots, e_m$ is pair-wise orthogonal, and is linearly independent. A linearly independent list of $n$ vectors in an $n$-dimensional space forms a basis, proving that $e_1,\ldots, e_n$ is as desired.
 \end{proof}
+
+\begin{solution}
+    Let $u_1 = (1,1,0)$ and $u_2 = (1,2,3)$. Using the formulas as defined in the previous proof, let $v_1 = u_1$ and $v_2 = u_2 - \frac{\ip{v_1}{u_2}}{\norm[v_1]}v_1 = (-1/2,1/2,3/2)$. Normalizing each of these vectors, we obtain an orthonormal basis:
+
+        \[\left\{ \begin{pmatrix} 1/\sqrt2\\ 1/\sqrt 2\\ 0 \end{pmatrix}, \begin{pmatrix}-\sqrt{11}/8 \\ \sqrt{11}/8\\ 3\sqrt{11}/8 \end{pmatrix} \right\}.\]
+\end{solution}
 
 \begin{prob}{S19.LA4}{S19.LA4}
     Let $V$ be a finite dimensional inner product space over $\R$. If $A$ and $B$ are subspaces of $V$, prove that $(A+B)^\perp = A^\perp \cap B^\perp$.
