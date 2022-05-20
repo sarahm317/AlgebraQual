@@ -4,7 +4,19 @@
 
 \subsection{Field Extensions}
 
-\begin{prob}{F17.RF2}{F17.RF2}
+\begin{prob}{(F03.RF2)}{F03.RF2}
+	Suppose that $\alpha \neq 0$ is algebraic over $\Q$ and $[\Q(\alpha): \Q]$ is odd. Show that $\Q(\alpha) = \Q(\alpha + \alpha\inv)$. Must this be true without the assumption that $[\Q(\alpha): \Q]$ is odd?
+\end{prob}
+
+\begin{proof}
+	Since $\Q(\alpha)$ is a field containing $\alpha$, it also must contain $\alpha + \alpha\inv$ and so $\Q(\alpha + \alpha\inv) \sq \Q(\alpha)$. Tower Rule implies that
+		\[[\Q(\alpha): \Q(\alpha + \alpha\inv):] \cdot [\Q(\alpha + \alpha\inv): \Q] = [\Q(\alpha): \Q].\]
+	Notice that $\alpha$ is a root of the polynomial $x^2 - (\alpha + \alpha\inv)x + 1 \in \Q(\alpha + \alpha\inv)[x]$. Therefore, $[\Q(\alpha + \alpha\inv): \Q]$ is either 1 or 2. But $[\Q(\alpha): \Q]$ is odd and therefore $[\Q(\alpha + \alpha\inv): \Q] = 1$. This implies that $\Q(\alpha) = \Q(\alpha + \alpha\inv)$, as desired.
+\end{proof}
+
+If the assumption that $[\Q(\alpha): \Q]$ is odd is removed, this statement is false. Consider the extension $\Q(i)$ over $\Q$. This is a degree 2 extension, but $\Q(i + i\inv) = \Q(i + (-i)) = \Q \neq \Q(i)$.
+
+\begin{prob}{(F17.RF2)}{F17.RF2}
 	\begin{enumerate}[(i)]
 		\item State Eisenstein's irreducibility criterion for polynomials.
 		\item Find $[\Q(\sqrt 2): \Q]$ and $[\Q(3^{1/3}): \Q]$.

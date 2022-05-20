@@ -4,6 +4,22 @@
 
 \subsection{General Group Theory}
 
+\begin{prob}{(F03.G2)}{F03.G2}
+	Suppose that $G$ is a finite group and let $K$ be a normal subgroup of $G$ such that $|K|$ and $[G:K]$ are coprime. Show that $K$ is the unique subgroup of order $|K|$.
+\end{prob}
+
+\begin{proof}
+	Let $H \leq G$ be a subgroup such that $|H| = |K|$. Because $K$ is normal,  $HK$ is a subgroup of $G$. Lagrange's Theorem implies that $|HK|$ divides $|G|$. Notice that
+		\[|HK| = \frac{|H| \cdot |K|}{|H \cap K|}\]
+	and
+		\[|G| = |K| \cdot [G:K].\]
+	Therefore, $\frac{|H| \cdot |K|}{|H \cap K|}$ divides $|K| \cdot [G:K]$. By dividing each quantity by $|K|$, it follows that $\frac{|H|}{|H\cap K|}$ divides $[G:K]$. That is, there exists $n \in \N$ such that
+		\[n \frac{|H|}{|H \cap K|} = [G:K].\]
+	Multiplying both sides by $|H \cap K|$,
+		\[n \cdot |H| = |H\cap K| \cdot [G:K]\]
+	meaning that $|H|$ divides $|H\cap K| \cdot [G:K]$. But, $|H|$ and $[G:K]$ are coprime and therefore $|H|$ divides $|H \cap K|$. This implies that $H = H \cap K$ and so $H = K$.
+\end{proof}
+
 \begin{prob}{(S20.G3)}{S20.G3}
 	\begin{enumerate}[(a)]
 	\item Prove that the centralizer of an element is a subgroup.
