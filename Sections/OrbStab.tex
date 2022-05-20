@@ -2,47 +2,4 @@
 
 \begin{document}
 \subsection{Order Stabilizer Theorem}
-
-
-\begin{prob}{F12}{F12.G2.a}
-Define the center of a group.
-\begin{enumerate}[(a)]
-\item Prove that if the order of $G$ is $p^k$ for some prime $p$ then $G$ has nontrivial center.
-\item Suppose that $p$ and $q$ are distinct primes. Prove that a non-abelian group of order $pq$ has trivial center.
-\end{enumerate}
-\end{prob}
-
-The center of a group $G$ is the subgroup
-	\[Z(G) = \{g \in G: gx = xg \textrm{ for any $x \in G$} \} \]
-
-\begin{proof}
-Assume that $|G| = p^k$ for some prime $p$. If $k = 1$, then $G$ is cyclic and therefore abelian. In this case, $Z(G) = G$ and thus is nontrivial. Assume now that $k > 1$. If $G$ is abelian, $Z(G) = G$ and so $G$ has nontrivial center. If $G$ is non-abelian, $G - Z(G)$ is non-empty. Let $C_1, \ldots, C_n$ be the distinct conjugacy classes of elements in $G - Z(G)$. That is, for each $j \in \{1, \ldots, n\}$ let $x_j \in G - Z(G)$ such that $C_j = \{gx_jg\inv: g \in G\}$. Note that each $|C_j| > 1$ since a conjugacy class is a singleton if and only if the representative element is in $Z(G)$. The Orbit Stablizer Theorem implies that for each $j = 1, \ldots, n$,
-	\[ |C_j| =  [G: C_G(x_j)] \]
-where $C_G(x_j) = \{g \in G: gx_jg\inv = x_j \}$ is the centralizer of $x_j$ in $G$. In particular, each $|C_j|$ divides $|G| = p^k$. Since $|C_j| > 1$, $p$ divides each $|C_j|$. The Class Equation states that 
-	\[|Z(G)| = |G| - \sum_{j=1}^n [G: C_G(x_j)] = p^k -  \sum_{j=1}^n |C_j| .\]
-Because $p$ divides $p^k$ and $p$ divides each $|C_j|$, $p$ must also divide $|Z(G)|$. Thus $Z(G)$ is nontrivial.
-\end{proof}
-
-\begin{proof}
-	See \ref{prob:F12.G2.b}.
-\end{proof}
-
-Note that \ref{prob:F18.G1} is Cauchy's Theorem and comes up for many Sylow-like problems. There's another version of the proof specifically for the case when $p = 2$ that does not involve group actions.
-
-	\begin{prob}{F18.G1}{F18.G1}
-	Let $G$ be a finite group with order that is divisible by a prime $p$. Prove that $G$ contains an element of order $p$.
-	\end{prob}
-	
-	\begin{proof}
-	Assume that $G$ is a finite group such that a prime $p$ divides $|G|$. Define a set $X \sq G^p$ as
-		\[X = \{(x_1, \ldots, x_p) \in G^p: x_1 \cdots x_p = e\}. \]
-	That is, $X$ is the set of all $p$-tuples of elements in $G$ where the product of the elements is the identity in $G$. Note that by choosing $x_1, \ldots, x_{p-1}$, $x_p$ is determined as
-		\[x^p = (x_1 \cdots x_{p - 1})\inv. \]
-	This means that $|X| = G^{p-1}$ and therefore $p$ must divide $|X|$.\\
-	
-	Next observe that if $x_1 \cdots x_p = e$, multiplying $x_1, \ldots, x_p$ in any order yields the identity. That is, if $(x_1, \ldots, x_p) \in X$, any permutation of this $p$-tuple is also in $X$. Therefore, we may let $\Z / p\Z$ act on $X$ via permutation. That is,
-		\[1 \cdot (x_1, \ldots, x_p) \mapsto (x_p, x_1, \ldots, x_{p-1}). \]
-	Since the order of $\Z / p\Z$ is prime, every stabilizer subgroup is either of size 1 or of size $p$. By the Order Stabilizer Theorem, this means that the order of an orbit is either 1 or $p$. Furthermore, the orbits of this action form a partition of $X$. Elements of $X$ that are in an orbit of size 1 must be of the form $(x, \ldots, x)$ where $x^p = e$. Since $(e, \ldots, e) \in X$ satisfies this condition, $e$ is in an orbit of size 1. Because orbits are of size 1 or $p$ and partition $X$, there exists some $x \neq e$ also in an orbit of size 1. If this were not the case, $p$ would not divide $X$, a contradiction. This chosen $x$ is of order $p$ since $x^p = e$.
-	\end{proof}
-	
 \end{document}
