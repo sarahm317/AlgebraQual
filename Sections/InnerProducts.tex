@@ -4,6 +4,33 @@
 
 \subsection{Inner Products}
 
+\begin{prob}{(S18.LA2)}{S18.LA2}
+    Let $V = \R^n$ with the Euclidean inner product. Let $U \sq V$ be a subspace.
+    \begin{enumerate}[(a)]
+        \item Prove that $U$ has an orthonormal basis.
+        \item Find an orthonormal basis for the space of $(1,1,0)$ and $(1,2,3)$ inside $\R^3$.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Any subspace has a basis. Therefore, let $u_1,\ldots, u_m$ be a basis for $U$. Let $v_1 = u_1$. Next define
+        \[v_2 = u_2 - \frac{\ip{v_1}{u_2}}{\norm[v_1]}v_1.\]
+    Observe:
+        \[\ip{v_1}{v_2} = \ip{v_1}{u_2} - \frac{\ip{v_1}{u_2}}{\ip{v_1}{v_1}}\ip{v_1}{v_1} = 0\]
+    following directly from the linearity properties of the inner product. For each $j = 2,\ldots,m$, define
+        \[v_j = u_j - \sum_{k=1}^{j-1}\frac{\ip{v_k}{u_j}}{\norm[v_k]}v_k.\]
+
+        \begin{claim}
+            For any $1 \leq i < j \leq m$, $\ip{v_i}{v_j} = 0$.
+
+            \begin{proof}
+                For the base case, notice that $\ip{v_1}{v_2} = 0$. Assume now that whenever $1 \leq i < j < k$, $\ip{v_i}{v_j}
+            \end{proof}
+        \end{claim}
+
+    Now define $e_j = \frac{1}{\norm[v_j]}v_j$ for each $j = 1,\ldots, m$. Then each $e_j$ has norm 1, the list $e_1,\ldots, e_m$ is pair-wise orthogonal, and is linearly independent.
+\end{proof}
+
 \begin{prob}{S19.LA4}{S19.LA4}
     Let $V$ be a finite dimensional inner product space over $\R$. If $A$ and $B$ are subspaces of $V$, prove that $(A+B)^\perp = A^\perp \cap B^\perp$.
 \end{prob}
