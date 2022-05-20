@@ -4,6 +4,36 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{(S18.LA3)}{S18.LA3}
+		Let $T: V \to W$ be a linear transformation between two finite dimensional vector spaces. Prove that there exist bases for $V$ and $W$ such that the matrix representation for $T$ with respect to these bases has an identity matrix in the top left corner and all other entries equal to zero.
+	\end{prob}
+
+	\begin{proof}
+		Let $T: V \to W$ be a linear map. Let $v_1,\ldots, v_n$ be a basis for $\null(T)$. Extend this list to a basis $v_1,\ldots, v_n,u_1,\ldots,u_m$ for $V$.
+
+		\begin{claim}
+			The list $Tu_1,\ldots, Tu_m$ is a basis for $\range(T)$.
+
+			\begin{proof}
+				Since $v_1,\ldots, v_n,u_1,\ldots, u_m$ form a basis for $V$ any $Tv$ can be written as 
+					\[Tv = T(a_1v_1 + \cdots + a_nv_n + b_1u_1 + \cdots + b_mu_m).\]
+				But each $Tv_k = 0$ and therefore
+					\[Tv = b_1Tu_1 + \cdots + b_mTu_m.\]
+				That is, $Tu_1,\ldots, Tu_m$ span $\range(T)$. It remains to show that $Tu_1,\ldots, Tu_m$ are linearly independent. Assume that 
+					\[a_1Tu_1 + \cdots + a_mTu_m = 0.\]
+				By linearity, this implies that
+					\[T(a_1u_1 + \cdots + a_mu_m) = 0\]
+				and so $a_1u_1 + \cdots + a_mu_m \in \null(T)$. Find $b_1,\ldots, b_n$ so that
+					\[a_1u_1 + \cdots + a_mu_m = b_1v_1 + \cdots + b_nv_n\]
+				or equivalently,
+				\[a_1u_1 + \cdots + a_mu_m - b_1v_1 - \cdots - b_nv_n = 0.\]
+				But $u_1,\ldots,u_m,v_1,\ldots,v_n$ is a basis for $V$ and thus linearly independent. That is, $a_1 = \cdots = a_m = b_1 = \cdots = b_n = 0$.
+			\end{proof}
+		\end{claim}
+
+		Reorder the list to $u_1,\ldots,u_m,v_1,\ldots, v_n$. Note that reordering the list does not change linear independence or the span. Since $Tu_k = 1\cdot Tu_k$ and $Tv_k = 0$ for each $k$, the matrix for $T$ with respect to this basis is as desired.
+	\end{proof}
+
 	\begin{prob}{S12.LA2}{S12.LA2}
 		Let $V$ be a finite dimensional vector space. A linear transformation $T: V \to V$ is a projection when $T = T^2$. Prove that there exists a basis for $V$ such that the matrix for $T$ with respect to this basis is a diagonal matrix with diagonal entries all zeros or ones.
 	\end{prob}
