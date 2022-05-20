@@ -4,9 +4,19 @@
 
 \subsection{Group Actions}
 
+\begin{prob}{(F03.G1)}{F03.G1}
+    Let $G$ be a group of order 15 which acts on a set $S$ with 7 elements. Show that the group action has a fixed point.
+\end{prob}
+
+\begin{proof}
+    From the Orbit Stabilizer Theorem, each orbit of the action must divide $|G|$ and the orbits partition $S$. Therefore, each orbit is of size 1,3,5, or 15 and the sum of the orbits must equal 7. The possible sizes for the orbits are:
+        \[\{1,1,1,1,1,1,1\}, \{1,1,1,1,3\}, \{1,1,5\}, \{1,3,3\}.\]
+    An orbit of size 1 corresponds to a fixed point. Since any of the possibilities has an orbit of size 1, there exists a fixed point.
+\end{proof}
+
 \begin{prob}{(S18.G3)}{S18.G3}
     \begin{enumerate}[(a)]
-        \item Let $G$ be a finite group acting on a finite set $S$. Prove that the size of the orbit of a point is equal to the index  of its stablizer.
+        \item Let $G$ be a finite group acting on a finite set $S$. Prove that the size of the orbit of a point is equal to the index  of its stabilizer.
         \item Prove  the class equation:
             \[|G| = |Z(G)| + \sum_{g \in I}[G: C(g)]\]
         where $Z(G)$ is the center of $G$, $C(g)$ is the centralizer of $g$, and $I$ is a set with one representative from each nontrivial conjugacy class of $G$.
