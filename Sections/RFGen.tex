@@ -4,6 +4,21 @@
 
 \subsection{General Rings and Fields}
 
+\begin{prob}{(F17.RF3)}{F17.RF3}
+    Let $p$ be a prime and $\F_p$ the field of $p$ elements. Let $x$ be an indeterminate and let $R_1 = \F_p[x]/(x^2 - 2)$ and $\R_2 = \F_p[x]/(x^2 - 3)$. Determine whether or not the rings $R_1$ and $R_2$ are isomorphic when
+    \begin{enumerate}[(a)]
+        \item $p = 5$
+        \item $p = 11$
+    \end{enumerate}
+\end{prob}
+
+
+\begin{solution}
+When $p = 5$, neither $x^2 - 2$ nor $x^2 - 3$ has any roots in $\F_5$. Therefore both of these polynomials are irreducible. By Kronecker's Theorem, $R_1$ and $R_2$ are both fields of order $5^2 = 25$. Since there is only one field of order 25, $R_1 \cong R_2$.\\
+
+Now let $p = 11$. In this case, 5 is a root of $x^2 - 3$. Therefore, $R_2$ is not a field. However, $x^2 - 2$ is irreducible in $\F_{11}$ since it has no roots. Therefore, $R_1$ is a field and $R_1 \not\cong R_2$.
+\end{solution}
+
 \begin{prob}{(S20.RF2), (F14.G2)}{S20.RF2}
 Let $K$ be a field. Show that every finite subgroup of $K^\times$ is cyclic.
 \end{prob}
