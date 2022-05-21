@@ -4,6 +4,32 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{(F17.LA2, F13.LA1)}{F13.LA1}
+		Let $T: \R^3 \to \R^3$ be a linear transformation. Prove the following:
+		\begin{enumerate}[(a)]
+			\item $T$ has a one-dimensional invariant subspace.
+			\item $T$ has a two-dimensional invariant subspace.
+		\end{enumerate}
+	
+		\emph{ Do not use the existence of canonical forms for matrices.}
+	\end{prob}
+
+	\begin{proof}
+		Let $p(x)$ be the characteristic polynomial of $T$. Since $T: \R^3 \to \R^3$, it follows that $\deg(p) = 3$. Therefore $p$ has some real root, say $\lambda$. Then there exists a degree 2 polynomial $q(x) = x^2 + ax + b$ such that $p(x) = (x-\lambda)q(x)$.\\
+
+		Any real root of $p$ corresponds to an eigenvalue of $T$. Therefore $\lambda$ is an eigenvalue of $T$ with some associated eigenvector, say $v$. The subspace $\rm{span}\{v\}$ is clearly a one-dimensional $T$ invariant subspace.\\
+
+		Let $m(x)$ be the minimal polynomial of $T$. Then $m(x) = (x-\lambda)f(x)$ for some polynomial $f$ of degree at most 2. By definition, $m$ is the polynomial of smallest degree so that $m(T) = 0$. Define $K = \ker(f(T))$. If $\dim(K) = 3$, then $K = \R^3$ and $f(T) = 0$. This contradicts the minimality of $m$ and therefore either $\dim(K) = 1$ or $\dim(K) = 2$.\\
+
+		If $\dim(K) = 1$, the rank-nullity theorem implies that $\range(f(T)) = 2$. For any $v \in \R^3$,
+			\[(T - \lambda I)f(T)v = 0\]
+		since $m(T) = 0$. Therefore each element in $\range(f(T))$ is an eigenvector associated with the eigenvalue $\lambda$. This means that $\range(f(T))$ is a two-dimensional $T$-invariant subspace.\\
+
+		Now assume that $\dim(K) = 2$. For any $v \in K$, $f(T)v = 0$. Then,
+			\[f(T)(Tv) = T(f(T)v) = T(0) = 0\]
+		implying that $Tv \in \ker(f(T)) = K$. That is, $K$ is a two-dimensional $T$-invariant subspace.
+	\end{proof}
+
 	\begin{prob}{(S18.LA3)}{S18.LA3}
 		Let $T: V \to W$ be a linear transformation between two finite dimensional vector spaces. Prove that there exist bases for $V$ and $W$ such that the matrix representation for $T$ with respect to these bases has an identity matrix in the top left corner and all other entries equal to zero.
 	\end{prob}
