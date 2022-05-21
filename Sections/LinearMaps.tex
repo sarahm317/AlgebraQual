@@ -4,6 +4,26 @@
 
 \subsection{Linear Maps}
 
+	\begin{prob}{(S19.LA1)}{S19.LA1}
+		Let $V$ be a finite-dimensional vector space over a field $F$ and $T: V \to V$ a linear map.
+
+		\begin{enumerate}[(a)]
+			\item If $F = \C$, prove that $T$ has an eigenvalue.
+			\item If $F = \R$, show that $T$ need not have an eigenvalue.
+		\end{enumerate}
+
+	\end{prob}
+
+	\begin{proof}
+		See \ref{thm:evalExists}.
+	\end{proof}
+
+	\begin{solution}
+		Let $T: \R^2 \to \R^2$ have matrix representation given by 
+			\[\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}.\]
+		The characteristic polynomial of $T$ is $x^2 + 1$ which has no real roots. Therefore $T$ has no eigenvalues.
+	\end{solution}
+
 	\begin{prob}{(F17.LA2, F13.LA1)}{F13.LA1}
 		Let $T: \R^3 \to \R^3$ be a linear transformation. Prove the following:
 		\begin{enumerate}[(a)]
