@@ -4,6 +4,37 @@
 
 \subsection{Properties of Normal Subgroups}
 
+\begin{prob}{(F04.G1)}{F04.G1}
+	Prove that if $H$ and $K$ are normal subgroups of a group $G$ and $HK = G$ then	
+		\[G/(H \cap K) \cong (G/H) \times (G/K).\]
+\end{prob}
+
+\begin{proof}
+	Define a map $\varphi: G/(H \cap K) \to (G/H) \times (G/K)$ by 
+		\[\varphi(g) = (gH,gK).\]
+	For any $a,b \in G$,
+		\[\varphi(ab) = (abH, abK) = (aH,aK)\cdot(bH,bK)\]
+	following directly from the definition of multiplication in the quotient group and in a direct product. Therefore, $\varphi$ is a homomorphism.\\
+
+	To see that $\varphi$ is surjective, consider an arbitrary element $(aH,bK) \in G/H \times G/K$. Because $G = HK$, write
+		\[a = h_1k_1\]
+	and
+		\[b = h_2k_2\]
+	for some $h_1,h_2 \in H$ and $k_1,k_2 \in K$. Consider the element $g = k_1 h_2 \in G$.\\
+
+	Because $H$ is normal in $G$, $k_1\inv h_1 k_1 \in H$ and therefore $h_2\inv k_1\inv h_1 k_1 \in H$. This implies that
+		\[g H = k_1h_2h_2\inv k_1\inv h_1 k_1 H = h_1 k_1 H.\]
+	Similarly, since $K$ is normal in $G$, $h_2\inv k_1\inv h_2k_2 \in K$. Thus,
+		\[g H = k_1h_2 h_2\inv k_1\inv h_2k_2 = h_2 k_2 K. \]
+	It then follows that
+		\[\varphi(g) = (gH, gK) = (h_1 k_1 H,  h_2 k_2 K) = (aH, bK),\]
+	proving that $\varphi$ is surjective.\\
+
+	If $g \in G$ is such that $\varphi(g) = (H,K)$, then $g \in H \cap K$. Similarly, if $g \in H \cap K$, then $\varphi(g) = (gH,gK) = (H,K)$. That is, $\ker(\varphi) = H \cap K$. By the First Isomorphism Theorem,
+		\[G/(H \cap K) \cong (G/H) \times (G/K),\]
+	as desired.
+\end{proof}
+
 	\begin{prob}{F16.G2}{F16.G2}
 		\begin{enumerate}[(i)]
 			\item Suppose that $H \leq G$. Define the normalizer of $H$ in $G$. Prove that there is a bijection between the conjugates of $H$ in $G$ and the left cosets of $N_G(H)$ in $G$.

@@ -4,6 +4,24 @@
 
 \subsection{Field Extensions}
 
+\begin{prob}{(F04.RF1)}{F04.RF1}
+	Suppose that $K = F(u)$ is a finite field extension of $F$ such that the degree $[K:F]$ is odd. Show that $K = F(u^2 - u)$.
+\end{prob}
+
+\begin{proof}
+	Since $F(u)$ is a field containing $u$, $u^2 - u \in F(u)$. Thus, $F(u^2 - u) \sq F(u)$ and we may consider the following diagram:
+
+	\[\begin{tikzcd}
+		K = F(u) \ar[dd, no head,"2n - 1"'] \ar[dr, no head] & \\
+		 & F(u^2 - u) \ar[dl, no head] \\
+		 F &
+	\end{tikzcd}\]
+	for some $n \in \N$. Seeking a contradiction, suppose that $[F(u): F(u^2 - u)] > 1$. In particular, this means that $u \not\in F(u^2 - u)$. The minimal polynomial for $u$ over $F(u^2 - u)$ is 
+		\[f(x) = x^2 - x - (u^2 - u)\]
+	since the degree of the minimal polynomial is at least degree two and $f$ has $u$ as a root. Therefore, $[F(u): F(u^2 - u)] = 2$. By the Tower Rule, this means that 2 must divide $[K: F]$, contradicting the assumption that the degree was odd. Therefore, $[F(u): F(u^2 - u)] = 1$, or equivalently, $F(u) =  F(u^2 - u)$ as desired.
+\end{proof}
+
+
 \begin{prob}{(F03.RF2)}{F03.RF2}
 	Suppose that $\alpha \neq 0$ is algebraic over $\Q$ and $[\Q(\alpha): \Q]$ is odd. Show that $\Q(\alpha) = \Q(\alpha + \alpha\inv)$. Must this be true without the assumption that $[\Q(\alpha): \Q]$ is odd?
 \end{prob}
