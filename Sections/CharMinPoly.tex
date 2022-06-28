@@ -4,6 +4,35 @@
 
 \subsection{Characteristic and Minimal Polynomials}
 
+\begin{prob}{(F04.L1)}{F04.L1}
+	Let $V$ be a four-dimensional vector space over $\R$ with basis $\{v_1,v_2,v_3,v_4\}$ and let $T: V \to V$ be a linear transformation such that
+		\[T(v_1) = v_2 \quad T(v_2) = v_3 \quad T(v_3) = v_4 \quad T(v_4) = -v_1 -4v_2 -6v_3 - 4fv_4.\]
+	\begin{enumerate}[(a)]
+		\item What is the characteristic polynomial of $T$?
+		\item Is $T$ diagonalizable over $\C$?
+	\end{enumerate}
+\end{prob}
+
+\begin{solution}
+	Consider the matrix representation of $T$ with respect to the given basis:
+		\[\begin{pmatrix}
+			0 & 0 & 0 & -1\\
+			1 & 0 & 0 & -4\\
+			0 & 1 & 0 & -6\\
+			0 & 0 & 1 & -4 \end{pmatrix}.\]
+		Observe that with respect to this basis, the matrix of $T$ is in rational canonical form with one $4 \times 4$ block. From the last column of this matrix, it follows that the minimal polynomial of $T$ is 
+			\[m(x) = x^4 + 4x^3 + 6x^2 + 4x + 1.\]
+		The characteristic polynomial $c(x)$ of $T$ is a monic, degree-4 polynomial. Furthermore, $m$ must divide $c$ and $m$ and $c$ have the same roots (disregarding multiplicity). This implies that $c(x) = m(x) = (x + 1)^4$
+\end{solution}
+
+\begin{claim}
+	$T$ is not diagonalizable over $\C$.
+
+	\begin{proof}
+		The minimal and characteristic polynomials of $T$ are both $(x + 1)^4$. Since the minimal polynomial has repeated roots, $T$ is not diagonalizable.
+	\end{proof}
+\end{claim}
+
 \begin{prob}{(F20.LA2)}{F20.LA2}
 	Prove or give a counter example.
 	\begin{enumerate}[(a)]
