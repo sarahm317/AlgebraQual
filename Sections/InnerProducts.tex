@@ -4,6 +4,39 @@
 
 \subsection{Inner Products}
 
+\begin{prob}{(F04.L2)}{F04.L2}
+    Let $V$ be a finite dimensional inner product space over $\R$ and $W \sq V$ a subspace. Show that:
+
+    \begin{enumerate}[(a)]
+        \item $V = W + W^\perp$.
+        \item $W = (W^\perp)^\perp$.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Let $w_1,\ldots, w_m$ be a basis for $W$. By applying the Gram-Schmidt process (see \ref{prob:S18.LA2}), we may assume this basis is orthonormal. Extend this list to a basis $w_1,\ldots, w_m, v_1, \ldots, v_n$ of $V$, again without loss of generality assuming the basis is orthonormal.
+
+    \begin{claim}
+        The list $v_1, \ldots, v_n$ is a basis for $W^\perp$. 
+
+        \begin{proof}
+            By construction, the list $v_1, \ldots, v_n$ is linearly independent and thus it suffices to prove that this list spans $W^\perp$. Let $u \in W^\perp$. Since $w_1,\ldots, w_m, v_1, \ldots, v_n$ is a basis of $V$, write
+                \[u = a_1w_1 + \cdots + a_m w_m  + b_1v_1 + \cdots + b_n v_n.\]
+            Since $u \in W^\perp$, for each $j = 1,\ldots, m$, $\ip{u}{w_j} = 0$. But, the list $w_1,\ldots, w_m, v_1, \ldots, v_n$ is orthonormal and therefore,
+                \[0 = \ip{u}{w_j} = a_1 \ip{w_1}{w_j} + \cdots + a_m \ip{w_m}{w_j} + b_1 \ip{v_1}{w_j} + \cdots + b_n \ip{v_n}{w_j} = a_j\ip{w_j}{w_j} = a_j.\]
+            That is,
+                \[u = b_1v_1 + \cdots + b_n v_n,\]
+            proving that $W^\perp = \textrm{span}\{v_1, \ldots, v_n\}$.
+        \end{proof}
+    \end{claim}
+    From the claim, it follows that $V = W + W^\perp$. By construction, $W \cap \textrm{span}\{v_1, \ldots, v_n\} = \{0\}$ and thus $V = W + W^\perp = W \oplus W^\perp$, as desired.
+\end{proof}
+
+\begin{proof}
+    \textcolor{red}{Let $w \in W$ be arbitrary. For each $u \in W^\perp$, $\ip{u}{w} = 0$. Therefore, $w \in (W^\perp)^\perp$. On the other hand, suppose that $w \in (W^\perp)^\perp$. Then $\ip{w}{u} = 0$ for each $u \in W^\perp$.}
+\end{proof}
+
+
 \begin{prob}{(S18.LA2)}{S18.LA2}
     Let $V = \R^n$ with the Euclidean inner product. Let $U \sq V$ be a subspace.
     \begin{enumerate}[(a)]

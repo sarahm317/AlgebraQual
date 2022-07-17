@@ -4,6 +4,41 @@
 
 \subsection{Permutation Groups}
 
+\begin{prob}{S19.G2}{S19.G2}
+    You may assume that every permutation has a cycle decomposition $\sigma = \sigma_1 \cdots \sigma_k$ where $\sigma_1, \ldots, \sigma_k$ are pairwise disjoint cycles. Prove that $\sigma, \tau \in S_n$ are conjugate in $S_n$ if and only if for each $m \geq 2$ the number of $m$-cycles in a cycle decomposition of $\sigma$ equals the number of $m$-cycles in a cycle decomposition of $\tau$.
+\end{prob}
+
+\begin{proof}
+\begin{claim}
+
+    Two cycles $\sigma, \tau \in S_n$ are conjugate if and only if they are cycles of the same length.
+    \begin{proof}
+        Suppose first that $\tau = x \sigma x\inv$ for some $x \in S_n$. Further suppose that $\sigma$ is an $m$-cycle and $\tau$ is a $k$-cycle. Since $\sigma$ is an $m$-cycle, $\sigma^m = \cycle{1}$. Observe that
+            \[\tau^m = (x\sigma x\inv)^m = x\sigma^m x\inv = xx\inv = \cycle{1}.\]
+        This implies that the order of $\tau$ is at most $m$. Suppose now that $\tau^k = \cycle{1}$ for some $k < m$. Then, 
+            \[\cycle{1} = \tau^k = (x\sigma x\inv)^k = x \sigma^k x\inv.\]
+        Left-multiplying by $x\inv$ and right-multiplying by $x$ implies that $\sigma^k = \cycle{1}$, contradicting the minimality of $m$. Therefore, but $\sigma$ and $\tau$ are $m$-cycles.\\
+        
+        Now assume that $\sigma$ and $\tau$ are both $m$-cycles. Write $\sigma = \cycle{k_1, \ldots, k_m}$ and $\tau = \cycle{\ell_1, \ldots, \ell_m}$ where $k_1,\ldots,k_m \in \{1,\ldots, n\}$ are distinct and $\ell_1, \ldots, \ell_m \in \{1,\ldots, n\}$ are  distinct. Let $k_1', \ldots, k_{n-m}'$ and $\ell_1', \ldots, \ell_{n-m}'$ denote the elements of $\{1,\ldots, n\}$ that do not appear in the cycle notation for $\sigma$ and $\tau$, respectively.\\
+
+        Define an element $x \in S_n$ as follows: for each $k_i$, let $x: k_i \mapsto \ell_i$. Note that defining $x$ in this way is well-defined as each $k_i$ is distinct. Similarly, for each $k_i'$, let $x: k_i' \mapsto \ell_i'$. It remains to show that $x\sigma x \inv = \tau$.\\
+
+        Consider any $\ell_i$. By construction,
+            \[x\sigma x\inv(\ell_i) = x\sigma(k_i) = x(k_{i+1}).\]
+        If $i = m$, then this equality becomes
+            \[x \sigma x\inv(\ell_m) = x(k_1).\]
+        On the other hand,
+            \[\tau(\ell_i) = \ell_{i+1} = x(k_{i+1})\]
+        and when $i = m$,
+            \[\tau(\ell_m) = \ell_1 = x(k_1).\]
+        Note also that $\tau$ fixes each $\ell_i'$. For each $\ell_i'$,
+            \[x\sigma x\inv(\ell_i') = x\sigma(k_i') = x(k_i') = \ell_i'\]
+        since $\sigma$ fixes each $k_i'$. Adjust the equation as done previously in the case that $i = m$. This proves that $x\sigma x\inv = \tau$.
+    \end{proof}
+\end{claim}
+\end{proof}
+
+
 \begin{prob}{F17.G1}{F17.G1}
     \begin{enumerate}[(i)]
         \item Let $G$ be a finite group and $H \leq G$ such that $[G:H] = n$. Prove that there is a nontrivial homomorphism $\rho: G \to S_n$ with $\ker(\rho)\leq H$.
