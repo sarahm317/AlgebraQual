@@ -2,7 +2,21 @@
 
 \begin{document}
 
-\subsection{Automorphism Groups}
+\subsection{Automorphisms}
+
+\begin{prob}{F13.G2, S03.G2}{F13.G2}
+	Prove that every finite group of order greater than two has a non-trivial automorphism.
+\end{prob}
+
+\begin{proof}
+Suppose first that $G$ is a non-abelian group of order greater than two. Since $G$ is non-abelian, there exists an element $g \in G \sm Z(G)$. Then, the homomorphism $\varphi: G \to G$ given by $\varphi(x) = gxg\inv$ is non-trivial since there exists $x \in G$ where $gx \neq xg$. If $gxg\inv = gyg\inv$, then right and left multiplying by $g$ and $g\inv$, respectively, yields that $x = y$. Therefore $\varphi$ is a non-trivial automorphism.\\
+
+Suppose now that $G$ is abelian. If $G$ is a 2-group, then $G \cong \Z_2^k$ for some $k \in \N$. Consider the automorphism $\varphi: \Z_2^k \to \Z_2^k$ given by 
+	\[\varphi: (x_1,\ldots, x_k) \mapsto (x_2, x_1, \ldots, x_k).\]
+Then $\varphi$ is a nontrivial automorphism, by construction. Composing $\varphi$ with the isomorphism between $G$ and $\Z_2^k$ yields the desired automorphism of $G$.\\
+
+If $G$ is not a 2-group, then there exists some prime $p \neq 2$ that divides the order of $G$. By Cauchy's Theorem (see \ref{prob:F18.G1}), there exists an element $x \in G$ of order $p$. The map $\varphi: g \mapsto g\inv$ is then a non-trivial automorphism as $\varphi(x) \neq x$.
+\end{proof}
 
 \begin{prob}{F18.G3, F03.G3}{F18.G3}
     Let $\rm{Inn}(G)$ be the group of inner automorphisms of the group $G$ and $\rm{Aut}(G)$ the group of all automorphisms of $G$.
