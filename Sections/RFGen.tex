@@ -4,6 +4,47 @@
 
 \subsection{General Rings and Fields}
 
+\begin{prob}{(S03.RF1)}{S03.RF1}
+    Let $V = \R^2$, regarded as a 2-dimensional vector space over $\R$. Let $L(V)$ denote the ring of all linear transformations from $V$ to $V$. Let $T \in L(V)$ be defined by $T(x,y) = (y,-x)$ and define
+        \[A = \{S \in L(V): ST = TS\}.\]
+    \begin{enumerate}[(a)]
+        \item Prove that $A$ is a subring of $L(V)$.
+        \item To which well-known ring is $A$ isomorphic? Give the isomorphism.
+    \end{enumerate}
+\end{prob}
+
+\begin{proof}
+    Let $I \in L(V)$ denote the identity transformation. Because $IT = TI$, it follows that $I \in A$. Suppose now that $R,S \in A$ and consider the linear transformation $R - S \in L(V)$. Then,
+        \[(R-S)T = RT -ST = TR - TS = T(R - S)\]
+    implying that $R - S \in A$. Similarly,
+        \[(RS)T = R(ST) = R(TS) = (RT)S = (TR)S = T(RS)\]
+    proving that $RS \in A$. As $A$ is nonempty, closed under addition, additive inverses, and multiplication, $A$ is a subring.
+\end{proof}
+
+\begin{claim}
+    $A \cong \C$.
+    
+    \begin{proof}
+        With respect to the standard basis for $\R^2$, the matrix of $T$ is
+            \[M(T) = \begin{pmatrix} 0 & -1 \\ 1 & 0\end{pmatrix}.\]
+        Given any $a,b \in \R$, define $S_{a,b} \in L(V)$ by $S_{a,b}(x,y) = (ax+by,-bx+ay)$. Note that $S_{a,b} \in A$ since
+            \[ST(x,y) = S(y,-x) = (ay-bx, -by -ax) = T(ax+by, ay-bx) = TS(x,y)\]
+        for each $(x,y) \in V$. Now define $\varphi: \C \to A$ by 
+            \[\varphi(a+bi) = S_{a,b}.\]
+        If $\varphi(a+bi) = \varphi(c+di)$, then $S_{a,b}(x,y) = S_{c,d}(x,y)$ for each $(x,y) \in V$. In particular,
+            \[(a,-b) = S_{a,b}(1,0) = S_{c,d}(1,0) = (c,-d)\]
+        implying that $a+bi=c+di$ and thus $\varphi$ is injective. To see that $\varphi$ is surjective, consider any $S \in A$. If the matrix of $S$ with respect to the standard basis is $M(S) = \begin{pmatrix} u & v \\ w & z\end{pmatrix}$, then
+            \[\begin{pmatrix} 0 & -1 \\ 1 & 0\end{pmatrix}\begin{pmatrix} u & v \\ w & z\end{pmatrix} = \begin{pmatrix} u & v \\ w & z\end{pmatrix}\begin{pmatrix} 0 & -1 \\ 1 & 0\end{pmatrix}.\]
+        Equivalently,
+            \[\begin{pmatrix} v & -u \\ z & -w\end{pmatrix} = \begin{pmatrix} -w & -z \\ u & v\end{pmatrix}.\]
+        Therefore,
+            \[M(S) = \begin{pmatrix} u & v \\ w & z\end{pmatrix} = \begin{pmatrix} u & v \\ -v & u\end{pmatrix}\]
+        meaning that $S = S_{u,v}$. That is, $\varphi(u +vi) = S_{u,v} = S$.\\
+
+        The computations to verify that $\varphi$ is a homomorphism are straightforward and standard.
+    \end{proof}
+\end{claim}
+
 \begin{prob}{(F17.RF3)}{F17.RF3}
     Let $p$ be a prime and $\F_p$ the field of $p$ elements. Let $x$ be an indeterminate and let $R_1 = \F_p[x]/(x^2 - 2)$ and $\R_2 = \F_p[x]/(x^2 - 3)$. Determine whether or not the rings $R_1$ and $R_2$ are isomorphic when
     \begin{enumerate}[(a)]
