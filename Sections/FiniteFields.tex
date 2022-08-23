@@ -14,7 +14,29 @@ Give an explicit construction for a field $F$ of 9 elements.
 		\[2x + (x^2 + 1) \quad 2x + 1 + (x^2 + 1) \quad 2x + 2 + (x^2 + 1)\]
 \end{proof}
 
-\begin{prob}{(S04.RF1, F18.RF1)}{F18.RF1}
+\begin{prob}{(S04.RF1)}{S04.RF1.c}
+	Let $F$ be a finite field. Using only vector space theory, prove that if $|F| = p^m$ and $K$ is an extension field  of $F$ with $|K|=p^n$, then $m$ divides $n$.
+\end{prob}
+
+\begin{proof}
+	Note first that both $F$ and $K$ contain a copy of $\F_p$.
+		\begin{claim}
+			Let $F$ be a finite field of characteristic $p$. Then, $|F|=p^n$ if and only if $[F:\F_p] = n$.
+
+			\begin{proof}
+				Since $\rm{char}(F) = p$, there exists a subfield $L$ of $F$ that is isomorphic to $\F_p$. Therefore, $F$ can be viewed as an $\F_p$-vector space. Let $\{x_1,\ldots, x_n\}$ be an $\F_p$-basis for $F$. A basic counting argument and the definition of the degree of an extension then implies that $[F:\F_p] = n$ if and only if $|F|=p^n$.
+			\end{proof}
+		\end{claim}
+
+	From the claim, $[F:\F_p] = m$ and $[K:\F_p] = n$. As $F$ is a subfield of $K$, there exists an $F$-basis, say $\{k_1, \ldots, k_r\}$ for $K$. That is, for each $k \in K$ there exist unique $b_1,\ldots b_r \in F$ such that
+		\[k = b_1k_1 + \cdots b_rk_r.\]
+	Similarly, there exists an $\F_p$-basis, say $\{f_1,\ldots, f_m\}$, for $F$. Then each $b_i$ can be written uniquely in the form 	
+		\[b_i = a_1f_1 + \cdots + a_mf_m\]
+	with each $a_1,\ldots,a_m \in \F_p$. A counting argument can then be used to see that $p^n = |K| = \left(p^m\right)^r$. That is, $p^n = p^mr$ and therefore $m$ divides $n$, as desired.
+\end{proof}
+
+
+\begin{prob}{(S04.RF1.ab, F18.RF1)}{F18.RF1}
 	\begin{enumerate}[(a)]
 		\item Define the characteristic of a field. Prove that a finite field must have prime characteristic $p$ and deduce that it has $p^k$ elements for some $k \in \N$.
 		\item Prove  that a finite field cannot be algebraically closed.
