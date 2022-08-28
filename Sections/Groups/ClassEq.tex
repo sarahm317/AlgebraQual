@@ -1,0 +1,29 @@
+\documentclass[../../AlgebraQualSolutions.tex]{subfiles}
+
+\begin{document}
+
+\subsection{The Class Equation}
+
+\begin{prob}{(F02.G4)}{F02.G4}
+    Let $G$ be a non-abelian group of order $p^3$ where $p$ is a prime. Prove that the center $Z(G)$ of $G$ has order $p$ and that $Z(G) = [G,G]$ is the commutator subgroup of $G$.
+\end{prob}
+
+\begin{proof}
+    Since $p$ is a prime and $|G| = p^3$, the order of $Z(G)$ must be one of $1,p,p^2,p^3$ by Lagrange's Theorem (\ref{prob:F12.G3}). Since it's assumed that $G$ is non-abelian, $|Z(G)|\neq p^3$.\\
+
+    If $|Z(G)| = p^2$, then $|G/Z(G)| = p$. Since $p$ is prime, this implies that $G/Z(G)$ is cyclic and therefore abelian. Therefore, when $|Z(G)| = p^2$, $G$ is abelian, a contradiction (see \ref{prob:S20.G1}).\\
+
+    Now consider the class equation: 
+        \[|G| = |Z(G)| + \sum_{g \in I}|C(g)|\]
+    where $I$ is some subset of $G$ containing exactly one element from each non-trivial conjugacy class of $G$ and $C(g)$ denotes the conjugacy class of $G$ with representative $g$. Each $|C(g)|> 1$ and is divisible by $p$. Since $|G|$ is also divisible by $p$, $|Z(G)| \neq 1$. Therefore, $|Z(G)| = p$.\\
+
+    Let $H = G/Z(G)$ and observe that $|Z(G)| = p$ implies that $|H| = p^2$. The class equation implies that $|Z(H)| \neq 1$. If $|Z(H)| = p$, then $H/Z(H)$ is of order $p$ and therefore cyclic. Again, by \ref{prob:S20.G1}, this implies that $H$ is abelian when $|Z(H)| = p$. Since the possible orders for $Z(H)$ are $p$ and $p^2 = |H|$, it follows that $H$ is abelian.\\
+
+    Now, since $H$ is abelian for any $xZ(G),yZ(G) \in H$,
+        \[((xy)Z(G) = xZ(G))(yZ(G)) = (yZ(G))(xZ(G)) = (yx)Z(G).\]
+    That is, for any $x,y \in G$,
+        \[xyx\inv y\inv \in Z(G)\]
+    and therefore $[G,G] \sq Z(G)$. Since $G$ is non-abelian, $[G,G]$ is non-trivial and thus $[G,G] = Z(G)$.
+\end{proof}
+
+\end{document}
