@@ -32,12 +32,8 @@
 		Suppose that $\Z(G)$ is of order $q$. Then $G/Z(G)$ is of order $q$. Any group of prime order is cyclic. But, $G/Z(G)$ cyclic implies that $G$ is abelian (\ref{prob:F21.G1}), a contradiction. Therefore $|Z(G)| \neq p$ and similarly, $|Z(G)| \neq q$. As $G$ is nonabelian, $|Z(G)| < |G|$ and by Lagrange's Theorem the only remaining possibility is $|Z(G)| =1$.
 	\end{proof}
 
-
-	\begin{prob}{F16.G1}{F16.G1}
-		\begin{enumerate}[(i)]
-			\item Suppose that $G$ has no subgroup of index 2. Prove that any subgroup of index 3 is normal.
-			\item Let $G$ be the finite simple group of order 168. Prove that $G$ is a subgroup of the alternating group on 8 letters.
-		\end{enumerate}
+	\begin{prob}{(\textbf{F16.G1(a)}), F02.G2}{F16.G1.a}
+		Suppose that $G$ has no subgroup of index 2. Prove that any subgroup of index 3 is normal.
 	\end{prob}
 
 	\begin{proof}
@@ -52,8 +48,30 @@
 		Since $[G:K] \neq 6$, it must be the case that $[G:K] = 3$. Since $K \sq H$ and $[G:H] = 3$, it follows that $H = K$ and thus $H$ must be normal.
 	\end{proof}
 
+	\begin{prob}{(\textbf{F16.G1(b)}),F02.G1}{F16.G1.b}
+		Let $G$ be the finite simple group of order 168. Prove that $G$ is a subgroup of the alternating group on 8 letters.
+	\end{prob}
+
 	\begin{proof}
-		Notice that $168 = 2^3\cdot3\cdot7$. Because $G$ is simple, $n_7 \neq 1$ and by the Sylow Theorems, the only other possibility is that $n_7 = 8$. Let $\varphi: G \incl S_8$ be the permutation associated with $G$ acting on the left cosets of $P$, a Sylow 7-subgroup. Notice that $\varphi$ is a nontrivial homomorphism. We must show that $\varphi(G) = A_8$. \textcolor{red}{Where to go from here?}
+		Notice that $168 = 2^3\cdot3\cdot7$. Because $G$ is simple, $n_7 \neq 1$ and by the Sylow Theorems, the only other possibility is that $n_7 = 8$. Let $\scr{A}$ denote the set of Sylow-7 subgroups of $G$, noting that $\scr{A}$ contains exactly 8 elements. Let $\varphi: G \to S_8$ be the permutation of the action of $G$ acting on $\scr{A}$ via conjugation. This action is well-defined since all Sylow-7 subgroups are conjugate to one another. Let $H$ be a Sylow-7 subgroup and write the elements of $\scr{A}$ as
+			\[\{H, g_1 Hg_1\inv, \ldots, g_7Hg_7\inv\}.\]
+		For simplicity, let $H_i = g_iHg_i\inv$ for each $i = 1, \ldots, 7$.\\
+
+		Let $K = \ker(\varphi)$ and observe that since $K \triangleleft G$ and $G$ is simple, either $K$ is trivial or $K = G$. Seeking a contradiction, suppose that $K = G$. This implies that for each $g \in G$, $\varphi(g) = \cycle{1}$. In particular, $H = gHg\inv$ meaning that $H$ is a non-trivial normal subgroup of $G$, a contradiction.\\
+
+		Thus, $K = \{1\}$ is trivial meaning that the action is faithful. By the First Isomorphism Theorem,
+			\[G \cong G/K \cong \varphi(G) \leq S_8\]
+		and so $G$ may be viewed as a subgroup of $S_8$. Seeking a contradiction, suppose that $G \not\leq A_8$ and find $g \in G$ such that $\varphi(g)$ is an odd permutation. Consider the following diagram:
+
+		\[
+			\begin{tikzcd}
+				G \ar[r, "\varphi", hook] \ar[dr] & \varphi(G) \ar[d,"\rm{sgn}"]\\
+				& \Z_2
+			\end{tikzcd}
+			\]
+		where $\rm{sgn}$ is the sign map, sending even permutations to 0 and odd permutations to 1. Let $\psi = \rm{sgn}\circ \varphi$. Since $\varphi(g)$ is odd and $\varphi(1)$ is even, $\psi(G) = \Z_2$ is surjective. By the First Isomorphism Theorem,
+			\[G/\ker(\psi) \cong \psi(G) = \Z_2\]
+		implying that $\ker(\psi)$ is a non-trivial normal subgroup of $G$. But this is impossible, meaning that $G \cong \varphi(G) \sq A_8$, as desired.
 	\end{proof}
 
 	\begin{prob}{S18.G2}{S18.G2}
